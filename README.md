@@ -2,12 +2,58 @@
 
 ## Miembros
 
-- Maya García Velasco
 - Miguel Ángel Quian Díaz
+- Maya García Velasco
 - Daniel Cabeza Berrazueta
 
 ## Indice de entregas
 <!--Para enlazar correctamente, crear un header con #/##/### y vincular -> [texto](#nombreDelHeader)-->
-1. [Prueba](#tarea1)
+1. [Diagrama de clases](#diagrama-clases)
+2. [Diagrama de casos de uso](#diagrama-de-casos-de-uso)
+3. [Manual de despliegue](#manual-despliegue)
+4. [Manual de usuario](#manual-de-usuario)
+5.  [Informes de la aplicación de escritorio](#informes-de-la-aplicación)
+6. [Base de datos y Script](#base-de-datos)
+7. [Diseño E/R](#entidad-relacion)
+8. [Script de disparadores](#script-disparadores)
+9. [Página web y hoja de estilos](#página-web-y-estilos)
+10. [Plantilla XSLT](#xslt)
+11. [Infografía de Seguriad Social](#infografía)
+12. [Identificación de factores de riesgos](#factores-de-riesgo)
+13. [Plan de emergencias](#plan-de-emergencias)
 
-## Tarea1
+
+   
+   
+
+## Diagrama clases
+
+## Diagrama de casos de uso
+
+## Manual despliegue
+
+## Manual de usuario
+
+## Informes de la aplicación
+
+## Base de datos
+
+## Entidad Relacion
+
+## Script disparadores
+
+## Página web y estilos
+
+## XSLT
+
+## Infografía
+
+## Factores de riesgo
+
+## Plan de emergencias
+
+
+
+
+
+
