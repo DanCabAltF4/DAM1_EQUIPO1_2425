@@ -28,6 +28,8 @@
 
 ## Diagrama clases
 
+[Diagrama](https://educantabria.sharepoint.com/:i:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Diagrama%20de%20clases.png?csf=1&web=1&e=7txM1a)
+
 ## Diagrama de casos de uso
 
 ## Manual despliegue
@@ -43,7 +45,8 @@
 
 [Relacional formato PDF](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/EER_Equipo1.pdf?csf=1&web=1&e=ffrN55)
 
-![Relacional](imagenes\EER_EQUIPO1.png)
+<!--Para enlazar imagenes, añade una ! a un enlace normal-->
+![Relacional](https://github.com/DanCabAltF4/DAM1_EQUIPO1_2425/blob/main/imagenes/EER_EQUIPO1.png)
 ## Entidad Relacion
 
 ## Script disparadores
