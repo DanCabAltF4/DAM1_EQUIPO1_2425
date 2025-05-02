@@ -12,7 +12,7 @@
 2. [Diagrama de casos de uso](#diagrama-de-casos-de-uso)
 3. [Manual de despliegue](#manual-despliegue)
 4. [Manual de usuario](#manual-de-usuario)
-5.  [Informes de la aplicación de escritorio](#informes-de-la-aplicación)
+5. [Informes de la aplicación de escritorio](#informes-de-la-aplicación)
 6. [Base de datos y Script](#base-de-datos)
 7. [Diseño E/R](#entidad-relacion)
 8. [Script de disparadores](#script-disparadores)
@@ -28,7 +28,9 @@
 
 ## Diagrama clases
 
-[Diagrama](https://educantabria.sharepoint.com/:i:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Diagrama%20de%20clases.png?csf=1&web=1&e=7txM1a)
+[Diagrama](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Diagrama%20de%20clases.pdf?csf=1&web=1&e=c3tKKg)
+
+![Imagen del diagrama](https://github.com/DanCabAltF4/DAM1_EQUIPO1_2425/blob/preparar-readme/imagenes/Diagrama%20de%20clases.png)
 
 ## Diagrama de casos de uso
 
