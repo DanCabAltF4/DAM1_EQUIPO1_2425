@@ -39,7 +39,11 @@
 ## Informes de la aplicación
 
 ## Base de datos
+[Relacional](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/EER_EQUIPO1.mwb?csf=1&web=1&e=ds55aY)
 
+[Relacional formato PDF](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/EER_Equipo1.pdf?csf=1&web=1&e=ffrN55)
+
+![Relacional](https://educantabria.sharepoint.com/:i:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/EER_EQUIPO1.png?csf=1&web=1&e=Ks5zBd)
 ## Entidad Relacion
 
 ## Script disparadores
