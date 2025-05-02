@@ -32,6 +32,8 @@
 
 ## Manual despliegue
 
+[Plantilla](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/MANUAL%20DE%20DESPLIEGUE%20DAM1.pdf?csf=1&web=1&e=lJPKIP)
+
 ## Manual de usuario
 
 ## Informes de la aplicación
