@@ -28,7 +28,7 @@
 
 ## Diagrama clases
 
-[Diagrama](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Diagrama%20de%20clases.pdf?csf=1&web=1&e=c3tKKg)
+[Diagrama](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Diagrama%20de%20clases.pdf?csf=1&web=1&e=S4GaSd)
 
 ![Diagrama](https://github.com/DanCabAltF4/DAM1_EQUIPO1_2425/blob/preparar-readme/imagenes/Diagrama%20de%20clases.png)
 
