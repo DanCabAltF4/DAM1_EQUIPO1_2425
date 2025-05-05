@@ -32,6 +32,7 @@
 
 ![Diagrama](https://github.com/DanCabAltF4/DAM1_EQUIPO1_2425/blob/modificaciones-readme/imagenes/Diagrama%20de%20clases.png)
 
+
 ## Diagrama de casos de uso
 
 ## Manual despliegue
