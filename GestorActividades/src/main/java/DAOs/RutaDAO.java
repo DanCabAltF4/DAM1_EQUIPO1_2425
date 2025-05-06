@@ -4,10 +4,20 @@
  */
 package DAOs;
 
+import com.mycompany.gestorActividades.AccesoBaseDatos;
+import java.sql.Connection;
+
 /**
  *
  * @author dam105
  */
 public class RutaDAO {
+    
+     private Connection conn;
+
+    public RutaDAO(Connection conn) {
+        this.conn = AccesoBaseDatos.getInstance().getConn();
+    }
+    
     
 }

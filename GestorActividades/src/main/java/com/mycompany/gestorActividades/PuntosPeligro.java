@@ -13,8 +13,32 @@ public class PuntosPeligro {
     private int id,kilometro,nivelGravedad;
     private String descripción;
     private Ruta idRuta; 
-    
-    
+    private Fotos fotos;
+
+    public PuntosPeligro(int id, int kilometro, int nivelGravedad, String descripción, Ruta idRuta, Fotos fotos) {
+        this.id = id;
+        this.kilometro = kilometro;
+        this.nivelGravedad = nivelGravedad;
+        this.descripción = descripción;
+        this.idRuta = idRuta;
+        this.fotos = fotos;
+    }
+
+    public PuntosPeligro(int kilometro, int nivelGravedad, String descripción, Ruta idRuta, Fotos fotos) {
+        this.kilometro = kilometro;
+        this.nivelGravedad = nivelGravedad;
+        this.descripción = descripción;
+        if(idRuta!=null){
+            this.idRuta = idRuta;
+        }else{
+            this.idRuta=null;
+        }
+        if(fotos!=null){
+            this.fotos=fotos;
+        }else{
+            this.fotos=null;
+        }
+    }
     
    //Métodos
     public int getId() {
@@ -43,6 +67,10 @@ public class PuntosPeligro {
 
     public Ruta getIdRuta() {
         return idRuta;
+    }
+
+    public Fotos getFotos() {
+        return fotos;
     }
     
     
