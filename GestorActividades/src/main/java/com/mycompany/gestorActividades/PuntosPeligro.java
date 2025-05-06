@@ -12,14 +12,10 @@ public class PuntosPeligro {
     
     private int id,kilometro,nivelGravedad;
     private String descripción;
-
-    public PuntosPeligro(int id, int kilometro, int nivelGravedad, String descripción) {
-        this.id = id;
-        this.kilometro = kilometro;
-        this.nivelGravedad = nivelGravedad;
-        this.descripción = descripción;
-    }
-
+    private Ruta idRuta; 
+    
+    
+    
    //Métodos
     public int getId() {
         return id;
@@ -39,6 +35,14 @@ public class PuntosPeligro {
 
     public int getNivelGravedad() {
         return nivelGravedad;
+    }
+
+    public String getDescripción() {
+        return descripción;
+    }
+
+    public Ruta getIdRuta() {
+        return idRuta;
     }
     
     
