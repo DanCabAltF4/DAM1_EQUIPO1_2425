@@ -5,6 +5,7 @@
 - Miguel Ángel Quian Díaz
 - Maya García Velasco
 - Daniel Cabeza Berrazueta
+- Raúl Buenaga García
 
 ## Indice de entregas
 <!--Para enlazar correctamente, crear un header con #/##/### y vincular -> [texto](#nombreDelHeader)-->
