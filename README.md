@@ -20,7 +20,7 @@
 9. [Página web y hoja de estilos](#página-web-y-estilos)
 10. [Plantilla XSLT](#xslt)
 11. [Infografía de Seguridad Social](#infografía-sobre-seguridad-social)
-12. [Identificación de factores de riesgos](#factores-de-riesgo)
+12. [Identificación de factores de riesgos y Matriz de riesgo](#factores-de-riesgo-y-matriz-de-riesgo)
 13. [Plan de emergencias](#plan-de-emergencias)
 14. [Tarea I.T](#tarea-it)
 
@@ -65,7 +65,7 @@
 ## Infografía sobre Seguridad Social
 [Infografia](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Infografia%20SS.pdf?csf=1&web=1&e=En4MY3)
 
-## Factores de riesgo
+## Factores de riesgo y Matriz de riesgo
 
 ## Plan de emergencias
 
