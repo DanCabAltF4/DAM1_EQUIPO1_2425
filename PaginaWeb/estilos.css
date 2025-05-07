@@ -6,16 +6,23 @@
 body {
     background-color: white;
 }
+#cabezaPagina {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    justify-content: center;
+}
 
+#cabezaPagina a {
+    text-decoration: none;
+}
 #encabezado {
     display: flex;
-    width: 96%;
-    padding: 0% 2%;
-    height: 50px;
+   flex: 1;
     background-color: #c0c0c0;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    position: sticky;
 }
 
 #encabezado>* {
@@ -27,7 +34,6 @@ body {
 
 #botonEncab {
     transition: ease-out 0.5s ;
-    text-decoration: none;
 }
 #botonEncab:hover {
     transition: ease-in 0.5s ;
@@ -37,16 +43,23 @@ body {
 #select {
     background-color: rgb(41, 40, 40);
     display: flex;
-    width: 96%;
-    padding: 0% 2%;
-    height: 40px;;
+    flex: 1;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    position: sticky;
+}
+
+#select>ul{
+    flex: 0.5;
+    padding: 5px 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 #select li {
-    text-decoration: none;
+    
+    font-size: large;
     color: white;
     list-style: none;
     background-color: #636363;
