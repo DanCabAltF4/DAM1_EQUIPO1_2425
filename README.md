@@ -30,9 +30,9 @@
 
 ## Diagrama clases
 
-[Diagrama](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Diagrama%20de%20clases%20definitvo%20en%20pdf.pdf?csf=1&web=1&e=zfwj0M)
+[Diagrama](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Diagrama%20de%20clases%20definitivisimo.pdf?csf=1&web=1&e=jii9GD)
 
-![Diagrama](/imagenes/Diagrama_clases_definitivo.png)
+![Diagrama](imagenes/Diagrama_clases_definitivisimo.png)
 
 
 ## Diagrama de casos de uso
