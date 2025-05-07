@@ -6,39 +6,39 @@ package DAOs;
 
 import com.mycompany.gestorActividades.AccesoBaseDatos;
 import com.mycompany.gestorActividades.Repositorio;
-import com.mycompany.gestorActividades.Ruta;
+import com.mycompany.gestorActividades.Usuario;
 import java.sql.Connection;
 import java.util.List;
 
 /**
  *
- * @author dam105
+ * @author DAM105
  */
-public class RutaDAO implements Repositorio<Ruta>{
-    
+public class UsuarioDAO implements Repositorio<Usuario>{
+       
     private Connection conn;
 
-    public RutaDAO(Connection conn) {
+    public UsuarioDAO(Connection conn) {
         this.conn = AccesoBaseDatos.getInstance().getConn();
     }
-
+    
     @Override
-    public List<Ruta> listar() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public Ruta porId(int id) {
+    public List<Usuario> listar() {
         throw new UnsupportedOperationException("Not supported yet."); 
     }
 
     @Override
-    public void modificar(Ruta t) {
+    public Usuario porId(int id) {
         throw new UnsupportedOperationException("Not supported yet."); 
     }
 
     @Override
-    public void agregar(Ruta t) {
+    public void modificar(Usuario t) {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
+
+    @Override
+    public void agregar(Usuario t) {
         throw new UnsupportedOperationException("Not supported yet."); 
     }
 
@@ -46,6 +46,5 @@ public class RutaDAO implements Repositorio<Ruta>{
     public void eliminar(int id) {
         throw new UnsupportedOperationException("Not supported yet."); 
     }
-    
     
 }
