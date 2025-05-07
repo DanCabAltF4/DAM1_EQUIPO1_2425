@@ -5,6 +5,7 @@
 - Miguel Ángel Quian Díaz
 - Maya García Velasco
 - Daniel Cabeza Berrazueta
+- Raúl Buenaga García
 
 ## Indice de entregas
 <!--Para enlazar correctamente, crear un header con #/##/### y vincular -> [texto](#nombreDelHeader)-->
@@ -20,17 +21,18 @@
 10. [Plantilla XSLT](#xslt)
 11. [Infografía de Seguridad Social](#infografía-sobre-seguridad-social)
 12. [Identificación de factores de riesgos](#factores-de-riesgo)
-13. [Plan de emergencias](#plan-de-emergencias)
-14. [Tarea I.T](#tarea-it)
+13. [Matriz de riesgo](#matriz-de-riesgo)
+14. [Plan de emergencias](#plan-de-emergencias)
+15. [Tarea I.T](#tarea-it)
 
    
    
 
 ## Diagrama clases
 
-[Diagrama](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Diagrama%20de%20clases.pdf?csf=1&web=1&e=S4GaSd)
+[Diagrama](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Diagrama%20de%20clases%20definitivisimo.pdf?csf=1&web=1&e=jii9GD)
 
-![Diagrama](https://github.com/DanCabAltF4/DAM1_EQUIPO1_2425/blob/modificaciones-readme/imagenes/Diagrama%20de%20clases.png)
+![Diagrama](imagenes/Diagrama_clases_definitivisimo.png)
 
 
 ## Diagrama de casos de uso
@@ -44,12 +46,15 @@
 ## Informes de la aplicación
 
 ## Base de datos
-[Relacional](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/EER_EQUIPO1_V3.mwb?csf=1&web=1&e=e1JlMH)
 
-[Relacional formato PDF](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/EER_EQUIPO1_V3.pdf?csf=1&web=1&e=KapWHP)
+[Script](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/GeneracionBD_Equipo1.sql?csf=1&web=1&e=hKzkjL)
+
+[Relacional](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/EER_EQUIPO1_V6.mwb?csf=1&web=1&e=e1JlMH)
+
+[Relacional formato PDF](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/EER_EQUIPO1_V6.pdf?csf=1&web=1&e=KapWHP)
 
 <!--Para enlazar imagenes, añade una ! a un enlace normal-->
-![Relacional](https://github.com/DanCabAltF4/DAM1_EQUIPO1_2425/blob/main/imagenes/EER_EQUIPO1_V3.png)
+![Relacional](/imagenes/EER_EQUIPO1_V6.png)
 ## Entidad Relacion
 
 ## Script disparadores
@@ -62,6 +67,8 @@
 [Infografia](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Infografia%20SS.pdf?csf=1&web=1&e=En4MY3)
 
 ## Factores de riesgo
+
+## Matriz de riesgo
 
 ## Plan de emergencias
 
