@@ -29,6 +29,12 @@ public class Usuario {
         this.contrasena = contrasena;
     }
     
+    public Usuario() {
+        this.nombre ="";
+        this.apellidos = "";
+        this.email = "";
+        this.contrasena = contrasena;
+    }
     //Métodos
     public int getId() {
         return id;

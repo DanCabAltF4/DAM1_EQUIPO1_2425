@@ -4,6 +4,9 @@
  */
 package Swing;
 
+import com.mycompany.gestorActividades.Usuario;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author DAM105
@@ -133,7 +136,13 @@ public class LogIn extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+
+        if (this.jTextField1.getText().length() == 0 || this.jPasswordField1.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Hay algun campo que no tiene datos", "ERROR", JOptionPane.ERROR_MESSAGE, null);
+
+        } else {
+            
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -141,8 +150,8 @@ public class LogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-         this.jPanel1.setVisible(false);
-         this.jPanel1.setVisible(true);
+         new Menú(new Usuario()).setVisible(true);
+        this.setVisible(false);
         this.setTitle("Menú");
     }//GEN-LAST:event_jButton2ActionPerformed
 
