@@ -67,7 +67,7 @@
 [Infografia](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Infografia%20SS.pdf?csf=1&web=1&e=En4MY3)
 
 ## Factores de riesgo
-
+[Factores de Riesgo PDF](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/IDENTIFICACION_DE_RIESGOS_EQUIPO1.pdf?csf=1&web=1&e=Mhk5Ep)
 ## Matriz de riesgo
 
 ## Plan de emergencias
