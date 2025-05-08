@@ -30,12 +30,17 @@
 
 ## Diagrama clases
 
-[Diagrama](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Diagrama%20de%20clases%20definitivisimo.pdf?csf=1&web=1&e=jii9GD)
+[Diagrama](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Diagrama%20de%20clases%20ahora%20si.pdf?csf=1&web=1&e=1jT5r5)
 
-![Diagrama](imagenes/Diagrama_clases_definitivisimo.png)
+![Diagrama](imagenes/Diagrama_clases_ahora_si.png)
 
 
 ## Diagrama de casos de uso
+[Diagrama](https://educantabria.sharepoint.com/:i:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/casos_uso.drawio.png?csf=1&web=1&e=hHwa4F)
+
+[Descripción](https://educantabria.sharepoint.com/:w:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/descripci%C3%B3n%20de%20casos%20de%20uso.docx?d=w5e06507a021a45c7ab6b5103337c9e46&csf=1&web=1&e=00XqIP)
+
+![Diagrama](imagenes/casos_uso.png)
 
 ## Manual despliegue
 
