@@ -30,12 +30,17 @@
 
 ## Diagrama clases
 
-[Diagrama](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Diagrama%20de%20clases%20definitivisimo.pdf?csf=1&web=1&e=jii9GD)
+[Diagrama](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Diagrama%20de%20clases%20ahora%20si.pdf?csf=1&web=1&e=1jT5r5)
 
-![Diagrama](imagenes/Diagrama_clases_definitivisimo.png)
+![Diagrama](imagenes/Diagrama_clases_ahora_si.png)
 
 
 ## Diagrama de casos de uso
+[Diagrama](https://educantabria.sharepoint.com/:i:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/casos_uso.drawio.png?csf=1&web=1&e=hHwa4F)
+
+[Descripción](https://educantabria.sharepoint.com/:w:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/descripci%C3%B3n%20de%20casos%20de%20uso.docx?d=w5e06507a021a45c7ab6b5103337c9e46&csf=1&web=1&e=00XqIP)
+
+![Diagrama](imagenes/casos_uso.png)
 
 ## Manual despliegue
 
@@ -49,12 +54,15 @@
 
 [Script](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/GeneracionBD_Equipo1.sql?csf=1&web=1&e=hKzkjL)
 
-[Relacional](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/EER_EQUIPO1_V6.mwb?csf=1&web=1&e=e1JlMH)
+[Relacional](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/EER_EQUIPO1_V8.mwb?csf=1&web=1&e=e1JlMH)
 
-[Relacional formato PDF](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/EER_EQUIPO1_V6.pdf?csf=1&web=1&e=KapWHP)
+[Relacional formato PDF](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/EER_EQUIPO1_V8.pdf?csf=1&web=1&e=KapWHP)
+
 
 <!--Para enlazar imagenes, añade una ! a un enlace normal-->
-![Relacional](/imagenes/EER_EQUIPO1_V6.png)
+![Relacional](/imagenes/EER_EQUIPO1_V8.png)
+
+[Script ejemplos](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/DatosEjemploBD_Equipo1.sql?csf=1&web=1&e=DBjGqU)
 ## Entidad Relacion
 
 ## Script disparadores
