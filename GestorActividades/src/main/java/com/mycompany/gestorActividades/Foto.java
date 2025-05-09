@@ -8,12 +8,12 @@ package com.mycompany.gestorActividades;
  *
  * @author Raúl Buenaga
  */
-public class Fotos {
+public class Foto {
     
     private int id;
     private String url;
 
-    public Fotos(int id, String url) {
+    public Foto(int id, String url) {
         this.id = id;
         this.url = url;
     }

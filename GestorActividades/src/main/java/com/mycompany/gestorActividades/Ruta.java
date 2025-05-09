@@ -13,16 +13,15 @@ import java.time.LocalDate;
  * @author Usuario
  */
 public class Ruta {
-    
-    private int idRuta,nivelRiesgo,nivelEsfuerzo,tipoTerreno,indicaciones,ValoracionMedia;
-    private String nombre,gpx,recomendaciones,zonaGeográfica;
+
+    private int idRuta, nivelRiesgo, nivelEsfuerzo, tipoTerreno, indicaciones, ValoracionMedia;
+    private String nombre, gpx, recomendaciones, zonaGeográfica;
     private LocalDate fechaCreacion;
-    private double longInicio,latInicio,longFin,latFin,altMax,altMin,desnivelPos,desnivelNeg;
+    private double longInicio, latInicio, longFin, latFin, altMax, altMin, desnivelPos, desnivelNeg;
     private Clasificación clasificacion;
     private EstadoRuta estado;
-    private boolean accesibilidad,familiar;
+    private boolean accesibilidad, familiar;
     private Usuario idUsu;
     private Actividad tipoActividad;
-    
-    
+
 }

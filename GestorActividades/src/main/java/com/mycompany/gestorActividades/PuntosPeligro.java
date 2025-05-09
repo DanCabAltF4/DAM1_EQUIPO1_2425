@@ -13,9 +13,9 @@ public class PuntosPeligro {
     private int id,kilometro,nivelGravedad;
     private String descripción;
     private Ruta idRuta; 
-    private Fotos fotos;
+    private Foto fotos;
 
-    public PuntosPeligro(int id, int kilometro, int nivelGravedad, String descripción, Ruta idRuta, Fotos fotos) {
+    public PuntosPeligro(int id, int kilometro, int nivelGravedad, String descripción, Ruta idRuta, Foto fotos) {
         this.id = id;
         this.kilometro = kilometro;
         this.nivelGravedad = nivelGravedad;
@@ -24,7 +24,7 @@ public class PuntosPeligro {
         this.fotos = fotos;
     }
 
-    public PuntosPeligro(int kilometro, int nivelGravedad, String descripción, Ruta idRuta, Fotos fotos) {
+    public PuntosPeligro(int kilometro, int nivelGravedad, String descripción, Ruta idRuta, Foto fotos) {
         this.kilometro = kilometro;
         this.nivelGravedad = nivelGravedad;
         this.descripción = descripción;
@@ -69,7 +69,7 @@ public class PuntosPeligro {
         return idRuta;
     }
 
-    public Fotos getFotos() {
+    public Foto getFotos() {
         return fotos;
     }
     
