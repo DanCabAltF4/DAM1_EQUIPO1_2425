@@ -2,6 +2,8 @@ package Swing;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -41,6 +43,7 @@ public class main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        label1 = new java.awt.Label();
         jPanelPrincipal = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabelLogo = new javax.swing.JLabel();
@@ -55,6 +58,23 @@ public class main extends javax.swing.JFrame {
         jButtonAccederInicio = new javax.swing.JButton();
         jButtonVolverInicio = new javax.swing.JButton();
         jPanelRegistro = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jTextFieldNombreRegistro = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextFieldApellidosRegistro = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jTextFieldCorreoRegistro = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jPasswordFieldInicio1 = new javax.swing.JPasswordField();
+        jLabel8 = new javax.swing.JLabel();
+        jPasswordFieldInicio2 = new javax.swing.JPasswordField();
+        jLabel9 = new javax.swing.JLabel();
+        jButtonVolverRegistro = new javax.swing.JButton();
+        choiceTipoUsuRegistro = new java.awt.Choice();
+        jLabel10 = new javax.swing.JLabel();
+        jButtonRegistrarseRegistro = new javax.swing.JButton();
+
+        label1.setText("label1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -201,15 +221,142 @@ public class main extends javax.swing.JFrame {
 
         getContentPane().add(jPanelInicioSesion, "card2");
 
+        jLabel2.setText("Nombre");
+
+        jTextFieldNombreRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNombreRegistroActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel5.setText("Registro");
+
+        jTextFieldApellidosRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldApellidosRegistroActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Apellidos");
+
+        jTextFieldCorreoRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCorreoRegistroActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Correo Electronico");
+
+        jPasswordFieldInicio1.setToolTipText("");
+        jPasswordFieldInicio1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPasswordFieldInicio1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordFieldInicio1ActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("Contraseña");
+
+        jPasswordFieldInicio2.setToolTipText("");
+        jPasswordFieldInicio2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPasswordFieldInicio2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordFieldInicio2ActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("Confirmar Contraseña");
+
+        jButtonVolverRegistro.setText("Volver");
+        jButtonVolverRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverRegistroActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("Nivel de Acceso");
+
+        jButtonRegistrarseRegistro.setText("Registrarse");
+        jButtonRegistrarseRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegistrarseRegistroActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelRegistroLayout = new javax.swing.GroupLayout(jPanelRegistro);
         jPanelRegistro.setLayout(jPanelRegistroLayout);
         jPanelRegistroLayout.setHorizontalGroup(
             jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(jPanelRegistroLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelRegistroLayout.createSequentialGroup()
+                        .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanelRegistroLayout.createSequentialGroup()
+                        .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelRegistroLayout.createSequentialGroup()
+                                .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jTextFieldApellidosRegistro)
+                                        .addComponent(jTextFieldCorreoRegistro)
+                                        .addComponent(jPasswordFieldInicio1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                                        .addComponent(jTextFieldNombreRegistro))
+                                    .addComponent(jLabel2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(choiceTipoUsuRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel10)))
+                            .addGroup(jPanelRegistroLayout.createSequentialGroup()
+                                .addComponent(jButtonVolverRegistro)
+                                .addGap(93, 93, 93)
+                                .addComponent(jLabel5)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanelRegistroLayout.createSequentialGroup()
+                                .addComponent(jPasswordFieldInicio2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
+                                .addComponent(jButtonRegistrarseRegistro)))
+                        .addContainerGap())))
         );
         jPanelRegistroLayout.setVerticalGroup(
             jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(jPanelRegistroLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jButtonVolverRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextFieldNombreRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(choiceTipoUsuRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldApellidosRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldCorreoRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPasswordFieldInicio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jPasswordFieldInicio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonRegistrarseRegistro))
+                .addContainerGap())
         );
 
         getContentPane().add(jPanelRegistro, "card4");
@@ -227,7 +374,8 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVerRutasActionPerformed
 
     private void jButtonRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarseActionPerformed
-        // TODO add your handling code here:
+        jPanelPrincipal.setVisible(false);
+        jPanelRegistro.setVisible(true);
     }//GEN-LAST:event_jButtonRegistrarseActionPerformed
 
     private void jPasswordFieldInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldInicioActionPerformed
@@ -241,11 +389,45 @@ public class main extends javax.swing.JFrame {
     private void jButtonVolverInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverInicioActionPerformed
         jPanelInicioSesion.setVisible(false);
         jPanelPrincipal.setVisible(true);
+        choiceTipoUsuRegistro.add("Alumno");
+        choiceTipoUsuRegistro.add("Diseñador");
+        choiceTipoUsuRegistro.add("Profesor");
+        choiceTipoUsuRegistro.add("Administrador");
     }//GEN-LAST:event_jButtonVolverInicioActionPerformed
 
     private void jTextFieldCorreoInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCorreoInicioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldCorreoInicioActionPerformed
+
+    private void jTextFieldNombreRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreRegistroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNombreRegistroActionPerformed
+
+    private void jTextFieldApellidosRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldApellidosRegistroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldApellidosRegistroActionPerformed
+
+    private void jTextFieldCorreoRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCorreoRegistroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCorreoRegistroActionPerformed
+
+    private void jPasswordFieldInicio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldInicio1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordFieldInicio1ActionPerformed
+
+    private void jPasswordFieldInicio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldInicio2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordFieldInicio2ActionPerformed
+
+    private void jButtonVolverRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverRegistroActionPerformed
+        jPanelRegistro.setVisible(false);
+        jPanelPrincipal.setVisible(true);
+    }//GEN-LAST:event_jButtonVolverRegistroActionPerformed
+
+    private void jButtonRegistrarseRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarseRegistroActionPerformed
+         JOptionPane.showMessageDialog(jPanelRegistro, "Su registro será completado cuando un administrador lo valide\nSe le enviará un mensaje al correo electronico", "Registro", JOptionPane.INFORMATION_MESSAGE);
+        //Falta el codigo de creacion del usuario, la validacion de que está todo introducido
+    }//GEN-LAST:event_jButtonRegistrarseRegistroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -283,19 +465,35 @@ public class main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.Choice choiceTipoUsuRegistro;
     private javax.swing.JButton jButtonAccederInicio;
     private javax.swing.JButton jButtonIniciarSesion;
     private javax.swing.JButton jButtonRegistrarse;
+    private javax.swing.JButton jButtonRegistrarseRegistro;
     private javax.swing.JButton jButtonVerRutas;
     private javax.swing.JButton jButtonVolverInicio;
+    private javax.swing.JButton jButtonVolverRegistro;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelLogo;
     private javax.swing.JPanel jPanelInicioSesion;
     private javax.swing.JPanel jPanelPrincipal;
     private javax.swing.JPanel jPanelRegistro;
     private javax.swing.JPasswordField jPasswordFieldInicio;
+    private javax.swing.JPasswordField jPasswordFieldInicio1;
+    private javax.swing.JPasswordField jPasswordFieldInicio2;
+    private javax.swing.JTextField jTextFieldApellidosRegistro;
     private javax.swing.JTextField jTextFieldCorreoInicio;
+    private javax.swing.JTextField jTextFieldCorreoRegistro;
+    private javax.swing.JTextField jTextFieldNombreRegistro;
+    private java.awt.Label label1;
     // End of variables declaration//GEN-END:variables
 }
