@@ -16,7 +16,7 @@ public class PuntosInteres {
     private String nombre,descripcion,caracteristicasEspeciales;
     private PuntosTipos tipo;
     private double longitud,latitud;
-    private Ruta idRuta; 
+    private Ruta ruta; 
 
     public PuntosInteres(int id, String nombre, String descripcion, String caracteristicasEspeciales, PuntosTipos tipo, double longitud, double latitud, Ruta idRuta) {
         this.id = id;
@@ -26,7 +26,7 @@ public class PuntosInteres {
         this.tipo = tipo;
         this.longitud = longitud;
         this.latitud = latitud;
-        this.idRuta = idRuta;
+        this.ruta = idRuta;
     }
     
     
@@ -39,9 +39,9 @@ public class PuntosInteres {
         this.longitud = longitud;
         this.latitud = latitud;
         if(idRuta!=null){
-            this.idRuta = idRuta;
+            this.ruta = idRuta;
         }else{
-            this.idRuta=null;
+            this.ruta=null;
         }
     }
     
@@ -74,8 +74,8 @@ public class PuntosInteres {
         return latitud;
     }
 
-    public Ruta getIdRuta() {
-        return idRuta;
+    public Ruta getRuta() {
+        return ruta;
     }
      
 

@@ -14,8 +14,8 @@ public class ValoracionTécnica {
     
     private int dificultad,bellezaPaisajistica,interesCultural;
     private LocalDate fecha;
-    private Usuario idUsuario;
-    private Ruta idRuta; 
+    private Usuario usuario;
+    private Ruta ruta; 
 
     public ValoracionTécnica(int dificultad, int bellezaPaisajistica, int interesCultural, LocalDate fecha, Usuario idUsuario, Ruta idRuta) {
         this.dificultad = dificultad;
@@ -23,14 +23,14 @@ public class ValoracionTécnica {
         this.interesCultural = interesCultural;
         this.fecha = fecha;
         if(idUsuario!=null){
-            this.idUsuario=idUsuario;
+            this.usuario=idUsuario;
         }else{
-            this.idUsuario=null;
+            this.usuario=null;
         }
         if(idRuta!=null){
-            this.idRuta = idRuta;
+            this.ruta = idRuta;
         }else{
-            this.idRuta=null;
+            this.ruta=null;
         }
     }   
     
@@ -51,12 +51,12 @@ public class ValoracionTécnica {
         return fecha;
     }
 
-    public Usuario getIdUsuario() {
-        return idUsuario;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public Ruta getIdRuta() {
-        return idRuta;
+    public Ruta getRuta() {
+        return ruta;
     }
 
     public void setDificultad(int dificultad) {
@@ -75,12 +75,12 @@ public class ValoracionTécnica {
         this.fecha = fecha;
     }
 
-    public void setIdUsuario(Usuario idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
-    public void setIdRuta(Ruta idRuta) {
-        this.idRuta = idRuta;
+    public void setRuta(Ruta ruta) {
+        this.ruta = ruta;
     }
     
     

@@ -15,22 +15,22 @@ public class Reseña {
     private String comentarios;
     private LocalDate fecah;
     private int valoracion;
-    private Usuario idUsuario;
-    private Ruta idRuta; 
+    private Usuario usuario;
+    private Ruta ruta; 
 
     public Reseña(String comentarios, LocalDate fecah, int valoracion, Usuario idUsuario, Ruta idRuta) {
         this.comentarios = comentarios;
         this.fecah = fecah;
         this.valoracion = valoracion;
          if(idUsuario!=null){
-            this.idUsuario=idUsuario;
+            this.usuario=idUsuario;
         }else{
-            this.idUsuario=null;
+            this.usuario=null;
         }
         if(idRuta!=null){
-            this.idRuta = idRuta;
+            this.ruta = idRuta;
         }else{
-            this.idRuta=null;
+            this.ruta=null;
         }
     }
     
@@ -59,20 +59,20 @@ public class Reseña {
         this.valoracion = valoracion;
     }
 
-    public Usuario getIdUsuario() {
-        return idUsuario;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setIdUsuario(Usuario idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
-    public Ruta getIdRuta() {
-        return idRuta;
+    public Ruta getRuta() {
+        return ruta;
     }
 
-    public void setIdRuta(Ruta idRuta) {
-        this.idRuta = idRuta;
+    public void setRuta(Ruta ruta) {
+        this.ruta = ruta;
     }
     
     

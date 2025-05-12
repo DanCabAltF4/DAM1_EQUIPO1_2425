@@ -12,17 +12,17 @@ public class FotoPtPeligro {
     
     private int id;
     private String url;
-    private PuntosPeligro idPunto;
+    private PuntosPeligro puntoPeligro;
 
     public FotoPtPeligro(int id, String url, PuntosPeligro idPunto) {
         this.id = id;
         this.url = url;
-        this.idPunto = idPunto;
+        this.puntoPeligro = idPunto;
     }
 
     public FotoPtPeligro(String url, PuntosPeligro idPunto) {
         this.url = url;
-        this.idPunto = idPunto;
+        this.puntoPeligro = idPunto;
     }
     
     //Métodos
@@ -42,12 +42,12 @@ public class FotoPtPeligro {
         this.url = url;
     }
 
-    public PuntosPeligro getIdPunto() {
-        return idPunto;
+    public PuntosPeligro getPuntoPeligro() {
+        return puntoPeligro;
     }
 
-    public void setIdPunto(PuntosPeligro idPunto) {
-        this.idPunto = idPunto;
+    public void setPuntoPeligro(PuntosPeligro puntoPeligro) {
+        this.puntoPeligro = puntoPeligro;
     }
     
 }
