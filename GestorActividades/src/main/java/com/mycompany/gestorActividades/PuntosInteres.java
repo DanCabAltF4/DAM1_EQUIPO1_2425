@@ -17,9 +17,8 @@ public class PuntosInteres {
     private PuntosTipos tipo;
     private double longitud,latitud;
     private Ruta idRuta; 
-    private Foto fotos;
 
-    public PuntosInteres(int id, String nombre, String descripcion, String caracteristicasEspeciales, PuntosTipos tipo, double longitud, double latitud, Ruta idRuta, Foto fotos) {
+    public PuntosInteres(int id, String nombre, String descripcion, String caracteristicasEspeciales, PuntosTipos tipo, double longitud, double latitud, Ruta idRuta) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -28,12 +27,11 @@ public class PuntosInteres {
         this.longitud = longitud;
         this.latitud = latitud;
         this.idRuta = idRuta;
-        this.fotos = fotos;
     }
     
     
 
-    public PuntosInteres(String nombre, String descripcion, String caracteristicasEspeciales, PuntosTipos tipo, double longitud, double latitud, Ruta idRuta,Foto fotos) {
+    public PuntosInteres(String nombre, String descripcion, String caracteristicasEspeciales, PuntosTipos tipo, double longitud, double latitud, Ruta idRuta,FotoPtInteres fotos) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.caracteristicasEspeciales = caracteristicasEspeciales;
@@ -44,11 +42,6 @@ public class PuntosInteres {
             this.idRuta = idRuta;
         }else{
             this.idRuta=null;
-        }
-        if(fotos!=null){
-            this.fotos=fotos;
-        }else{
-            this.fotos=null;
         }
     }
     
@@ -83,14 +76,6 @@ public class PuntosInteres {
 
     public Ruta getIdRuta() {
         return idRuta;
-    }
-
-    public Foto getFoto() {
-        return fotos;
-    }
-
-    public Foto getFotos() {
-        return fotos;
     }
      
 

@@ -6,16 +6,23 @@ package com.mycompany.gestorActividades;
 
 /**
  *
- * @author Raúl Buenaga
+ * @author Usuario
  */
-public class Foto {
+public class FotoPtPeligro {
     
     private int id;
     private String url;
+    private PuntosPeligro idPunto;
 
-    public Foto(int id, String url) {
+    public FotoPtPeligro(int id, String url, PuntosPeligro idPunto) {
         this.id = id;
         this.url = url;
+        this.idPunto = idPunto;
+    }
+
+    public FotoPtPeligro(String url, PuntosPeligro idPunto) {
+        this.url = url;
+        this.idPunto = idPunto;
     }
     
     //Métodos
@@ -34,6 +41,13 @@ public class Foto {
     public void setUrl(String url) {
         this.url = url;
     }
-    
+
+    public PuntosPeligro getIdPunto() {
+        return idPunto;
+    }
+
+    public void setIdPunto(PuntosPeligro idPunto) {
+        this.idPunto = idPunto;
+    }
     
 }

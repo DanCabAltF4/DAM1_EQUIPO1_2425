@@ -10,20 +10,17 @@ import java.time.LocalDate;
  *
  * @author Raúl Buenaga
  */
-public class Valoracion {
+public class ValoracionTécnica {
     
     private int dificultad,bellezaPaisajistica,interesCultural;
-    private String resena,valTecnica;
     private LocalDate fecha;
     private Usuario idUsuario;
     private Ruta idRuta; 
 
-    public Valoracion(int dificultad, int bellezaPaisajistica, int interesCultural, String resena, String valTecnica, LocalDate fecha, Usuario idUsuario, Ruta idRuta) {
+    public ValoracionTécnica(int dificultad, int bellezaPaisajistica, int interesCultural, LocalDate fecha, Usuario idUsuario, Ruta idRuta) {
         this.dificultad = dificultad;
         this.bellezaPaisajistica = bellezaPaisajistica;
         this.interesCultural = interesCultural;
-        this.resena = resena;
-        this.valTecnica = valTecnica;
         this.fecha = fecha;
         if(idUsuario!=null){
             this.idUsuario=idUsuario;
@@ -35,7 +32,7 @@ public class Valoracion {
         }else{
             this.idRuta=null;
         }
-    }
+    }   
     
     //Métodos
     public int getDificultad() {
@@ -50,14 +47,6 @@ public class Valoracion {
         return interesCultural;
     }
 
-    public String getResena() {
-        return resena;
-    }
-
-    public String getValTecnica() {
-        return valTecnica;
-    }
-
     public LocalDate getFecha() {
         return fecha;
     }
@@ -68,6 +57,30 @@ public class Valoracion {
 
     public Ruta getIdRuta() {
         return idRuta;
+    }
+
+    public void setDificultad(int dificultad) {
+        this.dificultad = dificultad;
+    }
+
+    public void setBellezaPaisajistica(int bellezaPaisajistica) {
+        this.bellezaPaisajistica = bellezaPaisajistica;
+    }
+
+    public void setInteresCultural(int interesCultural) {
+        this.interesCultural = interesCultural;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
+
+    public void setIdUsuario(Usuario idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public void setIdRuta(Ruta idRuta) {
+        this.idRuta = idRuta;
     }
     
     

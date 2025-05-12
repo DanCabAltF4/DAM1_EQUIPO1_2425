@@ -23,5 +23,5 @@ public class Ruta {
     private boolean accesibilidad, familiar;
     private Usuario idUsu;
     private Actividad tipoActividad;
-
+       
 }
