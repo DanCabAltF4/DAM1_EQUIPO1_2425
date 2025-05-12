@@ -12,16 +12,27 @@ public class PuntosPeligro {
     
     private int id,kilometro,nivelGravedad;
     private String descripción;
+<<<<<<< Updated upstream
     private Ruta idRuta; 
     private Fotos fotos;
+=======
+    private Ruta ruta; 
+    private double longitud,latidud;
+>>>>>>> Stashed changes
 
     public PuntosPeligro(int id, int kilometro, int nivelGravedad, String descripción, Ruta idRuta, Fotos fotos) {
         this.id = id;
         this.kilometro = kilometro;
         this.nivelGravedad = nivelGravedad;
         this.descripción = descripción;
+<<<<<<< Updated upstream
         this.idRuta = idRuta;
         this.fotos = fotos;
+=======
+        this.ruta = idRuta;
+        this.longitud = longitud;
+        this.latidud = latidud;
+>>>>>>> Stashed changes
     }
 
     public PuntosPeligro(int kilometro, int nivelGravedad, String descripción, Ruta idRuta, Fotos fotos) {
@@ -29,9 +40,9 @@ public class PuntosPeligro {
         this.nivelGravedad = nivelGravedad;
         this.descripción = descripción;
         if(idRuta!=null){
-            this.idRuta = idRuta;
+            this.ruta = idRuta;
         }else{
-            this.idRuta=null;
+            this.ruta=null;
         }
         if(fotos!=null){
             this.fotos=fotos;
@@ -65,8 +76,8 @@ public class PuntosPeligro {
         return descripción;
     }
 
-    public Ruta getIdRuta() {
-        return idRuta;
+    public Ruta getRuta() {
+        return ruta;
     }
 
     public Fotos getFotos() {

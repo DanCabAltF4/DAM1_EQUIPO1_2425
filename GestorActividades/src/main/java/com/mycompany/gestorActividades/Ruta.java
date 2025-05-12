@@ -20,8 +20,13 @@ public class Ruta {
     private double longInicio,latInicio,longFin,latFin,altMax,altMin,desnivelPos,desnivelNeg;
     private Clasificación clasificacion;
     private EstadoRuta estado;
+<<<<<<< Updated upstream
     private boolean accesibilidad,familiar;
     private Usuario idUsu;
+=======
+    private boolean accesibilidad, familiar;
+    private Usuario usuario;
+>>>>>>> Stashed changes
     private Actividad tipoActividad;
     
     

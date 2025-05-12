@@ -15,8 +15,8 @@ public class Valoracion {
     private int dificultad,bellezaPaisajistica,interesCultural;
     private String resena,valTecnica;
     private LocalDate fecha;
-    private Usuario idUsuario;
-    private Ruta idRuta; 
+    private Usuario usuario;
+    private Ruta ruta; 
 
     public Valoracion(int dificultad, int bellezaPaisajistica, int interesCultural, String resena, String valTecnica, LocalDate fecha, Usuario idUsuario, Ruta idRuta) {
         this.dificultad = dificultad;
@@ -26,14 +26,14 @@ public class Valoracion {
         this.valTecnica = valTecnica;
         this.fecha = fecha;
         if(idUsuario!=null){
-            this.idUsuario=idUsuario;
+            this.usuario=idUsuario;
         }else{
-            this.idUsuario=null;
+            this.usuario=null;
         }
         if(idRuta!=null){
-            this.idRuta = idRuta;
+            this.ruta = idRuta;
         }else{
-            this.idRuta=null;
+            this.ruta=null;
         }
     }
     
@@ -62,13 +62,40 @@ public class Valoracion {
         return fecha;
     }
 
-    public Usuario getIdUsuario() {
-        return idUsuario;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public Ruta getIdRuta() {
-        return idRuta;
+    public Ruta getRuta() {
+        return ruta;
     }
+<<<<<<< Updated upstream:GestorActividades/src/main/java/com/mycompany/gestorActividades/Valoracion.java
+=======
+
+    public void setDificultad(int dificultad) {
+        this.dificultad = dificultad;
+    }
+
+    public void setBellezaPaisajistica(int bellezaPaisajistica) {
+        this.bellezaPaisajistica = bellezaPaisajistica;
+    }
+
+    public void setInteresCultural(int interesCultural) {
+        this.interesCultural = interesCultural;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public void setRuta(Ruta ruta) {
+        this.ruta = ruta;
+    }
+>>>>>>> Stashed changes:GestorActividades/src/main/java/com/mycompany/gestorActividades/ValoracionTécnica.java
     
     
 }

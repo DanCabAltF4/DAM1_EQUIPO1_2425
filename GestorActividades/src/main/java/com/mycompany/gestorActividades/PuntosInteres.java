@@ -16,8 +16,12 @@ public class PuntosInteres {
     private String nombre,descripcion,caracteristicasEspeciales;
     private PuntosTipos tipo;
     private double longitud,latitud;
+<<<<<<< Updated upstream
     private Ruta idRuta; 
     private Fotos fotos;
+=======
+    private Ruta ruta; 
+>>>>>>> Stashed changes
 
     public PuntosInteres(int id, String nombre, String descripcion, String caracteristicasEspeciales, PuntosTipos tipo, double longitud, double latitud, Ruta idRuta, Fotos fotos) {
         this.id = id;
@@ -27,8 +31,12 @@ public class PuntosInteres {
         this.tipo = tipo;
         this.longitud = longitud;
         this.latitud = latitud;
+<<<<<<< Updated upstream
         this.idRuta = idRuta;
         this.fotos = fotos;
+=======
+        this.ruta = idRuta;
+>>>>>>> Stashed changes
     }
     
     
@@ -41,9 +49,9 @@ public class PuntosInteres {
         this.longitud = longitud;
         this.latitud = latitud;
         if(idRuta!=null){
-            this.idRuta = idRuta;
+            this.ruta = idRuta;
         }else{
-            this.idRuta=null;
+            this.ruta=null;
         }
         if(fotos!=null){
             this.fotos=fotos;
@@ -81,8 +89,8 @@ public class PuntosInteres {
         return latitud;
     }
 
-    public Ruta getIdRuta() {
-        return idRuta;
+    public Ruta getRuta() {
+        return ruta;
     }
 
     public Fotos getFoto() {
