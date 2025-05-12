@@ -12,17 +12,17 @@ public class FotoPtInteres {
     
     private int id;
     private String url;
-    private PuntosInteres idPunto;
+    private PuntosInteres puntoInteres;
 
     public FotoPtInteres(int id, String url, PuntosInteres idPunto) {
         this.id = id;
         this.url = url;
-        this.idPunto = idPunto;
+        this.puntoInteres = idPunto;
     }
 
     public FotoPtInteres(String url, PuntosInteres idPunto) {
         this.url = url;
-        this.idPunto = idPunto;
+        this.puntoInteres = idPunto;
     }
     
     //Métodos
@@ -42,12 +42,12 @@ public class FotoPtInteres {
         this.url = url;
     }
 
-    public PuntosInteres getIdPunto() {
-        return idPunto;
+    public PuntosInteres getPuntoInteres() {
+        return puntoInteres;
     }
 
-    public void setIdPunto(PuntosInteres idPunto) {
-        this.idPunto = idPunto;
+    public void setPuntoInteres(PuntosInteres puntoInteres) {
+        this.puntoInteres = puntoInteres;
     }
     
     

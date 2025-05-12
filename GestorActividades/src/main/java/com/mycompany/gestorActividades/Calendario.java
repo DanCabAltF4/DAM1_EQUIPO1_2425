@@ -15,29 +15,29 @@ public class Calendario {
     private int id;
     private LocalDateTime fecha;
     private String detalles;
-    private Usuario idUsuario;
-    private Ruta idRuta;
+    private Usuario usuario;
+    private Ruta ruta;
 
     public Calendario(int id, LocalDateTime fecha, String detalles, Usuario idUsuario, Ruta idRuta) {
         this.id = id;
         this.fecha = fecha;
         this.detalles = detalles;
-        this.idUsuario = idUsuario;
-        this.idRuta = idRuta;
+        this.usuario = idUsuario;
+        this.ruta = idRuta;
     }
 
     public Calendario(LocalDateTime fecha, String detalles, Usuario idUsuario, Ruta idRuta) {
         this.fecha = fecha;
         this.detalles = detalles;
         if(idUsuario!=null){
-            this.idUsuario=idUsuario;
+            this.usuario=idUsuario;
         }else{
-            this.idUsuario=null;
+            this.usuario=null;
         }
         if(idRuta!=null){
-            this.idRuta = idRuta;
+            this.ruta = idRuta;
         }else{
-            this.idRuta=null;
+            this.ruta=null;
         }
     }
     
@@ -54,12 +54,12 @@ public class Calendario {
         return detalles;
     }
 
-    public Usuario getIdUsuario() {
-        return idUsuario;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public Ruta getIdRuta() {
-        return idRuta;
+    public Ruta getRuta() {
+        return ruta;
     }
     
     

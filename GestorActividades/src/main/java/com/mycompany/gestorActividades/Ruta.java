@@ -21,7 +21,7 @@ public class Ruta {
     private Clasificación clasificacion;
     private EstadoRuta estado;
     private boolean accesibilidad, familiar;
-    private Usuario idUsu;
+    private Usuario usuario;
     private Actividad tipoActividad;
        
 }
