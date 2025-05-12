@@ -93,6 +93,8 @@ public class main extends javax.swing.JFrame {
         jButtonInfoRutas = new javax.swing.JButton();
         jPanelInfoRuta = new javax.swing.JPanel();
         jLabelNombreRuta = new javax.swing.JLabel();
+        jScrollPaneInfoRuta = new javax.swing.JScrollPane();
+        jTableInfoRuta = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -452,6 +454,7 @@ public class main extends javax.swing.JFrame {
 
         getContentPane().add(jPanelRutas, "card5");
 
+        jLabelNombreRuta.setFont(new java.awt.Font("Segoe UI", 0, 17)); // NOI18N
         jLabelNombreRuta.setText("texto de muestra");
         jLabelNombreRuta.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
@@ -459,21 +462,47 @@ public class main extends javax.swing.JFrame {
             }
         });
 
+        jScrollPaneInfoRuta.setFocusable(false);
+        jScrollPaneInfoRuta.setPreferredSize(new java.awt.Dimension(100, 100));
+        jScrollPaneInfoRuta.setRequestFocusEnabled(false);
+        jScrollPaneInfoRuta.setVerifyInputWhenFocusTarget(false);
+        jScrollPaneInfoRuta.setWheelScrollingEnabled(false);
+
+        jTableInfoRuta.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jTableInfoRuta.setPreferredSize(new java.awt.Dimension(100, 80));
+        jScrollPaneInfoRuta.setViewportView(jTableInfoRuta);
+
         javax.swing.GroupLayout jPanelInfoRutaLayout = new javax.swing.GroupLayout(jPanelInfoRuta);
         jPanelInfoRuta.setLayout(jPanelInfoRutaLayout);
         jPanelInfoRutaLayout.setHorizontalGroup(
             jPanelInfoRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelInfoRutaLayout.createSequentialGroup()
-                .addGap(141, 141, 141)
-                .addComponent(jLabelNombreRuta)
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanelInfoRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelInfoRutaLayout.createSequentialGroup()
+                        .addComponent(jLabelNombreRuta)
+                        .addGap(0, 269, Short.MAX_VALUE))
+                    .addComponent(jScrollPaneInfoRuta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanelInfoRutaLayout.setVerticalGroup(
             jPanelInfoRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelInfoRutaLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(31, 31, 31)
                 .addComponent(jLabelNombreRuta)
-                .addContainerGap(259, Short.MAX_VALUE))
+                .addGap(76, 76, 76)
+                .addComponent(jScrollPaneInfoRuta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelInfoRuta, "card6");
@@ -552,8 +581,20 @@ public class main extends javax.swing.JFrame {
         //Id en la tabla de la ruta seleccionada, -1 si no se ha elegido ninguna
         int rutaIndex = jTableRutas.getSelectedRow();
         if (rutaIndex != -1) {
+            //Cambio de ventana
             jPanelRutas.setVisible(false);
             jPanelInfoRuta.setVisible(true);
+            //Usamos DefaultTableModel para sacar el nombre de la ruta
+            DefaultTableModel modeloGeneral = (DefaultTableModel) jTableRutas.getModel();
+            String nombreRuta = (String) modeloGeneral.getValueAt(rutaIndex, 0);
+            //Ponemos el nombre de la ruta al label
+            jLabelNombreRuta.setText(nombreRuta);
+            //La gestion de la tabla con la info
+            jTableInfoRuta.getTableHeader().setReorderingAllowed(false);
+            DefaultTableModel modeloEspecifico = (DefaultTableModel) jTableInfoRuta.getModel();
+            String info[] = {};//Implementar la informacion obtenida mediante la base de datos cuando sea posible
+            modeloEspecifico.addRow(info);
+
         } else {
             JOptionPane.showMessageDialog(jPanelInfoRuta, "No has seleccionado ninguna ruta", "", JOptionPane.QUESTION_MESSAGE);
         }
@@ -580,7 +621,7 @@ public class main extends javax.swing.JFrame {
             String[] infoEjemplo = {"Nombre", "3", String.valueOf(i), "12/05/25"};
             modelo.addRow(infoEjemplo);
         }
-        String[] ejemplo = {"ejemplo", "ejemplo", "ejemplo", "ejemplo"};
+        String[] ejemplo = {"ejemploejemploejemploejemploejemploejemploeje", "ejemplo", "ejemplo", "ejemplo"};
         modelo.addRow(ejemplo);
     }//GEN-LAST:event_jPanelRutasComponentShown
 
@@ -651,7 +692,9 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordFieldInicio;
     private javax.swing.JPasswordField jPasswordFieldInicio1;
     private javax.swing.JPasswordField jPasswordFieldInicio2;
+    private javax.swing.JScrollPane jScrollPaneInfoRuta;
     private javax.swing.JScrollPane jScrollPaneRutas;
+    private javax.swing.JTable jTableInfoRuta;
     private javax.swing.JTable jTableRutas;
     private javax.swing.JTextField jTextFieldApellidosRegistro;
     private javax.swing.JTextField jTextFieldCorreoInicio;
