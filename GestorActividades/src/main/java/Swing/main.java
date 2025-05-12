@@ -4,18 +4,27 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author DAM116
  */
 public class main extends javax.swing.JFrame {
-
+    /*
+    Variable para controlar que tipo de usuario está trabajando
+    0-Invitado
+    1-Alumno
+    2-Diseñador
+    3-Profesor
+    4-Administrador
+    */
+    int nivelAcceso = 0;
     /**
      * Creates new form main
      */
@@ -23,9 +32,11 @@ public class main extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Gestor de Rutas RDosM2");
         mostrarLogo();
+        this.setResizable(false); // Evita que la ventana se pueda redimensionar
     }
 
     public void mostrarLogo() {
+        //Codigo tomado prestado del ejemplo completo
         java.net.URL imgUrl = getClass().getClassLoader().getResource("Imagenes/logo.jpeg");
         ImageIcon img = new ImageIcon(imgUrl);
         Icon icon = new ImageIcon(img.getImage().
@@ -33,7 +44,7 @@ public class main extends javax.swing.JFrame {
                         jLabelLogo.getHeight(), img.getIconWidth()));
         this.jLabelLogo.setIcon(img);
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -73,6 +84,12 @@ public class main extends javax.swing.JFrame {
         choiceTipoUsuRegistro = new java.awt.Choice();
         jLabel10 = new javax.swing.JLabel();
         jButtonRegistrarseRegistro = new javax.swing.JButton();
+        jPanelRutas = new javax.swing.JPanel();
+        jButtonVolverRegistro1 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableRutas = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         label1.setText("label1");
 
@@ -139,7 +156,7 @@ public class main extends javax.swing.JFrame {
                     .addComponent(jButtonIniciarSesion)
                     .addComponent(jButtonVerRutas)
                     .addComponent(jButtonRegistrarse))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelPrincipal, "card3");
@@ -216,7 +233,7 @@ public class main extends javax.swing.JFrame {
                 .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAccederInicio)
                     .addComponent(jButtonVolverInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelInicioSesion, "card2");
@@ -330,7 +347,7 @@ public class main extends javax.swing.JFrame {
                 .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jButtonVolverRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -361,6 +378,76 @@ public class main extends javax.swing.JFrame {
 
         getContentPane().add(jPanelRegistro, "card4");
 
+        jPanelRutas.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                jPanelRutasComponentShown(evt);
+            }
+        });
+
+        jButtonVolverRegistro1.setText("Volver");
+        jButtonVolverRegistro1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverRegistro1ActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel11.setText("Rutas");
+
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(100, 100));
+
+        jTableRutas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {},
+            new String [] {
+                "Ruta", "Valoracion", "Esfuerzo", "Creacion"
+            }
+        ){
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        });
+        jTableRutas.setRowSelectionAllowed(true);
+        jTableRutas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jTableRutas.setShowHorizontalLines(true);
+        jScrollPane1.setViewportView(jTableRutas);
+
+        jButton1.setText("INFO");
+
+        javax.swing.GroupLayout jPanelRutasLayout = new javax.swing.GroupLayout(jPanelRutas);
+        jPanelRutas.setLayout(jPanelRutasLayout);
+        jPanelRutasLayout.setHorizontalGroup(
+            jPanelRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRutasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanelRutasLayout.createSequentialGroup()
+                        .addComponent(jButtonVolverRegistro1)
+                        .addGap(99, 99, 99)
+                        .addComponent(jLabel11)
+                        .addGap(0, 184, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRutasLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
+                .addContainerGap())
+        );
+        jPanelRutasLayout.setVerticalGroup(
+            jPanelRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRutasLayout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addGroup(jPanelRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11)
+                    .addComponent(jButtonVolverRegistro1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        getContentPane().add(jPanelRutas, "card5");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -370,7 +457,8 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonIniciarSesionActionPerformed
 
     private void jButtonVerRutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerRutasActionPerformed
-        // TODO add your handling code here:
+        jPanelPrincipal.setVisible(false);
+        jPanelRutas.setVisible(true);
     }//GEN-LAST:event_jButtonVerRutasActionPerformed
 
     private void jButtonRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarseActionPerformed
@@ -425,9 +513,35 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVolverRegistroActionPerformed
 
     private void jButtonRegistrarseRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarseRegistroActionPerformed
-         JOptionPane.showMessageDialog(jPanelRegistro, "Su registro será completado cuando un administrador lo valide\nSe le enviará un mensaje al correo electronico", "Registro", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(jPanelRegistro, "Su registro será completado cuando un administrador lo valide\nSe le enviará un mensaje al correo electronico", "Registro", JOptionPane.INFORMATION_MESSAGE);
         //Falta el codigo de creacion del usuario, la validacion de que está todo introducido
     }//GEN-LAST:event_jButtonRegistrarseRegistroActionPerformed
+
+    private void jButtonVolverRegistro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverRegistro1ActionPerformed
+        jPanelRutas.setVisible(false);
+        jPanelPrincipal.setVisible(true);
+    }//GEN-LAST:event_jButtonVolverRegistro1ActionPerformed
+
+    private void jPanelRutasComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jPanelRutasComponentShown
+        // Cogiendo el modelo y parseandolo a DefaultTableModel tenemos acceso a metodos que nos permiten añadir/eliminar/recoger filas de la tabla
+        DefaultTableModel modelo = (DefaultTableModel) jTableRutas.getModel();
+        //Con esto no se puede mover el encabezado de la tabla
+        jTableRutas.getTableHeader().setReorderingAllowed(false);
+        //Eliminamos la filas que haya actualmente cargadas para actualizar el listado sin repetir rutas
+        System.out.println(modelo.getRowCount());
+        int numFilas = modelo.getRowCount();
+        for (int i = 0; i < numFilas; i++) {
+            modelo.removeRow(0);
+        }
+
+        //valores de pruebas
+        for (int i = 0; i < 20; i++) {
+        String[] infoEjemplo = {"Nombre", "3",String.valueOf(i), "12/05/25"};
+            modelo.addRow(infoEjemplo);
+        }
+        String[] ejemplo = {"ejemplo","ejemplo","ejemplo","ejemplo"};
+        modelo.addRow(ejemplo);
+    }//GEN-LAST:event_jPanelRutasComponentShown
 
     /**
      * @param args the command line arguments
@@ -466,6 +580,7 @@ public class main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Choice choiceTipoUsuRegistro;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonAccederInicio;
     private javax.swing.JButton jButtonIniciarSesion;
     private javax.swing.JButton jButtonRegistrarse;
@@ -473,8 +588,10 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton jButtonVerRutas;
     private javax.swing.JButton jButtonVolverInicio;
     private javax.swing.JButton jButtonVolverRegistro;
+    private javax.swing.JButton jButtonVolverRegistro1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -487,9 +604,12 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelInicioSesion;
     private javax.swing.JPanel jPanelPrincipal;
     private javax.swing.JPanel jPanelRegistro;
+    private javax.swing.JPanel jPanelRutas;
     private javax.swing.JPasswordField jPasswordFieldInicio;
     private javax.swing.JPasswordField jPasswordFieldInicio1;
     private javax.swing.JPasswordField jPasswordFieldInicio2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTableRutas;
     private javax.swing.JTextField jTextFieldApellidosRegistro;
     private javax.swing.JTextField jTextFieldCorreoInicio;
     private javax.swing.JTextField jTextFieldCorreoRegistro;
