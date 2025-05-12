@@ -87,9 +87,9 @@ public class main extends javax.swing.JFrame {
         jPanelRutas = new javax.swing.JPanel();
         jButtonVolverRegistro1 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPaneRutas = new javax.swing.JScrollPane();
         jTableRutas = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        jButtonInfoRutas = new javax.swing.JButton();
 
         label1.setText("label1");
 
@@ -394,7 +394,7 @@ public class main extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel11.setText("Rutas");
 
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(100, 100));
+        jScrollPaneRutas.setPreferredSize(new java.awt.Dimension(100, 100));
 
         jTableRutas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {},
@@ -407,12 +407,16 @@ public class main extends javax.swing.JFrame {
                 return false;
             }
         });
-        jTableRutas.setRowSelectionAllowed(true);
         jTableRutas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jTableRutas.setShowHorizontalLines(true);
-        jScrollPane1.setViewportView(jTableRutas);
+        jScrollPaneRutas.setViewportView(jTableRutas);
 
-        jButton1.setText("INFO");
+        jButtonInfoRutas.setText("INFO");
+        jButtonInfoRutas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonInfoRutasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelRutasLayout = new javax.swing.GroupLayout(jPanelRutas);
         jPanelRutas.setLayout(jPanelRutasLayout);
@@ -421,7 +425,7 @@ public class main extends javax.swing.JFrame {
             .addGroup(jPanelRutasLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPaneRutas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanelRutasLayout.createSequentialGroup()
                         .addComponent(jButtonVolverRegistro1)
                         .addGap(99, 99, 99)
@@ -429,7 +433,7 @@ public class main extends javax.swing.JFrame {
                         .addGap(0, 184, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRutasLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                        .addComponent(jButtonInfoRutas)))
                 .addContainerGap())
         );
         jPanelRutasLayout.setVerticalGroup(
@@ -440,9 +444,9 @@ public class main extends javax.swing.JFrame {
                     .addComponent(jLabel11)
                     .addComponent(jButtonVolverRegistro1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(jButtonInfoRutas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPaneRutas, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -543,6 +547,11 @@ public class main extends javax.swing.JFrame {
         modelo.addRow(ejemplo);
     }//GEN-LAST:event_jPanelRutasComponentShown
 
+    private void jButtonInfoRutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInfoRutasActionPerformed
+        jPanelRutas.setVisible(false);
+        //jPanelInfoRuta.setVisible(true);
+    }//GEN-LAST:event_jButtonInfoRutasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -580,8 +589,8 @@ public class main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Choice choiceTipoUsuRegistro;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonAccederInicio;
+    private javax.swing.JButton jButtonInfoRutas;
     private javax.swing.JButton jButtonIniciarSesion;
     private javax.swing.JButton jButtonRegistrarse;
     private javax.swing.JButton jButtonRegistrarseRegistro;
@@ -608,7 +617,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordFieldInicio;
     private javax.swing.JPasswordField jPasswordFieldInicio1;
     private javax.swing.JPasswordField jPasswordFieldInicio2;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPaneRutas;
     private javax.swing.JTable jTableRutas;
     private javax.swing.JTextField jTextFieldApellidosRegistro;
     private javax.swing.JTextField jTextFieldCorreoInicio;
