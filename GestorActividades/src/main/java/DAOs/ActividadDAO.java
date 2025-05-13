@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  *
- * @author DAM105
+ * @author Raúl Buenaga
  */
 public class ActividadDAO implements Repositorio<Actividad>{
        
@@ -31,7 +31,7 @@ public class ActividadDAO implements Repositorio<Actividad>{
     public List<Actividad> listar() {
         List<Actividad> lista = new ArrayList<>();
         Actividad a;
-        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select  FROM actividad")) {
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select id,nomActividad FROM actividad")) {
                 while (rs.next()) {
                     a = crearActividad(rs);
                     if (!lista.add(a)) {
@@ -49,12 +49,12 @@ public class ActividadDAO implements Repositorio<Actividad>{
 
     @Override
     public Actividad porId(int id) {
-        Actividad calendario = null;
-        try (PreparedStatement stmt = conn.prepareStatement("SELECT  FROM actividad WHERE  id= ?")) {
+        Actividad actividad = null;
+        try (PreparedStatement stmt = conn.prepareStatement("SELECT id,nomActividad FROM actividad WHERE  id= ?")) {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
-                    calendario = crearActividad(rs);
+                    actividad = crearActividad(rs);
                 }
             }
         } catch (SQLException e) {
@@ -62,18 +62,18 @@ public class ActividadDAO implements Repositorio<Actividad>{
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-        return calendario;
+        return actividad;
     }
 
     @Override
     public void modificar(Actividad a) {
-        try (PreparedStatement stmt = conn.prepareStatement("UPDATE actividad SET  WHERE id= ?")) {
-            stmt.setString(1, u.getNombre());
-            
+        try (PreparedStatement stmt = conn.prepareStatement("UPDATE actividad SET  id= ?,nomActividad=? WHERE id= ?")) {
+            stmt.setInt(1, a.getId());
+            stmt.setString(2, a.getNomActividad());           
             if (stmt.executeUpdate() != 1) {
-                throw new Exception("ERROR: no se ha modificado el calendario");
+                throw new Exception("ERROR: no se ha modificado la actividad");
             }
-            System.out.println("Se ha modificado el calendario");
+            System.out.println("Se ha modificado la actividad");
         } catch (SQLException e) {
             System.out.println("SQL ERROR: " + e.getMessage());
         } catch (Exception ex) {
@@ -83,10 +83,9 @@ public class ActividadDAO implements Repositorio<Actividad>{
 
     @Override
     public void agregar(Actividad a) {
-       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO actividad () VALUES (?, ?, ?, ?, ?, ? ,?)")) {
-            stmt.setInt(1, u.getId());
-            stmt.setString(2, u.getNombre());
-            
+       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO actividad (id,nomActividad) VALUES (?, ?)")) {
+            stmt.setInt(1, a.getId());
+            stmt.setString(2, a.getNomActividad());           
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha creado la actividad");
             }
@@ -101,7 +100,7 @@ public class ActividadDAO implements Repositorio<Actividad>{
     @Override
     public void eliminar(int id) {
         try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM actividad WHERE id=?")) {
-            stmt.setObject(1, id);
+            stmt.setInt(1, id);
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: la actividad no existe");
             }
@@ -114,6 +113,6 @@ public class ActividadDAO implements Repositorio<Actividad>{
     }
     
      public Actividad crearActividad(final ResultSet rs) throws Exception {
-        return new Actividad();
+        return new Actividad(rs.getInt("id"),rs.getString("nomActividad"));
     }
 }
