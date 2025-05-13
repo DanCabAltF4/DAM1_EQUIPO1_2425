@@ -8,6 +8,6 @@ package Enumerados;
  *
  * @author Raúl Buenaga
  */
-public enum EstadoRuta {
+public enum Estado {
     PENDIENTE,VALIDADA;
 }

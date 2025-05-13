@@ -5,7 +5,7 @@
 package com.mycompany.gestorActividades;
 
 import Enumerados.Clasificación;
-import Enumerados.EstadoRuta;
+import Enumerados.Estado;
 import java.time.LocalDate;
 
 /**
@@ -19,9 +19,9 @@ public class Ruta {
     private LocalDate fechaCreacion;
     private double longInicio, latInicio, longFin, latFin, altMax, altMin, desnivelPos, desnivelNeg;
     private Clasificación clasificacion;
-    private EstadoRuta estado;
+    private Estado estado;
     private boolean accesibilidad, familiar;
-    private Usuario usuario;
+    private Invitado invitado;
     private Actividad tipoActividad;
        
 }
