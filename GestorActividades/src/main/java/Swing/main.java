@@ -1,5 +1,6 @@
 package Swing;
 
+import java.awt.event.ActionEvent;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
@@ -69,6 +70,7 @@ public class main extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jButtonAccederInicio = new javax.swing.JButton();
         jButtonVolverInicio = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
         jPanelRegistro = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jTextFieldNombreRegistro = new javax.swing.JTextField();
@@ -77,9 +79,9 @@ public class main extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jTextFieldCorreoRegistro = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jPasswordFieldInicio1 = new javax.swing.JPasswordField();
+        jPasswordFieldRegistro1 = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
-        jPasswordFieldInicio2 = new javax.swing.JPasswordField();
+        jPasswordFieldRegistro2 = new javax.swing.JPasswordField();
         jLabel9 = new javax.swing.JLabel();
         jButtonVolverRegistro = new javax.swing.JButton();
         choiceTipoUsuRegistro = new java.awt.Choice();
@@ -159,7 +161,7 @@ public class main extends javax.swing.JFrame {
                     .addComponent(jButtonIniciarSesion)
                     .addComponent(jButtonVerRutas)
                     .addComponent(jButtonRegistrarse))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelPrincipal, "card3");
@@ -196,6 +198,10 @@ public class main extends javax.swing.JFrame {
             }
         });
 
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel12.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel12.setText("        No se ha encontrado el usuario       ");
+
         javax.swing.GroupLayout jPanelInicioSesionLayout = new javax.swing.GroupLayout(jPanelInicioSesion);
         jPanelInicioSesion.setLayout(jPanelInicioSesionLayout);
         jPanelInicioSesionLayout.setHorizontalGroup(
@@ -207,19 +213,24 @@ public class main extends javax.swing.JFrame {
                 .addComponent(jButtonAccederInicio)
                 .addGap(32, 32, 32))
             .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
-                .addGap(128, 128, 128)
                 .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
-                            .addGap(44, 44, 44)
-                            .addComponent(jLabel4))
-                        .addComponent(jPasswordFieldInicio)
-                        .addComponent(jTextFieldCorreoInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInicioSesionLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3)
-                        .addGap(24, 24, 24)))
-                .addContainerGap(133, Short.MAX_VALUE))
+                    .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
+                                    .addGap(44, 44, 44)
+                                    .addComponent(jLabel4))
+                                .addComponent(jPasswordFieldInicio)
+                                .addComponent(jTextFieldCorreoInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInicioSesionLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel3)
+                                .addGap(24, 24, 24))))
+                    .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addComponent(jLabel12)))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
         jPanelInicioSesionLayout.setVerticalGroup(
             jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,11 +243,13 @@ public class main extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPasswordFieldInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel12)
+                .addGap(25, 25, 25)
                 .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAccederInicio)
                     .addComponent(jButtonVolverInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelInicioSesion, "card2");
@@ -249,7 +262,7 @@ public class main extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel5.setText("Registro");
 
         jTextFieldApellidosRegistro.addActionListener(new java.awt.event.ActionListener() {
@@ -268,21 +281,21 @@ public class main extends javax.swing.JFrame {
 
         jLabel7.setText("Correo Electronico");
 
-        jPasswordFieldInicio1.setToolTipText("");
-        jPasswordFieldInicio1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPasswordFieldInicio1.addActionListener(new java.awt.event.ActionListener() {
+        jPasswordFieldRegistro1.setToolTipText("");
+        jPasswordFieldRegistro1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPasswordFieldRegistro1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordFieldInicio1ActionPerformed(evt);
+                jPasswordFieldRegistro1ActionPerformed(evt);
             }
         });
 
         jLabel8.setText("Contraseña");
 
-        jPasswordFieldInicio2.setToolTipText("");
-        jPasswordFieldInicio2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPasswordFieldInicio2.addActionListener(new java.awt.event.ActionListener() {
+        jPasswordFieldRegistro2.setToolTipText("");
+        jPasswordFieldRegistro2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPasswordFieldRegistro2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordFieldInicio2ActionPerformed(evt);
+                jPasswordFieldRegistro2ActionPerformed(evt);
             }
         });
 
@@ -311,37 +324,35 @@ public class main extends javax.swing.JFrame {
             .addGroup(jPanelRegistroLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanelRegistroLayout.createSequentialGroup()
+                .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelRegistroLayout.createSequentialGroup()
                         .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanelRegistroLayout.createSequentialGroup()
+                            .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTextFieldApellidosRegistro)
+                                .addComponent(jTextFieldCorreoRegistro)
+                                .addComponent(jPasswordFieldRegistro1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                                .addComponent(jTextFieldNombreRegistro))
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelRegistroLayout.createSequentialGroup()
-                                .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextFieldApellidosRegistro)
-                                        .addComponent(jTextFieldCorreoRegistro)
-                                        .addComponent(jPasswordFieldInicio1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                                        .addComponent(jTextFieldNombreRegistro))
-                                    .addComponent(jLabel2))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(choiceTipoUsuRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel10)))
-                            .addGroup(jPanelRegistroLayout.createSequentialGroup()
-                                .addComponent(jButtonVolverRegistro)
-                                .addGap(93, 93, 93)
-                                .addComponent(jLabel5)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanelRegistroLayout.createSequentialGroup()
-                                .addComponent(jPasswordFieldInicio2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
-                                .addComponent(jButtonRegistrarseRegistro)))
-                        .addContainerGap())))
+                            .addComponent(choiceTipoUsuRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10)))
+                    .addGroup(jPanelRegistroLayout.createSequentialGroup()
+                        .addComponent(jButtonVolverRegistro)
+                        .addGap(93, 93, 93)
+                        .addComponent(jLabel5)
+                        .addGap(0, 149, Short.MAX_VALUE))
+                    .addGroup(jPanelRegistroLayout.createSequentialGroup()
+                        .addComponent(jPasswordFieldRegistro2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonRegistrarseRegistro)))
+                .addContainerGap())
         );
         jPanelRegistroLayout.setVerticalGroup(
             jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -350,15 +361,15 @@ public class main extends javax.swing.JFrame {
                 .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jButtonVolverRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jTextFieldNombreRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(choiceTipoUsuRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(2, 2, 2)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldApellidosRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -366,17 +377,20 @@ public class main extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldCorreoRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordFieldInicio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPasswordFieldInicio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonRegistrarseRegistro))
-                .addContainerGap())
+                .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelRegistroLayout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addComponent(jButtonRegistrarseRegistro))
+                    .addGroup(jPanelRegistroLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPasswordFieldRegistro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPasswordFieldRegistro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(14, 14, 14))
         );
 
         getContentPane().add(jPanelRegistro, "card4");
@@ -553,14 +567,13 @@ public class main extends javax.swing.JFrame {
     private void jTextFieldCorreoRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCorreoRegistroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldCorreoRegistroActionPerformed
-
-    private void jPasswordFieldInicio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldInicio1ActionPerformed
+    private void jPasswordFieldRegistro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldRegistro1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordFieldInicio1ActionPerformed
+    }//GEN-LAST:event_jPasswordFieldRegistro1ActionPerformed
 
-    private void jPasswordFieldInicio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldInicio2ActionPerformed
+    private void jPasswordFieldRegistro2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldRegistro2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordFieldInicio2ActionPerformed
+    }//GEN-LAST:event_jPasswordFieldRegistro2ActionPerformed
 
     private void jButtonVolverRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverRegistroActionPerformed
         jPanelRegistro.setVisible(false);
@@ -568,7 +581,13 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVolverRegistroActionPerformed
 
     private void jButtonRegistrarseRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarseRegistroActionPerformed
-        JOptionPane.showMessageDialog(jPanelRegistro, "Su registro será completado cuando un administrador lo valide\nSe le enviará un mensaje al correo electronico", "Registro", JOptionPane.INFORMATION_MESSAGE);
+        String contra1=new String(jPasswordFieldRegistro1.getPassword());
+        String contra2=new String(jPasswordFieldRegistro2.getPassword());
+        if (contra1.equals(contra2)) {
+            JOptionPane.showMessageDialog(jPanelRegistro, "Su registro será completado cuando un administrador lo valide\nSe le enviará un mensaje al correo electronico", "Registro", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(jPanelRegistro, "Las contrasenas no coinciden\nAsegurese de que sean iguales");
+        }
         //Falta el codigo de creacion del usuario, la validacion de que está todo introducido
     }//GEN-LAST:event_jButtonRegistrarseRegistroActionPerformed
 
@@ -625,6 +644,10 @@ public class main extends javax.swing.JFrame {
         modelo.addRow(ejemplo);
     }//GEN-LAST:event_jPanelRutasComponentShown
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -674,6 +697,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -690,11 +714,12 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelRegistro;
     private javax.swing.JPanel jPanelRutas;
     private javax.swing.JPasswordField jPasswordFieldInicio;
-    private javax.swing.JPasswordField jPasswordFieldInicio1;
-    private javax.swing.JPasswordField jPasswordFieldInicio2;
     private javax.swing.JScrollPane jScrollPaneInfoRuta;
     private javax.swing.JScrollPane jScrollPaneRutas;
     private javax.swing.JTable jTableInfoRuta;
+    private javax.swing.JPasswordField jPasswordFieldRegistro1;
+    private javax.swing.JPasswordField jPasswordFieldRegistro2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableRutas;
     private javax.swing.JTextField jTextFieldApellidosRegistro;
     private javax.swing.JTextField jTextFieldCorreoInicio;
