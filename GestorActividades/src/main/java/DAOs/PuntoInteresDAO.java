@@ -5,8 +5,8 @@
 package DAOs;
 
 import com.mycompany.gestorActividades.AccesoBaseDatos;
+import com.mycompany.gestorActividades.PuntosInteres;
 import com.mycompany.gestorActividades.Repositorio;
-import com.mycompany.gestorActividades.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,26 +19,26 @@ import java.util.List;
  *
  * @author DAM105
  */
-public class UsuarioDAO implements Repositorio<Usuario>{
+public class PuntoInteresDAO implements Repositorio<PuntosInteres>{
        
     private Connection conn;
 
-    public UsuarioDAO(Connection conn) {
+    public PuntoInteresDAO(Connection conn) {
         this.conn = AccesoBaseDatos.getInstance().getConn();
     }
     
     @Override
-    public List<Usuario> listar() {
-        List<Usuario> lista = new ArrayList<>();
-        Usuario u;
-        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select id, nombre, apellidos, email, contrasena FROM usuarios")) {
+    public List<PuntosInteres> listar() {
+        List<PuntosInteres> lista = new ArrayList<>();
+        PuntosInteres p;
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select latitud FROM puntosInteres")) {
                 while (rs.next()) {
-                    u = crearUsuario(rs);
-                    if (!lista.add(u)) {
-                        throw new Exception("ERROR: el usuario no ha sido añadido");
+                    p = crearPuntoPeligro(rs);
+                    if (!lista.add(p)) {
+                        throw new Exception("ERROR: el punto interes no ha sido añadido");
                     }
                 }         
-            System.out.println("Se ha llenado la lista con usuarios");
+            System.out.println("Se ha llenado la lista con puntos interes");
         } catch (SQLException e) {
             System.out.println("SQL error: " + e.getMessage());
         } catch (Exception ex) {
@@ -48,13 +48,13 @@ public class UsuarioDAO implements Repositorio<Usuario>{
     }
 
     @Override
-    public Usuario porId(int id) {
-        Usuario usuario = null;
-        try (PreparedStatement stmt = conn.prepareStatement("SELECT id, nombre, apellidos, email, contrasena FROM usuarios WHERE id = ?")) {
+    public PuntosInteres porId(int id) {
+        PuntosInteres puntoPeligro = null;
+        try (PreparedStatement stmt = conn.prepareStatement("SELECT id FROM puntosInteres WHERE id = ?")) {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
-                    usuario = crearUsuario(rs);
+                    puntoPeligro = crearPuntoPeligro(rs);
                 }
             }
         } catch (SQLException e) {
@@ -62,21 +62,18 @@ public class UsuarioDAO implements Repositorio<Usuario>{
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-        return usuario;
+        return puntoPeligro;
     }
 
     @Override
-    public void modificar(Usuario u) {
-        try (PreparedStatement stmt = conn.prepareStatement("UPDATE usuarios SET nombre = ?,apellidos = ?,email = ?,contrasena = ? WHERE id= ?")) {
+    public void modificar(PuntosInteres p) {
+        try (PreparedStatement stmt = conn.prepareStatement("UPDATE puntosInteres SET kilometro = ?,nivelGravedad = ?,descripcion = ?,ruta = ?,longitud = ?,latitud = ? WHERE id= ?")) {
             stmt.setString(1, u.getNombre());
-            stmt.setString(2, u.getApellidos());
-            stmt.setString(3, u.getEmail());
-            stmt.setString(4, String.valueOf(u.getContrasena()));
-            stmt.setInt(5, u.getId());
+            
             if (stmt.executeUpdate() != 1) {
-                throw new Exception("ERROR: no se ha modificado el usuario");
+                throw new Exception("ERROR: no se ha modificado el punto interes");
             }
-            System.out.println("Se ha modificado el usuario");
+            System.out.println("Se ha modificado el punto interes");
         } catch (SQLException e) {
             System.out.println("SQL ERROR: " + e.getMessage());
         } catch (Exception ex) {
@@ -85,17 +82,15 @@ public class UsuarioDAO implements Repositorio<Usuario>{
     }
 
     @Override
-    public void agregar(Usuario u) {
-       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO usuarios (id,nombre,apellidos,email,contrasena) VALUES (?, ?, ?, ?, ?)")) {
+    public void agregar(PuntosInteres u) {
+       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO puntosInteres (id,kilometro,nivelGravedad,descripcion,ruta,longitud,latitud) VALUES (?, ?, ?, ?, ?, ? ,?)")) {
             stmt.setInt(1, u.getId());
             stmt.setString(2, u.getNombre());
-            stmt.setString(3, u.getApellidos());
-            stmt.setString(4, u.getEmail());
-            stmt.setString(5, String.valueOf(u.getContrasena()));
+            
             if (stmt.executeUpdate() != 1) {
-                throw new Exception("ERROR: no se ha creado el usuario");
+                throw new Exception("ERROR: no se ha creado el punto interes");
             }
-            System.out.println("Se ha creado el usuario");
+            System.out.println("Se ha creado el punto interes");
         } catch (SQLException e) {
             System.out.println("SQL ERROR "+e.getMessage());
         } catch (Exception ex) {
@@ -105,12 +100,12 @@ public class UsuarioDAO implements Repositorio<Usuario>{
 
     @Override
     public void eliminar(int id) {
-        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM usuarios WHERE id=?")) {
+        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM puntosInteres WHERE id=?")) {
             stmt.setObject(1, id);
             if (stmt.executeUpdate() != 1) {
-                throw new Exception("ERROR: el usuario no existe");
+                throw new Exception("ERROR: el punto interes no existe");
             }
-            System.out.println("Se ha eliminado el usuario");
+            System.out.println("Se ha eliminado el punto interes");
         } catch (SQLException e) {
             System.out.println("SQL ERROR: " + e.getMessage());
         } catch (Exception ex) {
@@ -118,8 +113,8 @@ public class UsuarioDAO implements Repositorio<Usuario>{
         } 
     }
     
-     public Usuario crearUsuario(final ResultSet rs) throws Exception {
-        return new Usuario(rs.getInt("id"),rs.getString("nombre"),rs.getString("apellidos"),rs.getString("email"),rs.get);
+     public PuntosInteres crearPuntoPeligro(final ResultSet rs) throws Exception {
+        return new PuntosInteres();
     }
-    
-}
+}  
+

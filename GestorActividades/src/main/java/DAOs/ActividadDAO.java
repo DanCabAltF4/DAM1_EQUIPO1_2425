@@ -5,8 +5,8 @@
 package DAOs;
 
 import com.mycompany.gestorActividades.AccesoBaseDatos;
+import com.mycompany.gestorActividades.Actividad;
 import com.mycompany.gestorActividades.Repositorio;
-import com.mycompany.gestorActividades.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,26 +19,26 @@ import java.util.List;
  *
  * @author DAM105
  */
-public class UsuarioDAO implements Repositorio<Usuario>{
+public class ActividadDAO implements Repositorio<Actividad>{
        
     private Connection conn;
 
-    public UsuarioDAO(Connection conn) {
+    public ActividadDAO(Connection conn) {
         this.conn = AccesoBaseDatos.getInstance().getConn();
     }
     
     @Override
-    public List<Usuario> listar() {
-        List<Usuario> lista = new ArrayList<>();
-        Usuario u;
-        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select id, nombre, apellidos, email, contrasena FROM usuarios")) {
+    public List<Actividad> listar() {
+        List<Actividad> lista = new ArrayList<>();
+        Actividad a;
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select  FROM actividad")) {
                 while (rs.next()) {
-                    u = crearUsuario(rs);
-                    if (!lista.add(u)) {
-                        throw new Exception("ERROR: el usuario no ha sido añadido");
+                    a = crearActividad(rs);
+                    if (!lista.add(a)) {
+                        throw new Exception("ERROR: la actividad no ha sido añadido");
                     }
                 }         
-            System.out.println("Se ha llenado la lista con usuarios");
+            System.out.println("Se ha llenado la lista con actividades");
         } catch (SQLException e) {
             System.out.println("SQL error: " + e.getMessage());
         } catch (Exception ex) {
@@ -48,13 +48,13 @@ public class UsuarioDAO implements Repositorio<Usuario>{
     }
 
     @Override
-    public Usuario porId(int id) {
-        Usuario usuario = null;
-        try (PreparedStatement stmt = conn.prepareStatement("SELECT id, nombre, apellidos, email, contrasena FROM usuarios WHERE id = ?")) {
+    public Actividad porId(int id) {
+        Actividad calendario = null;
+        try (PreparedStatement stmt = conn.prepareStatement("SELECT  FROM actividad WHERE  id= ?")) {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
-                    usuario = crearUsuario(rs);
+                    calendario = crearActividad(rs);
                 }
             }
         } catch (SQLException e) {
@@ -62,21 +62,18 @@ public class UsuarioDAO implements Repositorio<Usuario>{
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-        return usuario;
+        return calendario;
     }
 
     @Override
-    public void modificar(Usuario u) {
-        try (PreparedStatement stmt = conn.prepareStatement("UPDATE usuarios SET nombre = ?,apellidos = ?,email = ?,contrasena = ? WHERE id= ?")) {
+    public void modificar(Actividad a) {
+        try (PreparedStatement stmt = conn.prepareStatement("UPDATE actividad SET  WHERE id= ?")) {
             stmt.setString(1, u.getNombre());
-            stmt.setString(2, u.getApellidos());
-            stmt.setString(3, u.getEmail());
-            stmt.setString(4, String.valueOf(u.getContrasena()));
-            stmt.setInt(5, u.getId());
+            
             if (stmt.executeUpdate() != 1) {
-                throw new Exception("ERROR: no se ha modificado el usuario");
+                throw new Exception("ERROR: no se ha modificado el calendario");
             }
-            System.out.println("Se ha modificado el usuario");
+            System.out.println("Se ha modificado el calendario");
         } catch (SQLException e) {
             System.out.println("SQL ERROR: " + e.getMessage());
         } catch (Exception ex) {
@@ -85,17 +82,15 @@ public class UsuarioDAO implements Repositorio<Usuario>{
     }
 
     @Override
-    public void agregar(Usuario u) {
-       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO usuarios (id,nombre,apellidos,email,contrasena) VALUES (?, ?, ?, ?, ?)")) {
+    public void agregar(Actividad a) {
+       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO actividad () VALUES (?, ?, ?, ?, ?, ? ,?)")) {
             stmt.setInt(1, u.getId());
             stmt.setString(2, u.getNombre());
-            stmt.setString(3, u.getApellidos());
-            stmt.setString(4, u.getEmail());
-            stmt.setString(5, String.valueOf(u.getContrasena()));
+            
             if (stmt.executeUpdate() != 1) {
-                throw new Exception("ERROR: no se ha creado el usuario");
+                throw new Exception("ERROR: no se ha creado la actividad");
             }
-            System.out.println("Se ha creado el usuario");
+            System.out.println("Se ha creado la actividad");
         } catch (SQLException e) {
             System.out.println("SQL ERROR "+e.getMessage());
         } catch (Exception ex) {
@@ -105,12 +100,12 @@ public class UsuarioDAO implements Repositorio<Usuario>{
 
     @Override
     public void eliminar(int id) {
-        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM usuarios WHERE id=?")) {
+        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM actividad WHERE id=?")) {
             stmt.setObject(1, id);
             if (stmt.executeUpdate() != 1) {
-                throw new Exception("ERROR: el usuario no existe");
+                throw new Exception("ERROR: la actividad no existe");
             }
-            System.out.println("Se ha eliminado el usuario");
+            System.out.println("Se ha eliminado la actividad");
         } catch (SQLException e) {
             System.out.println("SQL ERROR: " + e.getMessage());
         } catch (Exception ex) {
@@ -118,8 +113,7 @@ public class UsuarioDAO implements Repositorio<Usuario>{
         } 
     }
     
-     public Usuario crearUsuario(final ResultSet rs) throws Exception {
-        return new Usuario(rs.getInt("id"),rs.getString("nombre"),rs.getString("apellidos"),rs.getString("email"),rs.get);
+     public Actividad crearActividad(final ResultSet rs) throws Exception {
+        return new Actividad();
     }
-    
 }
