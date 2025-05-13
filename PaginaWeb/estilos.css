@@ -1,10 +1,14 @@
 body {
+  display: flex;
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: rgb(240, 248, 255); 
+  background-image: url("/imagenes/Forest_of_Sai_Yok_National_Park.jpg");
+  backdrop-filter: blur(5px);
+  flex-direction: column;
+  min-height: 100vh; /*Hace que el cuerpo ocupe todo el espacio visible*/
 }
 
-.encabezado {
+#encabezado {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -14,19 +18,19 @@ body {
   background: linear-gradient(to bottom, lightgreen, darkgreen);
 }
 
-.encabezado>a {
+#encabezado>a {
   color: white;
   text-shadow: black 1px 1px 2px;
   text-decoration: none;
   transition: transform 0.2s ease-in-out;
 }
 
-.encabezado>a:hover {
+#encabezado>a:hover {
   transform: scale(1.1);
 }
 
 
-.menu {
+#menu {
   display: flex;
   flex-direction: row;
   top: 0;
@@ -39,23 +43,60 @@ body {
   border-radius: 5px;
 }
 
-.menu a{
+#menu a{
   text-decoration: none;
   color: black;
+  
 }
-.menu li {
+/*Si juntases estas dos (a y li) lo que es el boton se limitaria el texto-*/
+#menu li {
   padding: 12px;
   border-radius: 5px;
 }
 
-.menu li:hover {
+#menu li:hover {
   background-color: darkgray;
 }
 
-.pie {
+main {
+  flex: 1; /*Como el resto de elementos del body no tienen atributo flex, main toma todo el espacio posible, así el footer siempre estará abajo del todo*/
+}
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 10px;
+  background-color: rgba(171, 228, 209, 0.274);
+  border-radius: 10px;
+  box-shadow: -1px -1px 2px black;
+}
+
+article h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+article p {
+  text-align: justify;
+  align-self: flex-start;
+  margin: 10px 0;
+}
+
+article figure {
+  align-self: start;
+  display: flex;
+}
+article figure img{
+  align-self: end;
+}
+footer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background-color: gray;
+  box-shadow: -1px -1px  1px black;
+  text-shadow: 0px 0px 2px white;
 }
