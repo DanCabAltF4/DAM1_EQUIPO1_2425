@@ -70,7 +70,14 @@ public class main extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jButtonAccederInicio = new javax.swing.JButton();
         jButtonVolverInicio = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
+        jPanelInicioSesion2 = new javax.swing.JPanel();
+        jPasswordFieldInicio2 = new javax.swing.JPasswordField();
+        jTextFieldCorreoInicio2 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jButtonAccederInicio2 = new javax.swing.JButton();
+        jButtonVolverInicio2 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
         jPanelRegistro = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jTextFieldNombreRegistro = new javax.swing.JTextField();
@@ -198,10 +205,6 @@ public class main extends javax.swing.JFrame {
             }
         });
 
-        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel12.setText("        No se ha encontrado el usuario       ");
-
         javax.swing.GroupLayout jPanelInicioSesionLayout = new javax.swing.GroupLayout(jPanelInicioSesion);
         jPanelInicioSesion.setLayout(jPanelInicioSesionLayout);
         jPanelInicioSesionLayout.setHorizontalGroup(
@@ -213,24 +216,19 @@ public class main extends javax.swing.JFrame {
                 .addComponent(jButtonAccederInicio)
                 .addGap(32, 32, 32))
             .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
+                .addGap(128, 128, 128)
                 .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
-                                    .addGap(44, 44, 44)
-                                    .addComponent(jLabel4))
-                                .addComponent(jPasswordFieldInicio)
-                                .addComponent(jTextFieldCorreoInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInicioSesionLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3)
-                                .addGap(24, 24, 24))))
-                    .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
-                        .addGap(99, 99, 99)
-                        .addComponent(jLabel12)))
-                .addContainerGap(103, Short.MAX_VALUE))
+                    .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
+                            .addGap(44, 44, 44)
+                            .addComponent(jLabel4))
+                        .addComponent(jPasswordFieldInicio)
+                        .addComponent(jTextFieldCorreoInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInicioSesionLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel3)
+                        .addGap(24, 24, 24)))
+                .addContainerGap(133, Short.MAX_VALUE))
         );
         jPanelInicioSesionLayout.setVerticalGroup(
             jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,16 +241,102 @@ public class main extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPasswordFieldInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel12)
-                .addGap(25, 25, 25)
+                .addGap(43, 43, 43)
                 .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAccederInicio)
                     .addComponent(jButtonVolverInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelInicioSesion, "card2");
+
+        jPasswordFieldInicio2.setToolTipText("");
+        jPasswordFieldInicio2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPasswordFieldInicio2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordFieldInicio2ActionPerformed(evt);
+            }
+        });
+
+        jTextFieldCorreoInicio2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCorreoInicio2ActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setText("Correo electronico");
+
+        jLabel14.setText("Contraseña");
+
+        jButtonAccederInicio2.setText("Entrar");
+        jButtonAccederInicio2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAccederInicio2ActionPerformed(evt);
+            }
+        });
+
+        jButtonVolverInicio2.setText("Volver");
+        jButtonVolverInicio2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverInicio2ActionPerformed(evt);
+            }
+        });
+
+        jLabel15.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel15.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel15.setText("        No se ha encontrado el usuario       ");
+
+        javax.swing.GroupLayout jPanelInicioSesion2Layout = new javax.swing.GroupLayout(jPanelInicioSesion2);
+        jPanelInicioSesion2.setLayout(jPanelInicioSesion2Layout);
+        jPanelInicioSesion2Layout.setHorizontalGroup(
+            jPanelInicioSesion2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInicioSesion2Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jButtonVolverInicio2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonAccederInicio2)
+                .addGap(32, 32, 32))
+            .addGroup(jPanelInicioSesion2Layout.createSequentialGroup()
+                .addGroup(jPanelInicioSesion2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelInicioSesion2Layout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addGroup(jPanelInicioSesion2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelInicioSesion2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanelInicioSesion2Layout.createSequentialGroup()
+                                    .addGap(44, 44, 44)
+                                    .addComponent(jLabel14))
+                                .addComponent(jPasswordFieldInicio2)
+                                .addComponent(jTextFieldCorreoInicio2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInicioSesion2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel13)
+                                .addGap(24, 24, 24))))
+                    .addGroup(jPanelInicioSesion2Layout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addComponent(jLabel15)))
+                .addContainerGap(103, Short.MAX_VALUE))
+        );
+        jPanelInicioSesion2Layout.setVerticalGroup(
+            jPanelInicioSesion2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelInicioSesion2Layout.createSequentialGroup()
+                .addGap(86, 86, 86)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldCorreoInicio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPasswordFieldInicio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel15)
+                .addGap(25, 25, 25)
+                .addGroup(jPanelInicioSesion2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonAccederInicio2)
+                    .addComponent(jButtonVolverInicio2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(55, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanelInicioSesion2, "card2");
 
         jLabel2.setText("Nombre");
 
@@ -578,12 +662,13 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVolverRegistroActionPerformed
 
     private void jButtonRegistrarseRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarseRegistroActionPerformed
+        // creamos las contraseñas y las casteamos a String para tratarlas en el if y ver si las contraseñas coinciden
         String contra1 = new String(jPasswordFieldRegistro1.getPassword());
         String contra2 = new String(jPasswordFieldRegistro2.getPassword());
         if (contra1.equals(contra2)) {
             JOptionPane.showMessageDialog(jPanelRegistro, "Su registro será completado cuando un administrador lo valide\nSe le enviará un mensaje al correo electronico", "Registro", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(jPanelRegistro, "Las contrasenas no coinciden\nAsegurese de que sean iguales");
+            JOptionPane.showMessageDialog(jPanelRegistro, "Las contrasenas no coinciden\nAsegurese de que sean iguales", "Error", JOptionPane.ERROR_MESSAGE);
         }
         //Falta el codigo de creacion del usuario, la validacion de que está todo introducido
     }//GEN-LAST:event_jButtonRegistrarseRegistroActionPerformed
@@ -646,6 +731,22 @@ public class main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jPasswordFieldInicio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldInicio2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordFieldInicio2ActionPerformed
+
+    private void jTextFieldCorreoInicio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCorreoInicio2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCorreoInicio2ActionPerformed
+
+    private void jButtonAccederInicio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAccederInicio2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonAccederInicio2ActionPerformed
+
+    private void jButtonVolverInicio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverInicio2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonVolverInicio2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -684,18 +785,22 @@ public class main extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Choice choiceTipoUsuRegistro;
     private javax.swing.JButton jButtonAccederInicio;
+    private javax.swing.JButton jButtonAccederInicio2;
     private javax.swing.JButton jButtonInfoRutas;
     private javax.swing.JButton jButtonIniciarSesion;
     private javax.swing.JButton jButtonRegistrarse;
     private javax.swing.JButton jButtonRegistrarseRegistro;
     private javax.swing.JButton jButtonVerRutas;
     private javax.swing.JButton jButtonVolverInicio;
+    private javax.swing.JButton jButtonVolverInicio2;
     private javax.swing.JButton jButtonVolverRegistro;
     private javax.swing.JButton jButtonVolverRutas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -709,10 +814,12 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanelInfoRuta;
     private javax.swing.JPanel jPanelInicioSesion;
+    private javax.swing.JPanel jPanelInicioSesion2;
     private javax.swing.JPanel jPanelPrincipal;
     private javax.swing.JPanel jPanelRegistro;
     private javax.swing.JPanel jPanelRutas;
     private javax.swing.JPasswordField jPasswordFieldInicio;
+    private javax.swing.JPasswordField jPasswordFieldInicio2;
     private javax.swing.JPasswordField jPasswordFieldRegistro1;
     private javax.swing.JPasswordField jPasswordFieldRegistro2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -720,6 +827,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTable jTableRutas;
     private javax.swing.JTextField jTextFieldApellidosRegistro;
     private javax.swing.JTextField jTextFieldCorreoInicio;
+    private javax.swing.JTextField jTextFieldCorreoInicio2;
     private javax.swing.JTextField jTextFieldCorreoRegistro;
     private javax.swing.JTextField jTextFieldNombreRegistro;
     // End of variables declaration//GEN-END:variables
