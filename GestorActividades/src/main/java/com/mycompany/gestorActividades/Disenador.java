@@ -6,8 +6,12 @@ package com.mycompany.gestorActividades;
 
 /**
  *
- * @author DAM102
+ * @author Raúl Buenaga
  */
-public class Disenador {
+public class Disenador extends Alumno{
+    
+    public Disenador(int id, String nombre, String apellidos, String email, char contrasena) {
+        super(id, nombre, apellidos, email, contrasena);
+    }
     
 }

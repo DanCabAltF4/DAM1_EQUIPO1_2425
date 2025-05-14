@@ -31,7 +31,7 @@ public class ReseñaDAO implements Repositorio<Resena>{
     public List<Resena> listar() {
         List<Resena> lista = new ArrayList<>();
         Resena r;
-        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select  FROM resenna")) {
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select dificultad,bellezaPaisajistica,interesCultural,Usuario.idUsu,Ruta.idRuta,fecha FROM resenna")) {
                 while (rs.next()) {
                     r = crearReseña(rs);
                     if (!lista.add(r)) {
@@ -50,7 +50,7 @@ public class ReseñaDAO implements Repositorio<Resena>{
     @Override
     public Resena porId(int id) {
         Resena resena = null;
-        try (PreparedStatement stmt = conn.prepareStatement("SELECT  FROM resenna WHERE  = ?")) {
+        try (PreparedStatement stmt = conn.prepareStatement("SELECT dificultad,bellezaPaisajistica,interesCultural,Usuario.idUsu,Ruta.idRuta,fecha FROM resenna WHERE  idUsu= ?")) {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
@@ -67,7 +67,7 @@ public class ReseñaDAO implements Repositorio<Resena>{
 
     @Override
     public void modificar(Resena r) {
-        try (PreparedStatement stmt = conn.prepareStatement("UPDATE resenna SET  WHERE = ?")) {
+        try (PreparedStatement stmt = conn.prepareStatement("UPDATE resenna SET dificultad = ?,bellezaPaisajistica = ?,interesCultural= ?,fecha = ? WHERE idUsu= ?")) {
             
             
             if (stmt.executeUpdate() != 1) {
