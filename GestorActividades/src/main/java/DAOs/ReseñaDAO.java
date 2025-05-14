@@ -6,7 +6,7 @@ package DAOs;
 
 import com.mycompany.gestorActividades.AccesoBaseDatos;
 import com.mycompany.gestorActividades.Repositorio;
-import com.mycompany.gestorActividades.Ruta;
+import com.mycompany.gestorActividades.Resena;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,28 +17,28 @@ import java.util.List;
 
 /**
  *
- * @author dam105
+ * @author Raúl Buenaga
  */
-public class RutaDAO implements Repositorio<Ruta>{
+public class ReseñaDAO implements Repositorio<Resena>{
        
     private Connection conn;
 
-    public RutaDAO(Connection conn) {
+    public ReseñaDAO(Connection conn) {
         this.conn = AccesoBaseDatos.getInstance().getConn();
     }
     
     @Override
-    public List<Ruta> listar() {
-        List<Ruta> lista = new ArrayList<>();
-        Ruta r;
-        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select  FROM rutas")) {
+    public List<Resena> listar() {
+        List<Resena> lista = new ArrayList<>();
+        Resena r;
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select comentario,Usuario.idUsu,Ruta.idRuta,fecha,valoracion FROM resenna")) {
                 while (rs.next()) {
-                    r = crearRuta(rs);
+                    r = crearReseña(rs);
                     if (!lista.add(r)) {
-                        throw new Exception("ERROR: la ruta no ha sido añadido");
+                        throw new Exception("ERROR: la resena no ha sido añadido");
                     }
                 }         
-            System.out.println("Se ha llenado la lista con rutas");
+            System.out.println("Se ha llenado la lista con resenas");
         } catch (SQLException e) {
             System.out.println("SQL error: " + e.getMessage());
         } catch (Exception ex) {
@@ -48,13 +48,13 @@ public class RutaDAO implements Repositorio<Ruta>{
     }
 
     @Override
-    public Ruta porId(int id) {
-        Ruta resena = null;
-        try (PreparedStatement stmt = conn.prepareStatement("SELECT  FROM rutas WHERE idRuta = ?")) {
+    public Resena porId(int id) {
+        Resena resena = null;
+        try (PreparedStatement stmt = conn.prepareStatement("SELECT comentario,Usuario.idUsu,Ruta.idRuta,fecha,valoracion FROM resenna WHERE  idUsu= ?")) {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
-                    resena = crearRuta(rs);
+                    resena = crearReseña(rs);
                 }
             }
         } catch (SQLException e) {
@@ -66,15 +66,15 @@ public class RutaDAO implements Repositorio<Ruta>{
     }
 
     @Override
-    public void modificar(Ruta r) {
-        try (PreparedStatement stmt = conn.prepareStatement("UPDATE rutas SET comentario = ?,fecha = ?,valoracion= ? WHERE idRuta= ?")) {
-            
+    public void modificar(Resena r) {
+        try (PreparedStatement stmt = conn.prepareStatement("UPDATE resenna SET comentario = ?,fecha = ?,valoracion= ? WHERE idUsu= ?")) {
+            stmt.setString(1, r.getComentario());
             
             
             if (stmt.executeUpdate() != 1) {
-                throw new Exception("ERROR: no se ha modificado la ruta");
+                throw new Exception("ERROR: no se ha modificado la resena");
             }
-            System.out.println("Se ha modificado la ruta");
+            System.out.println("Se ha modificado la resena");
         } catch (SQLException e) {
             System.out.println("SQL ERROR: " + e.getMessage());
         } catch (Exception ex) {
@@ -83,14 +83,14 @@ public class RutaDAO implements Repositorio<Ruta>{
     }
 
     @Override
-    public void agregar(Ruta r) {
-       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO rutas () VALUES (?, ?, ?, ?, ?, ? ,?)")) {
+    public void agregar(Resena r) {
+       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO resenna () VALUES (?, ?, ?, ?, ?, ? ,?)")) {
             
             
             if (stmt.executeUpdate() != 1) {
-                throw new Exception("ERROR: no se ha creado la ruta");
+                throw new Exception("ERROR: no se ha creado la resena");
             }
-            System.out.println("Se ha creado la ruta");
+            System.out.println("Se ha creado la resena");
         } catch (SQLException e) {
             System.out.println("SQL ERROR "+e.getMessage());
         } catch (Exception ex) {
@@ -100,12 +100,12 @@ public class RutaDAO implements Repositorio<Ruta>{
 
     @Override
     public void eliminar(int id) {
-        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM rutas WHERE idRuta=?")) {
+        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM resenna WHERE =?")) {
             stmt.setObject(1, id);
             if (stmt.executeUpdate() != 1) {
-                throw new Exception("ERROR: la ruta no existe");
+                throw new Exception("ERROR: la resena no existe");
             }
-            System.out.println("Se ha eliminado la ruta");
+            System.out.println("Se ha eliminado la resena");
         } catch (SQLException e) {
             System.out.println("SQL ERROR: " + e.getMessage());
         } catch (Exception ex) {
@@ -113,8 +113,7 @@ public class RutaDAO implements Repositorio<Ruta>{
         } 
     }
     
-     public Ruta crearRuta(final ResultSet rs) throws Exception {
-        return new Ruta();
-    }     
-    
+     public Resena crearReseña(final ResultSet rs) throws Exception {
+        return new Resena(rs.getString("comentario"),rs.getFloat("estrellas"));
+    }
 }

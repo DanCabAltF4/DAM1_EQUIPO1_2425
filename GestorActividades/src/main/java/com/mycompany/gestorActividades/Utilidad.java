@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Usuario
+ * @author Raúl Buenaga
  */
 public class Utilidad {
     

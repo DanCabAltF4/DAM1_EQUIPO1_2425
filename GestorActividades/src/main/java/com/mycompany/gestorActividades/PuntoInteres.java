@@ -22,4 +22,31 @@ public class PuntoInteres extends Waypoint {
         this.tipo = tipo;
         this.caracteristicas = caracteristicas;
     }
+    
+    //Métodos
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public PuntosTipos getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(PuntosTipos tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getCaracteristicas() {
+        return caracteristicas;
+    }
+
+    public void setCaracteristicas(String caracteristicas) {
+        this.caracteristicas = caracteristicas;
+    }
+    
 }

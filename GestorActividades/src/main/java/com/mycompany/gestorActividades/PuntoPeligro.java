@@ -18,4 +18,23 @@ public class PuntoPeligro extends Waypoint{
         this.km = km;
         this.nivGravedad = nivGravedad;
     }
+    
+    //Métodos
+
+    public double getKm() {
+        return km;
+    }
+
+    public void setKm(double km) {
+        this.km = km;
+    }
+
+    public int getNivGravedad() {
+        return nivGravedad;
+    }
+
+    public void setNivGravedad(int nivGravedad) {
+        this.nivGravedad = nivGravedad;
+    }
+    
 }

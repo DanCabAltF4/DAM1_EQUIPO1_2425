@@ -6,10 +6,8 @@ package com.mycompany.gestorActividades;
 
 /**
  *
- * @author Raúl Buenaga
+ * @author DAM105
  */
 public class Invitado {
     
-   
-      
 }

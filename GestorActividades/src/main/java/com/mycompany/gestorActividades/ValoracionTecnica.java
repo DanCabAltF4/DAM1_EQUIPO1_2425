@@ -23,5 +23,4 @@ public class ValoracionTecnica extends Valoracion {
         this.interes = interes;
 
     }
-
 }

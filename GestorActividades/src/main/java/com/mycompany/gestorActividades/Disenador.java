@@ -8,7 +8,7 @@ import Enumerados.Estado;
 
 /**
  *
- * @author DAM102
+ * @author Raúl Buenaga
  */
 public class Disenador extends Alumno{
     
