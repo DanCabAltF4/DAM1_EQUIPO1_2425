@@ -20,50 +20,6 @@ abstract class Valoracion {
         this.ruta = ruta;
         this.votante = votante;
         this.fecha = fecha;
-        if(idUsuario!=null){
-            this.idUsuario=idUsuario;
-        }else{
-            this.idUsuario=null;
-        }
-        if(idRuta!=null){
-            this.idRuta = idRuta;
-        }else{
-            this.idRuta=null;
-        }
     }
-    
-    //Métodos
-    public int getDificultad() {
-        return dificultad;
-    }
-
-    public int getBellezaPaisajistica() {
-        return bellezaPaisajistica;
-    }
-
-    public int getInteresCultural() {
-        return interesCultural;
-    }
-
-    public String getResena() {
-        return resena;
-    }
-
-    public String getValTecnica() {
-        return valTecnica;
-    }
-
-    public LocalDate getFecha() {
-        return fecha;
-    }
-
-    public Usuario getIdUsuario() {
-        return idUsuario;
-    }
-
-    public Ruta getIdRuta() {
-        return idRuta;
-    }
-    
     
 }
