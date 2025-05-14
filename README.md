@@ -29,9 +29,9 @@
 
 ## Diagrama clases
 
-[Diagrama](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Diagrama%20de%20clases%20ultimo.pdf?csf=1&web=1&e=LEeazY)
+[Diagrama](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Diagrama%20de%20clases%20espero%20que%20sea%20el%20ultimo.pdf?csf=1&web=1&e=UkPkpz)
 
-![Diagrama](imagenes/Diagrama_clases_ultimo.png)
+![Diagrama](imagenes/Diagrama_clases_por_fin.png)
 
 
 ## Diagrama de casos de uso
