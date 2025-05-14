@@ -3,7 +3,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-image: url("/PaginaWeb/imagenesWeb/Forest_of_Sai_Yok_National_Park.jpg");
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px) brightness(0.3); 
   flex-direction: column;
   min-height: 100vh; /*Hace que el cuerpo ocupe todo el espacio visible*/
 }
@@ -109,7 +109,7 @@ footer {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: gray;
+  background: linear-gradient(to bottom, gray, #222);
   box-shadow: -1px -1px  1px black;
   text-shadow: 0px 0px 2px white;
 }
