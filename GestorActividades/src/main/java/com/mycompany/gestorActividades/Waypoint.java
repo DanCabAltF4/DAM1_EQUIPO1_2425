@@ -8,12 +8,15 @@ package com.mycompany.gestorActividades;
  *
  * @author DAM102
  */
-public class Actividad {
+public class Waypoint {
+    
+    protected String descripcion;
+    protected String imagen;
 
-    private String tipo;
-
-    public Actividad(String tipo) {
-        this.tipo = tipo;
+    public Waypoint(String descripcion, String imagen) {
+        this.descripcion = descripcion;
+        this.imagen = imagen;
     }
 
+    
 }

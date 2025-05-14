@@ -8,12 +8,13 @@ package com.mycompany.gestorActividades;
  *
  * @author DAM102
  */
-public class Actividad {
+abstract class FichaInformativa {
+    protected Disenador creador;
+    protected Ruta ruta;
 
-    private String tipo;
-
-    public Actividad(String tipo) {
-        this.tipo = tipo;
+    public FichaInformativa(Disenador creador, Ruta ruta) {
+        this.creador = creador;
+        this.ruta = ruta;
     }
 
 }

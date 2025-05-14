@@ -2,12 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Enumerados;
+package com.mycompany.gestorActividades;
 
 /**
  *
  * @author Raúl Buenaga
  */
-public enum EstadoRuta {
-    PENDIENTE,VALIDADA;
+public class Invitado {
+    
+   
+      
 }

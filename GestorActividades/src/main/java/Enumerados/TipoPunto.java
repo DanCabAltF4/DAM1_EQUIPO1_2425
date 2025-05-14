@@ -8,6 +8,7 @@ package Enumerados;
  *
  * @author Raúl Buenaga
  */
-public enum Clasificación {
-    CIRCULAR,LINEAL;
+public enum TipoPunto {
+    
+    HISTÓRICOARQUEOLÓGICO,NATURALEZA,MIRADOR,ÁREADEDESCANSO,puntodeagua,ALOJAMIENTO,CULTURAL,GEOLÓGICO,FAUNAESPECIFICA,BOTÁNICO;
 }

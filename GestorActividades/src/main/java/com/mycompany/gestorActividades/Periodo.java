@@ -10,29 +10,19 @@ package com.mycompany.gestorActividades;
  */
 public class Periodo {
     
-    private int id;
-    private String nomPeriodo;
+    private String nombre;
 
-    public Periodo(int id, String nomPeriodo) {
-        this.id = id;
-        this.nomPeriodo = nomPeriodo;
+    public Periodo( String nomPeriodo) {
+        this.nombre= nomPeriodo;
     }
     
     //Métodos
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getNomPeriodo() {
-        return nomPeriodo;
+        return nombre;
     }
 
     public void setNomPeriodo(String nomPeriodo) {
-        this.nomPeriodo = nomPeriodo;
+        this.nombre = nomPeriodo;
     }
 
     

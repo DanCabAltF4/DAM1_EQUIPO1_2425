@@ -4,16 +4,16 @@
  */
 package com.mycompany.gestorActividades;
 
+import Enumerados.Estado;
+
 /**
  *
  * @author DAM102
  */
-public class Actividad {
-
-    private String tipo;
-
-    public Actividad(String tipo) {
-        this.tipo = tipo;
+public class Profesor extends Disenador {
+    
+    public Profesor(String nombre, String apellidos, String email, char contrasena, Estado estado) {
+        super(nombre, apellidos, email, contrasena, estado);
     }
-
+    
 }
