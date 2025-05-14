@@ -4,10 +4,16 @@
  */
 package com.mycompany.gestorActividades;
 
+import Enumerados.Estado;
+
 /**
  *
  * @author DAM102
  */
-public class Disenador {
+public class Disenador extends Alumno{
+    
+    public Disenador(String nombre, String apellidos, String email, char contrasena, Estado estado) {
+        super(nombre, apellidos, email, contrasena, estado);
+    }
     
 }

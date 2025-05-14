@@ -6,34 +6,14 @@ package com.mycompany.gestorActividades;
 
 /**
  *
- * @author Raúl Buenaga
+ * @author DAM102
  */
 public class Actividad {
-    
-    private int id;
-    private String nomActividad;
 
-    public Actividad(int id, String nomActividad) {
-        this.id = id;
-        this.nomActividad = nomActividad;
-    }
-    
-    //Métodos
-    public int getId() {
-        return id;
+    private String tipo;
+
+    public Actividad(String tipo) {
+        this.tipo = tipo;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNomActividad() {
-        return nomActividad;
-    }
-
-    public void setNomActividad(String nomActividad) {
-        this.nomActividad = nomActividad;
-    }
-    
-    
 }

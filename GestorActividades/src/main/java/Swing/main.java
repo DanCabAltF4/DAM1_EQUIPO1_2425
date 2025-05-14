@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -71,6 +72,7 @@ public class main extends javax.swing.JFrame {
         jButtonAccederInicio = new javax.swing.JButton();
         jButtonVolverInicio = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         jPanelRegistro = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jTextFieldNombreRegistro = new javax.swing.JTextField();
@@ -94,9 +96,22 @@ public class main extends javax.swing.JFrame {
         jTableRutas = new javax.swing.JTable();
         jButtonInfoRutas = new javax.swing.JButton();
         jPanelInfoRuta = new javax.swing.JPanel();
-        jLabelNombreRuta = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jLabelNombreRutaInfo = new javax.swing.JLabel();
+        jTableInfo = new javax.swing.JTable();
+        jButtonVolverInfo = new javax.swing.JButton();
+        jButtonReseñarInfo = new javax.swing.JButton();
+        jButtonValorarInfo = new javax.swing.JButton();
+        jButtonVerValResInfo = new javax.swing.JButton();
+        jPanelValoracionesRuta = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jButtonVolverValoraciones = new javax.swing.JButton();
+        jScrollPaneResenas = new javax.swing.JScrollPane();
+        jTableResenas = new javax.swing.JTable();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jScrollPaneValTecn = new javax.swing.JScrollPane();
+        jTableValTecn = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -138,16 +153,15 @@ public class main extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(jPanelPrincipalLayout.createSequentialGroup()
                         .addGap(91, 91, 91)
-                        .addComponent(jLabelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanelPrincipalLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jButtonIniciarSesion)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonRegistrarse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(28, 28, 28)
-                .addComponent(jButtonVerRutas)
-                .addGap(50, 50, 50))
+                        .addComponent(jLabelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jButtonIniciarSesion)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonRegistrarse)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonVerRutas)))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
         jPanelPrincipalLayout.setVerticalGroup(
             jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,7 +175,7 @@ public class main extends javax.swing.JFrame {
                     .addComponent(jButtonIniciarSesion)
                     .addComponent(jButtonVerRutas)
                     .addComponent(jButtonRegistrarse))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelPrincipal, "card3");
@@ -198,44 +212,46 @@ public class main extends javax.swing.JFrame {
             }
         });
 
-        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel12.setText("        No se ha encontrado el usuario       ");
+        jLabel12.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel12.setText("   No se ha encontrado el usuario.   ");
+
+        jLabel13.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel13.setText("Asegúrese que los datos introducidos sean correctos");
 
         javax.swing.GroupLayout jPanelInicioSesionLayout = new javax.swing.GroupLayout(jPanelInicioSesion);
         jPanelInicioSesion.setLayout(jPanelInicioSesionLayout);
         jPanelInicioSesionLayout.setHorizontalGroup(
             jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInicioSesionLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jButtonVolverInicio)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonAccederInicio)
-                .addGap(32, 32, 32))
             .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
                 .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
-                                    .addGap(44, 44, 44)
-                                    .addComponent(jLabel4))
-                                .addComponent(jPasswordFieldInicio)
-                                .addComponent(jTextFieldCorreoInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInicioSesionLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3)
-                                .addGap(24, 24, 24))))
+                        .addGap(21, 21, 21)
+                        .addComponent(jButtonVolverInicio)
+                        .addGap(235, 235, 235)
+                        .addComponent(jButtonAccederInicio))
                     .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
-                        .addGap(99, 99, 99)
+                        .addGap(152, 152, 152)
+                        .addComponent(jLabel3))
+                    .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPasswordFieldInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCorreoInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jLabel13))
+                    .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
+                        .addGap(109, 109, 109)
                         .addComponent(jLabel12)))
-                .addContainerGap(103, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelInicioSesionLayout.setVerticalGroup(
             jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
-                .addGap(86, 86, 86)
+                .addGap(59, 59, 59)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldCorreoInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -243,13 +259,15 @@ public class main extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPasswordFieldInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel12)
-                .addGap(25, 25, 25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel13)
+                .addGap(26, 26, 26)
                 .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAccederInicio)
                     .addComponent(jButtonVolverInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(159, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelInicioSesion, "card2");
@@ -326,9 +344,8 @@ public class main extends javax.swing.JFrame {
                 .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9))
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel8))
+                .addGap(0, 354, Short.MAX_VALUE))
             .addGroup(jPanelRegistroLayout.createSequentialGroup()
                 .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelRegistroLayout.createSequentialGroup()
@@ -338,7 +355,9 @@ public class main extends javax.swing.JFrame {
                                 .addComponent(jTextFieldCorreoRegistro)
                                 .addComponent(jPasswordFieldRegistro1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
                                 .addComponent(jTextFieldNombreRegistro))
-                            .addComponent(jLabel2))
+                            .addGroup(jPanelRegistroLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel2)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(choiceTipoUsuRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -347,9 +366,13 @@ public class main extends javax.swing.JFrame {
                         .addComponent(jButtonVolverRegistro)
                         .addGap(93, 93, 93)
                         .addComponent(jLabel5)
-                        .addGap(0, 149, Short.MAX_VALUE))
+                        .addGap(0, 196, Short.MAX_VALUE))
                     .addGroup(jPanelRegistroLayout.createSequentialGroup()
-                        .addComponent(jPasswordFieldRegistro2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPasswordFieldRegistro2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanelRegistroLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel9)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonRegistrarseRegistro)))
                 .addContainerGap())
@@ -361,19 +384,23 @@ public class main extends javax.swing.JFrame {
                 .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jButtonVolverRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelRegistroLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRegistroLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldNombreRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(choiceTipoUsuRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(2, 2, 2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(2, 2, 2)
                 .addComponent(jTextFieldApellidosRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldCorreoRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -382,11 +409,11 @@ public class main extends javax.swing.JFrame {
                         .addGap(91, 91, 91)
                         .addComponent(jButtonRegistrarseRegistro))
                     .addGroup(jPanelRegistroLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPasswordFieldRegistro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPasswordFieldRegistro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -442,12 +469,12 @@ public class main extends javax.swing.JFrame {
             .addGroup(jPanelRutasLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPaneRutas, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
+                    .addComponent(jScrollPaneRutas, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
                     .addGroup(jPanelRutasLayout.createSequentialGroup()
                         .addComponent(jButtonVolverRutas)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(45, 45, 45)
                         .addComponent(jButtonInfoRutas)))
                 .addContainerGap())
         );
@@ -458,7 +485,7 @@ public class main extends javax.swing.JFrame {
                 .addGroup(jPanelRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelRutasLayout.createSequentialGroup()
                         .addComponent(jButtonVolverRutas, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
                         .addComponent(jButtonInfoRutas))
                     .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -468,27 +495,71 @@ public class main extends javax.swing.JFrame {
 
         getContentPane().add(jPanelRutas, "card5");
 
-        jLabelNombreRuta.setFont(new java.awt.Font("Segoe UI", 0, 17)); // NOI18N
-        jLabelNombreRuta.setText("texto de muestra");
-        jLabelNombreRuta.addComponentListener(new java.awt.event.ComponentAdapter() {
+        jPanelInfoRuta.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
-                jLabelNombreRutaComponentShown(evt);
+                jPanelInfoRutaComponentShown(evt);
             }
         });
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = {
-                "Nivel de Riesgo: ",
-                "Nivel de Esfuerzo: ",
-                "Tipo de Terreno: ",
-                "Calidad de Indicaciones: ",
-                "Accesibilidad: ",
-                "Familiar",
-                "Zona Geografica"};
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        jLabelNombreRutaInfo.setFont(new java.awt.Font("Segoe UI", 0, 17)); // NOI18N
+        jLabelNombreRutaInfo.setText("texto de muestra");
+        jLabelNombreRutaInfo.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                jLabelNombreRutaInfoComponentShown(evt);
+            }
         });
-        jScrollPane1.setViewportView(jList1);
+
+        jTableInfo.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Distancia", null},
+                {"Duracion Estimada", null},
+                {"Clasificacion", null},
+                {"Nivel de Riesgo", null},
+                {"Nivel de Esfuerzo", null},
+                {"Tipo de Terreno", null},
+                {"Zona", null},
+                {null,"Escala 1-5"},
+                {"Indicaciones", null},
+                {"Accesibilidad", null},
+                {"Familiar", null},
+                {"Valoracion Media", null}
+
+            },
+            new Object[] {"nombre","info"}
+        ){
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        });
+
+        jButtonVolverInfo.setText("Volver");
+        jButtonVolverInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverInfoActionPerformed(evt);
+            }
+        });
+
+        jButtonReseñarInfo.setText("Reseñar");
+        jButtonReseñarInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonReseñarInfoActionPerformed(evt);
+            }
+        });
+
+        jButtonValorarInfo.setText("Valorar");
+        jButtonValorarInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonValorarInfoActionPerformed(evt);
+            }
+        });
+
+        jButtonVerValResInfo.setText("Ver Valoraciones/Reseñas");
+        jButtonVerValResInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerValResInfoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelInfoRutaLayout = new javax.swing.GroupLayout(jPanelInfoRuta);
         jPanelInfoRuta.setLayout(jPanelInfoRutaLayout);
@@ -496,23 +567,153 @@ public class main extends javax.swing.JFrame {
             jPanelInfoRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelInfoRutaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelNombreRuta)
-                .addContainerGap(275, Short.MAX_VALUE))
-            .addGroup(jPanelInfoRutaLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(jPanelInfoRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelNombreRutaInfo)
+                    .addComponent(jButtonVolverInfo)
+                    .addGroup(jPanelInfoRutaLayout.createSequentialGroup()
+                        .addComponent(jTableInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanelInfoRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelInfoRutaLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButtonVerValResInfo))
+                            .addGroup(jPanelInfoRutaLayout.createSequentialGroup()
+                                .addGap(53, 53, 53)
+                                .addGroup(jPanelInfoRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButtonReseñarInfo)
+                                    .addComponent(jButtonValorarInfo))))))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
         jPanelInfoRutaLayout.setVerticalGroup(
             jPanelInfoRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelInfoRutaLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabelNombreRuta)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jButtonVolverInfo)
+                .addGap(2, 2, 2)
+                .addComponent(jLabelNombreRutaInfo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanelInfoRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTableInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanelInfoRutaLayout.createSequentialGroup()
+                        .addComponent(jButtonVerValResInfo)
+                        .addGap(43, 43, 43)
+                        .addComponent(jButtonReseñarInfo)
+                        .addGap(44, 44, 44)
+                        .addComponent(jButtonValorarInfo)))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelInfoRuta, "card6");
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        jButtonVolverValoraciones.setText("Volver");
+        jButtonVolverValoraciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverValoracionesActionPerformed(evt);
+            }
+        });
+
+        jTableResenas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Usuario", "Valoración (1-5)", "Fecha", "Comentario"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPaneResenas.setViewportView(jTableResenas);
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel15.setText("VALORACIONES");
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel16.setText("Reseñas");
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel17.setText("Valoraciones técnicas");
+
+        jTableValTecn.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Usuario", "DIficultad (1-5)", "Belleza (1-5)", "Interés cultural (1-5)", "Fecha"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPaneValTecn.setViewportView(jTableValTecn);
+
+        javax.swing.GroupLayout jPanelValoracionesRutaLayout = new javax.swing.GroupLayout(jPanelValoracionesRuta);
+        jPanelValoracionesRuta.setLayout(jPanelValoracionesRutaLayout);
+        jPanelValoracionesRutaLayout.setHorizontalGroup(
+            jPanelValoracionesRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelValoracionesRutaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelValoracionesRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPaneValTecn, javax.swing.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE)
+                    .addComponent(jScrollPaneResenas, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel17)
+                    .addGroup(jPanelValoracionesRutaLayout.createSequentialGroup()
+                        .addComponent(jButtonVolverValoraciones)
+                        .addGroup(jPanelValoracionesRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelValoracionesRutaLayout.createSequentialGroup()
+                                .addGap(92, 92, 92)
+                                .addComponent(jLabel14))
+                            .addGroup(jPanelValoracionesRutaLayout.createSequentialGroup()
+                                .addGap(74, 74, 74)
+                                .addComponent(jLabel15)))))
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+        jPanelValoracionesRutaLayout.setVerticalGroup(
+            jPanelValoracionesRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelValoracionesRutaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel14)
+                .addGap(10, 10, 10)
+                .addGroup(jPanelValoracionesRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonVolverValoraciones)
+                    .addComponent(jLabel15))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPaneResenas, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPaneValTecn, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanelValoracionesRuta, "card7");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -542,6 +743,14 @@ public class main extends javax.swing.JFrame {
 
     private void jButtonAccederInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAccederInicioActionPerformed
         // TODO add your handling code here:
+        /* Dejamos los jLabel invisibles hasta que le de al boton, entonces en el if se comprobara que el usuario
+        escrito existe, si no existe se veran los jLabel informando de ello*/
+        jLabel12.setVisible(false);
+        jLabel13.setVisible(false);
+        // if(){
+            jLabel12.setVisible(true);
+            jLabel13.setVisible(true);
+        //}
     }//GEN-LAST:event_jButtonAccederInicioActionPerformed
 
     private void jButtonVolverInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverInicioActionPerformed
@@ -578,20 +787,24 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVolverRegistroActionPerformed
 
     private void jButtonRegistrarseRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarseRegistroActionPerformed
+        // creamos las contraseñas y las casteamos a String para tratarlas en el if y ver si las contraseñas coinciden
         String contra1 = new String(jPasswordFieldRegistro1.getPassword());
         String contra2 = new String(jPasswordFieldRegistro2.getPassword());
         if (contra1.equals(contra2)) {
             JOptionPane.showMessageDialog(jPanelRegistro, "Su registro será completado cuando un administrador lo valide\nSe le enviará un mensaje al correo electronico", "Registro", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(jPanelRegistro, "Las contrasenas no coinciden\nAsegurese de que sean iguales");
+            JOptionPane.showMessageDialog(jPanelRegistro, "Las contrasenas no coinciden\nAsegurese de que sean iguales", "Error", JOptionPane.ERROR_MESSAGE);
         }
         //Falta el codigo de creacion del usuario, la validacion de que está todo introducido
     }//GEN-LAST:event_jButtonRegistrarseRegistroActionPerformed
 
     private void jButtonVolverRutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverRutasActionPerformed
         jPanelRutas.setVisible(false);
-        jPanelPrincipal.setVisible(true);
-        //Cuando haya menu de opciones, hay que controlar el nivel de acceso para volver a Nivel 0-> jPanelPrincipal  Otros niveles-> jPanelMenu (o como se llame)
+        if (nivelAcceso == 0) {
+            jPanelPrincipal.setVisible(true);
+        } else {
+            //Cuando haya menu de opciones, hay que controlar el nivel de acceso para volver a Nivel 0-> jPanelPrincipal  Otros niveles-> jPanelMenu (o como se llame)
+        }
     }//GEN-LAST:event_jButtonVolverRutasActionPerformed
 
     private void jButtonInfoRutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInfoRutasActionPerformed
@@ -605,21 +818,15 @@ public class main extends javax.swing.JFrame {
             DefaultTableModel modeloGeneral = (DefaultTableModel) jTableRutas.getModel();
             String nombreRuta = (String) modeloGeneral.getValueAt(rutaIndex, 0);
             //Ponemos el nombre de la ruta al label
-            jLabelNombreRuta.setText(nombreRuta);
-            //La gestion de la lista con la info
-           
+            jLabelNombreRutaInfo.setText(nombreRuta);
+            //La gestion de la tabla con la info
+
             //Implementar la informacion obtenida mediante la base de datos cuando sea posible
             //De momento voy a incluir datos de prueba
-            
-
         } else {
             JOptionPane.showMessageDialog(jPanelInfoRuta, "No has seleccionado ninguna ruta", "", JOptionPane.QUESTION_MESSAGE);
         }
     }//GEN-LAST:event_jButtonInfoRutasActionPerformed
-
-    private void jLabelNombreRutaComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jLabelNombreRutaComponentShown
-
-    }//GEN-LAST:event_jLabelNombreRutaComponentShown
 
     private void jPanelRutasComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jPanelRutasComponentShown
         // Cogiendo el modelo y parseandolo a DefaultTableModel tenemos acceso a metodos que nos permiten añadir/eliminar/recoger filas de la tabla
@@ -627,7 +834,6 @@ public class main extends javax.swing.JFrame {
         //Con esto no se puede mover el encabezado de la tabla
         jTableRutas.getTableHeader().setReorderingAllowed(false);
         //Eliminamos la filas que haya actualmente cargadas para actualizar el listado sin repetir rutas
-        System.out.println(modelo.getRowCount());
         int numFilas = modelo.getRowCount();
         for (int i = 0; i < numFilas; i++) {
             modelo.removeRow(0);
@@ -645,6 +851,53 @@ public class main extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButtonReseñarInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReseñarInfoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonReseñarInfoActionPerformed
+
+    private void jButtonVolverInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverInfoActionPerformed
+
+        jPanelInfoRuta.setVisible(false);
+        jPanelRutas.setVisible(true);
+    }//GEN-LAST:event_jButtonVolverInfoActionPerformed
+
+    private void jLabelNombreRutaInfoComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jLabelNombreRutaInfoComponentShown
+
+    }//GEN-LAST:event_jLabelNombreRutaInfoComponentShown
+
+    private void jPanelInfoRutaComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jPanelInfoRutaComponentShown
+        //Control de visibilidad de los botones
+        if (nivelAcceso < 1) {
+            jButtonVerValResInfo.setVisible(true);
+            jButtonReseñarInfo.setVisible(false);
+            jButtonValorarInfo.setVisible(false);
+        } else if (nivelAcceso < 2) {
+            jButtonVerValResInfo.setVisible(true);
+            jButtonReseñarInfo.setVisible(true);
+            jButtonValorarInfo.setVisible(false);
+        } else {
+            jButtonVerValResInfo.setVisible(true);
+            jButtonReseñarInfo.setVisible(true);
+            jButtonValorarInfo.setVisible(true);
+        }
+
+    }//GEN-LAST:event_jPanelInfoRutaComponentShown
+
+    private void jButtonValorarInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValorarInfoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonValorarInfoActionPerformed
+
+    private void jButtonVerValResInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerValResInfoActionPerformed
+        // TODO add your handling code here:
+        jPanelInfoRuta.setVisible(false);
+        jPanelValoracionesRuta.setVisible(true);
+    }//GEN-LAST:event_jButtonVerValResInfoActionPerformed
+
+    private void jButtonVolverValoracionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverValoracionesActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButtonVolverValoracionesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -688,14 +941,24 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton jButtonIniciarSesion;
     private javax.swing.JButton jButtonRegistrarse;
     private javax.swing.JButton jButtonRegistrarseRegistro;
+    private javax.swing.JButton jButtonReseñarInfo;
+    private javax.swing.JButton jButtonValorarInfo;
     private javax.swing.JButton jButtonVerRutas;
+    private javax.swing.JButton jButtonVerValResInfo;
+    private javax.swing.JButton jButtonVolverInfo;
     private javax.swing.JButton jButtonVolverInicio;
     private javax.swing.JButton jButtonVolverRegistro;
     private javax.swing.JButton jButtonVolverRutas;
+    private javax.swing.JButton jButtonVolverValoraciones;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -705,19 +968,23 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelLogo;
-    private javax.swing.JLabel jLabelNombreRuta;
-    private javax.swing.JList<String> jList1;
+    private javax.swing.JLabel jLabelNombreRutaInfo;
     private javax.swing.JPanel jPanelInfoRuta;
     private javax.swing.JPanel jPanelInicioSesion;
     private javax.swing.JPanel jPanelPrincipal;
     private javax.swing.JPanel jPanelRegistro;
     private javax.swing.JPanel jPanelRutas;
+    private javax.swing.JPanel jPanelValoracionesRuta;
     private javax.swing.JPasswordField jPasswordFieldInicio;
     private javax.swing.JPasswordField jPasswordFieldRegistro1;
     private javax.swing.JPasswordField jPasswordFieldRegistro2;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPaneResenas;
     private javax.swing.JScrollPane jScrollPaneRutas;
+    private javax.swing.JScrollPane jScrollPaneValTecn;
+    private javax.swing.JTable jTableInfo;
+    private javax.swing.JTable jTableResenas;
     private javax.swing.JTable jTableRutas;
+    private javax.swing.JTable jTableValTecn;
     private javax.swing.JTextField jTextFieldApellidosRegistro;
     private javax.swing.JTextField jTextFieldCorreoInicio;
     private javax.swing.JTextField jTextFieldCorreoRegistro;

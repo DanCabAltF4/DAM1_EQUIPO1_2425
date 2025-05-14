@@ -4,17 +4,17 @@
  */
 package com.mycompany.gestorActividades;
 
-import Enumerados.Estado;
-
 /**
  *
  * @author DAM102
  */
-public class Administrador extends Profesor{
-    
-    public Administrador(String nombre, String apellidos, String email, char contrasena, Estado estado) {
-        super(nombre, apellidos, email, contrasena, estado);
+abstract class FichaInformativa {
+    protected Disenador creador;
+    protected Ruta ruta;
+
+    public FichaInformativa(Disenador creador, Ruta ruta) {
+        this.creador = creador;
+        this.ruta = ruta;
     }
-    
-    
+
 }

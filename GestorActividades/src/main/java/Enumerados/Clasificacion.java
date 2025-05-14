@@ -8,6 +8,6 @@ package Enumerados;
  *
  * @author Raúl Buenaga
  */
-public enum Clasificación {
+public enum Clasificacion {
     CIRCULAR,LINEAL;
 }

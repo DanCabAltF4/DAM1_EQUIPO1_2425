@@ -15,5 +15,11 @@ abstract class Valoracion {
     protected Ruta ruta;
     protected Disenador votante;
     protected LocalDate fecha;
+
+    public Valoracion(Ruta ruta, Disenador votante, LocalDate fecha) {
+        this.ruta = ruta;
+        this.votante = votante;
+        this.fecha = fecha;
+    }
     
 }

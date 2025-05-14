@@ -52,7 +52,7 @@ public class Utilidad {
         return temp;
     }
     
-    public static boolean nextBolean(String cadena) {
+    public static boolean nextBoolean(String cadena) {
         boolean temp = false;
         boolean salir = false;
         Scanner teclado = new Scanner(System.in);

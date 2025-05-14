@@ -4,7 +4,7 @@
  */
 package com.mycompany.gestorActividades;
 
-import Enumerados.PuntosTipos;
+import Enumerados.TipoPunto;
 
 /**
  *
@@ -13,10 +13,10 @@ import Enumerados.PuntosTipos;
 public class PuntoInteres extends Waypoint {
     
     private String nombre;
-    private PuntosTipos tipo;
+    private TipoPunto tipo;
     private String caracteristicas;
 
-    public PuntoInteres(String descripcion, String imagen,String nombre, PuntosTipos tipo, String caracteristicas) {
+    public PuntoInteres(String descripcion, String imagen,String nombre, TipoPunto tipo, String caracteristicas) {
         super(descripcion,imagen);
         this.nombre = nombre;
         this.tipo = tipo;
