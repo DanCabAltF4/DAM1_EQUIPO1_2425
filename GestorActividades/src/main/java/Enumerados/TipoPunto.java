@@ -8,7 +8,7 @@ package Enumerados;
  *
  * @author Raúl Buenaga
  */
-public enum PuntosTipos {
+public enum TipoPunto {
     
     HISTÓRICOARQUEOLÓGICO,NATURALEZA,MIRADOR,ÁREADEDESCANSO,puntodeagua,ALOJAMIENTO,CULTURAL,GEOLÓGICO,FAUNAESPECIFICA,BOTÁNICO;
 }

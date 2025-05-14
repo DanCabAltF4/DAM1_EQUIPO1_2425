@@ -10,22 +10,22 @@ import Enumerados.Estado;
  *
  * @author DAM102
  */
-public class Alumno extends Invitado{
+public class Alumno extends Invitado {
 
-    protected int id;
     protected String nombre, apellidos, email;
     protected char contrasena;
     protected Estado estado;
-    
+
     //constructor que crea un alumno con el estado en pendiente
-    public Alumno(int id, String nombre, String apellidos, String email, char contrasena) {
-        this.id = id;
+    public Alumno(String nombre, String apellidos, String email, char contrasena) {
+
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.email = email;
         this.contrasena = contrasena;
         estado = Estado.PENDIENTE;
     }
+
     //constructor que crea un alumno según figura en la base de datos
     public Alumno(String nombre, String apellidos, String email, char contrasena, Estado estado) {
         this.nombre = nombre;
@@ -36,12 +36,6 @@ public class Alumno extends Invitado{
     }
 
     //Métodos
-
-    
-    public int getId() {
-        return id;
-    }
-
     public String getNombre() {
         return nombre;
     }

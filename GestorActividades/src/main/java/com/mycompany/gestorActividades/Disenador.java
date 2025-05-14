@@ -4,14 +4,16 @@
  */
 package com.mycompany.gestorActividades;
 
+import Enumerados.Estado;
+
 /**
  *
  * @author Raúl Buenaga
  */
 public class Disenador extends Alumno{
     
-    public Disenador(int id, String nombre, String apellidos, String email, char contrasena) {
-        super(id, nombre, apellidos, email, contrasena);
+    public Disenador(String nombre, String apellidos, String email, char contrasena, Estado estado) {
+        super(nombre, apellidos, email, contrasena, estado);
     }
     
 }

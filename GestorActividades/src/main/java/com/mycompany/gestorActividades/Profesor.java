@@ -10,11 +10,10 @@ import Enumerados.Estado;
  *
  * @author DAM102
  */
-public class Administrador extends Profesor{
+public class Profesor extends Disenador {
     
-    public Administrador(String nombre, String apellidos, String email, char contrasena, Estado estado) {
+    public Profesor(String nombre, String apellidos, String email, char contrasena, Estado estado) {
         super(nombre, apellidos, email, contrasena, estado);
     }
-    
     
 }
