@@ -2,7 +2,7 @@ body {
   display: flex;
   margin: 0;
   font-family: Arial, sans-serif;
-  background-image: url("/imagenes/Forest_of_Sai_Yok_National_Park.jpg");
+  background-image: url("/PaginaWeb/imagenesWeb/Forest_of_Sai_Yok_National_Park.jpg");
   backdrop-filter: blur(5px);
   flex-direction: column;
   min-height: 100vh; /*Hace que el cuerpo ocupe todo el espacio visible*/
