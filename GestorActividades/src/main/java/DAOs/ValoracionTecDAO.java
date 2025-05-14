@@ -6,7 +6,7 @@ package DAOs;
 
 import com.mycompany.gestorActividades.AccesoBaseDatos;
 import com.mycompany.gestorActividades.Repositorio;
-import com.mycompany.gestorActividades.ValoracionTécnica;
+import com.mycompany.gestorActividades.ValoracionTecnica;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -20,7 +20,7 @@ import java.util.List;
  *
  * @author DAM105
  */
-public class ValoracionTecDAO implements Repositorio<ValoracionTécnica>{
+public class ValoracionTecDAO implements Repositorio<ValoracionTecnica>{
     
     
     private Connection conn;
@@ -30,9 +30,9 @@ public class ValoracionTecDAO implements Repositorio<ValoracionTécnica>{
     }
     
     @Override
-    public List<ValoracionTécnica> listar() {
-        List<ValoracionTécnica> lista = new ArrayList<>();
-        ValoracionTécnica v;
+    public List<ValoracionTecnica> listar() {
+        List<ValoracionTecnica> lista = new ArrayList<>();
+        ValoracionTecnica v;
         try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select dificultad,bellezaPaisajistica,interesCultural,fecha,usuario,ruta FROM valoracionesTecnicas")) {
                 while (rs.next()) {
                     v = crearValoracion(rs);
@@ -51,8 +51,8 @@ public class ValoracionTecDAO implements Repositorio<ValoracionTécnica>{
     }
 
     @Override
-    public ValoracionTécnica porId(int id) {
-        ValoracionTécnica valoracion = null;
+    public ValoracionTecnica porId(int id) {
+        ValoracionTecnica valoracion = null;
         try (PreparedStatement stmt = conn.prepareStatement("SELECT idValora, dificultad, fecha, estrellas, interesCultural, belleza FROM valora WHERE idValora = ?")) {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery();) {
@@ -69,9 +69,9 @@ public class ValoracionTecDAO implements Repositorio<ValoracionTécnica>{
     }
 
     @Override
-    public void modificar(ValoracionTécnica t) {
+    public void modificar(ValoracionTecnica t) {
         try (PreparedStatement stmt = conn.prepareStatement("UPDATE valoracionesTecnicas SET dificultad = ?,bellezaPaisajistica = ?,interesCultural = ?,fecha = ?,usuario = ?,ruta= ? WHERE idValora = ?")) {
-            stmt.setInt(1, t.getDificultad());
+            
             
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha modificado la valoracion");
@@ -85,14 +85,9 @@ public class ValoracionTecDAO implements Repositorio<ValoracionTécnica>{
     }
 
     @Override
-    public void agregar(ValoracionTécnica t) {
+    public void agregar(ValoracionTecnica t) {
         try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO valoracionesTecnicas (dificultad,bellezaPaisajistica,interesCultural,fecha,usuario,ruta) VALUES (?, ?, ?, ?, ?, ?)")) {
-            stmt.setInt(1, t.getDificultad());
-            stmt.setInt(2, t.getBellezaPaisajistica());
-            stmt.setInt(3, t.getInteresCultural());
-            stmt.setDate(4, Date.valueOf(t.getFecha()));
-            stmt.setObject(4, t.getUsuario());
-            stmt.setObject(5, t.getRuta());
+            
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha creado la valoracion");
             }
@@ -119,7 +114,7 @@ public class ValoracionTecDAO implements Repositorio<ValoracionTécnica>{
         }
     }
     
-     public ValoracionTécnica crearValoracion(final ResultSet rs) throws Exception {
-        return new ValoracionTécnica(rs.getInt("dificultad"),rs.getInt("belleza paisajistica"),rs.getInt("interes cultural"),rs.getDate("fecha").toLocalDate());
+     public ValoracionTecnica crearValoracion(final ResultSet rs) throws Exception {
+        return new ValoracionTecnica(rs.getInt("dificultad"),rs.getInt("belleza paisajistica"),rs.getInt("interes cultural"));
     }
 }

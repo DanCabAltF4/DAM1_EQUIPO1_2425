@@ -6,7 +6,7 @@ package DAOs;
 
 import com.mycompany.gestorActividades.AccesoBaseDatos;
 import com.mycompany.gestorActividades.Repositorio;
-import com.mycompany.gestorActividades.Reseña;
+import com.mycompany.gestorActividades.Resena;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,7 +19,7 @@ import java.util.List;
  *
  * @author Raúl Buenaga
  */
-public class ReseñaDAO implements Repositorio<Reseña>{
+public class ReseñaDAO implements Repositorio<Resena>{
        
     private Connection conn;
 
@@ -28,9 +28,9 @@ public class ReseñaDAO implements Repositorio<Reseña>{
     }
     
     @Override
-    public List<Reseña> listar() {
-        List<Reseña> lista = new ArrayList<>();
-        Reseña r;
+    public List<Resena> listar() {
+        List<Resena> lista = new ArrayList<>();
+        Resena r;
         try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select  FROM resenna")) {
                 while (rs.next()) {
                     r = crearReseña(rs);
@@ -48,8 +48,8 @@ public class ReseñaDAO implements Repositorio<Reseña>{
     }
 
     @Override
-    public Reseña porId(int id) {
-        Reseña resena = null;
+    public Resena porId(int id) {
+        Resena resena = null;
         try (PreparedStatement stmt = conn.prepareStatement("SELECT  FROM resenna WHERE  = ?")) {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery();) {
@@ -66,9 +66,9 @@ public class ReseñaDAO implements Repositorio<Reseña>{
     }
 
     @Override
-    public void modificar(Reseña r) {
+    public void modificar(Resena r) {
         try (PreparedStatement stmt = conn.prepareStatement("UPDATE resenna SET  WHERE = ?")) {
-            stmt.setString(1, u.getNombre());
+            
             
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha modificado la resena");
@@ -82,10 +82,9 @@ public class ReseñaDAO implements Repositorio<Reseña>{
     }
 
     @Override
-    public void agregar(Reseña r) {
+    public void agregar(Resena r) {
        try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO resenna () VALUES (?, ?, ?, ?, ?, ? ,?)")) {
-            stmt.setInt(1, u.getId());
-            stmt.setString(2, u.getNombre());
+            
             
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha creado la resena");
@@ -113,7 +112,7 @@ public class ReseñaDAO implements Repositorio<Reseña>{
         } 
     }
     
-     public Reseña crearReseña(final ResultSet rs) throws Exception {
-        return new Reseña();
+     public Resena crearReseña(final ResultSet rs) throws Exception {
+        return new Resena(rs.getString("comentario"),rs.getFloat("estrellas"));
     }
 }

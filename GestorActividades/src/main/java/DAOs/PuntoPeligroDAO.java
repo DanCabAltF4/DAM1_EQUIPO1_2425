@@ -5,7 +5,7 @@
 package DAOs;
 
 import com.mycompany.gestorActividades.AccesoBaseDatos;
-import com.mycompany.gestorActividades.PuntosPeligro;
+import com.mycompany.gestorActividades.PuntoPeligro;
 import com.mycompany.gestorActividades.Repositorio;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,7 +19,7 @@ import java.util.List;
  *
  * @author DAM105
  */
-public class PuntoPeligroDAO implements Repositorio<PuntosPeligro>{
+public class PuntoPeligroDAO implements Repositorio<PuntoPeligro>{
        
     private Connection conn;
 
@@ -28,9 +28,9 @@ public class PuntoPeligroDAO implements Repositorio<PuntosPeligro>{
     }
     
     @Override
-    public List<PuntosPeligro> listar() {
-        List<PuntosPeligro> lista = new ArrayList<>();
-        PuntosPeligro p;
+    public List<PuntoPeligro> listar() {
+        List<PuntoPeligro> lista = new ArrayList<>();
+        PuntoPeligro p;
         try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select id,kilometro,nivelGravedad,descripcion,ruta,longitud,latitud FROM puntosPeligro")) {
                 while (rs.next()) {
                     p = crearPuntoPeligro(rs);
@@ -48,8 +48,8 @@ public class PuntoPeligroDAO implements Repositorio<PuntosPeligro>{
     }
 
     @Override
-    public PuntosPeligro porId(int id) {
-        PuntosPeligro puntoPeligro = null;
+    public PuntoPeligro porId(int id) {
+        PuntoPeligro puntoPeligro = null;
         try (PreparedStatement stmt = conn.prepareStatement("SELECT id,kilometro,nivelGravedad,descripcion,ruta,longitud,latitud FROM puntosPeligro WHERE id = ?")) {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery();) {
@@ -66,9 +66,9 @@ public class PuntoPeligroDAO implements Repositorio<PuntosPeligro>{
     }
 
     @Override
-    public void modificar(PuntosPeligro p) {
+    public void modificar(PuntoPeligro p) {
         try (PreparedStatement stmt = conn.prepareStatement("UPDATE puntosPeligro SET kilometro = ?,nivelGravedad = ?,descripcion = ?,ruta = ?,longitud = ?,latitud = ? WHERE id= ?")) {
-            stmt.setString(1, u.getNombre());
+            
             
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha modificado el punto peligro");
@@ -82,10 +82,9 @@ public class PuntoPeligroDAO implements Repositorio<PuntosPeligro>{
     }
 
     @Override
-    public void agregar(PuntosPeligro u) {
+    public void agregar(PuntoPeligro u) {
        try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO puntosPeligro (id,kilometro,nivelGravedad,descripcion,ruta,longitud,latitud) VALUES (?, ?, ?, ?, ?, ? ,?)")) {
-            stmt.setInt(1, u.getId());
-            stmt.setString(2, u.getNombre());
+            
             
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha creado el usuario");
@@ -113,7 +112,7 @@ public class PuntoPeligroDAO implements Repositorio<PuntosPeligro>{
         } 
     }
     
-     public PuntosPeligro crearPuntoPeligro(final ResultSet rs) throws Exception {
-        return new PuntosPeligro(rs.getInt("id"),rs.getString("nombre"),rs.getString("apellidos"),rs.getString("email"),rs.get);
+     public PuntoPeligro crearPuntoPeligro(final ResultSet rs) throws Exception {
+        return new PuntoPeligro(rs.getString("descripcion"),rs.getString("imagen"),rs.getDouble("km"),rs.getInt("nivel de gravedad"));
     }
 }

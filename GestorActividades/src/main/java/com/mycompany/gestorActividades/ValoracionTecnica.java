@@ -20,4 +20,31 @@ public class ValoracionTecnica {
         this.interes = interes;
     }
     
+    //Métodos
+
+    public int getDificultad() {
+        return dificultad;
+    }
+
+    public void setDificultad(int dificultad) {
+        this.dificultad = dificultad;
+    }
+
+    public int getBelleza() {
+        return belleza;
+    }
+
+    public void setBelleza(int belleza) {
+        this.belleza = belleza;
+    }
+
+    public int getInteres() {
+        return interes;
+    }
+
+    public void setInteres(int interes) {
+        this.interes = interes;
+    }
+    
+    
 }
