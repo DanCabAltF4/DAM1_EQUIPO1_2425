@@ -113,3 +113,6 @@ footer {
   box-shadow: -1px -1px  1px black;
   text-shadow: 0px 0px 2px white;
 }
+figcaption {
+  font-size: xx-small;
+}
