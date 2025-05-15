@@ -3,9 +3,10 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-image: url("/PaginaWeb/imagenesWeb/Forest_of_Sai_Yok_National_Park.jpg");
-  backdrop-filter: blur(5px) brightness(0.3); 
+  backdrop-filter: blur(5px) brightness(0.3);
   flex-direction: column;
-  min-height: 100vh; /*Hace que el cuerpo ocupe todo el espacio visible*/
+  min-height: 100vh;
+  /*Hace que el cuerpo ocupe todo el espacio visible*/
 }
 
 #encabezado {
@@ -43,11 +44,12 @@ body {
   border-radius: 5px;
 }
 
-#menu a{
+#menu a {
   text-decoration: none;
   color: black;
-  
+
 }
+
 /*Si juntases estas dos (a y li) lo que es el boton se limitaria el texto-*/
 #menu li {
   padding: 12px;
@@ -59,8 +61,10 @@ body {
 }
 
 main {
-  flex: 1; /*Como el resto de elementos del body no tienen atributo flex, main toma todo el espacio posible, así el footer siempre estará abajo del todo*/
+  flex: 1;
+  /*Como el resto de elementos del body no tienen atributo flex, main toma todo el espacio posible, así el footer siempre estará abajo del todo*/
 }
+
 article {
   display: flex;
   flex-direction: column;
@@ -77,6 +81,9 @@ article h1 {
   margin-bottom: 10px;
 }
 
+
+
+
 #contenido {
   display: flex;
   flex-direction: row;
@@ -84,13 +91,19 @@ article h1 {
   justify-content: center;
   text-align: center;
 }
+
 #texto p {
   text-align: justify;
   align-self: stretch;
   margin: 10px 0;
 }
 
- #imagenes {
+#texto ul {
+  text-align: left;
+  list-style-type: none;
+}
+
+#imagenes {
   align-self: stretch;
   display: flex;
   flex-direction: row;
@@ -98,21 +111,50 @@ article h1 {
   justify-content: center;
   flex-wrap: wrap;
 }
+
 article figure img {
-  max-width: 200px; /* Limit the image width */
+  max-width: 200px;
+  /* Limit the image width */
   height: auto;
   border: 1px solid black;
   border-radius: 5px;
 }
+
 footer {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   background: linear-gradient(to bottom, gray, #222);
-  box-shadow: -1px -1px  1px black;
-  text-shadow: 0px 0px 2px white;
+  box-shadow: -1px -1px 1px black;
+  text-shadow: 0px 0px 2px black;
+  color: white;
 }
+
 figcaption {
   font-size: xx-small;
+}
+
+#datosRuta {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#datosRuta p {
+  margin: 5px;
+  padding: 5px;
+  background-color: rgba(205, 230, 221, 0.603);
+  border-radius: 10px;
+  box-shadow: -1px -1px 2px black;
+}
+
+#sin-decorar {
+  text-decoration: none;
+  color: black;
+}
+
+#principalRuta {
+  display: flex;;
+  flex-direction: row;
+  align-items: center;
 }
