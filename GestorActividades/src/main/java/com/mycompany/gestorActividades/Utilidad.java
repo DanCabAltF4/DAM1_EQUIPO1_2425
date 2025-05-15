@@ -92,4 +92,19 @@ public class Utilidad {
         }
         return temp;
     }
+    
+    public static String email() {
+        String temp = "";
+        boolean salir = false;
+        do {
+            temp = Utilidad.nextString("Email: ");
+            if (temp.contains("@")) {
+                salir = true;
+            } else {
+                System.out.println("Email no valido, vuelva a intentarlo.");
+            }
+        } while (!salir);
+
+        return temp;
+    }
 }

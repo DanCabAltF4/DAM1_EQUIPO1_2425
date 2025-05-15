@@ -4,6 +4,8 @@
  */
 package DAOs;
 
+import Enumerados.Clasificacion;
+import Enumerados.Estado;
 import com.mycompany.gestorActividades.AccesoBaseDatos;
 import com.mycompany.gestorActividades.Repositorio;
 import com.mycompany.gestorActividades.Ruta;
@@ -30,10 +32,10 @@ public class RutaDAO implements Repositorio<Ruta>{
     @Override
     public List<Ruta> listar() {
         List<Ruta> lista = new ArrayList<>();
-        Ruta r = null;
+        Ruta r;
         try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select  FROM rutas")) {
                 while (rs.next()) {
-                    
+                    r = crearRuta(rs);
                     if (!lista.add(r)) {
                         throw new Exception("ERROR: la ruta no ha sido añadido");
                     }
@@ -54,7 +56,7 @@ public class RutaDAO implements Repositorio<Ruta>{
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
-                    
+                    resena = crearRuta(rs);
                 }
             }
         } catch (SQLException e) {
@@ -98,10 +100,10 @@ public class RutaDAO implements Repositorio<Ruta>{
         }
     }
 
-    
-    public void eliminar(int id) {
-        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM rutas WHERE idRuta=?")) {
-            stmt.setObject(1, id);
+    @Override
+    public void eliminar(String nombre) {
+        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM rutas WHERE nombre=?")) {
+            stmt.setObject(1, nombre);
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: la ruta no existe");
             }
@@ -113,11 +115,34 @@ public class RutaDAO implements Repositorio<Ruta>{
         } 
     }
     
-       
-
-    @Override
-    public void eliminar(String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+     public Ruta crearRuta(final ResultSet rs) throws Exception {
+        return new Ruta(rs.getInt("nivel de riesgo")
+                ,rs.getInt("nivel de esfuerzo")
+                ,rs.getInt("tipo de terreno")
+                ,rs.getInt("indicaciones")
+                ,rs.getBoolean("accesibilidad")
+                ,rs.getBoolean("familiar")
+                ,rs.getInt("duracion")
+                ,rs.getString("nombre")
+                ,rs.getString("gpx")
+                ,rs.getString("recomendaciones")
+                ,rs.getString("zona")
+                ,rs.getDate("fechaCreacion").toLocalDate()
+                ,rs.getDouble("longInicio")
+                ,rs.getDouble("longFinal")
+                ,rs.getDouble("latInicio")
+                ,rs.getDouble("latFinal")
+                ,rs.getDouble("altMax")
+                ,rs.getDouble("altMin")
+                ,rs.getDouble("desnivelPos")
+                ,rs.getDouble("desnivelNeg")
+                ,rs.getDouble("distancia")
+                ,rs.getDouble("valoracionMedia")
+                ,Clasificacion.valueOf("clasificacion")
+                ,Estado.valueOf("estado")
+                ,null
+                ,null
+                ,null);
+    }     
     
 }
