@@ -33,7 +33,7 @@ public class ValoracionTecDAO implements Repositorio<ValoracionTecnica>{
     public List<ValoracionTecnica> listar() {
         List<ValoracionTecnica> lista = new ArrayList<>();
         ValoracionTecnica v;
-        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select dificultad,bellezaPaisajistica,interesCultural FROM valoracionesTecnicas")) {
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select dificultad,bellezaPaisajistica,interesCultural,Usuario.idUsu,Ruta.idRuta,fecha FROM valoracionesTecnicas")) {
                 while (rs.next()) {
                     v = crearValoracion(rs);
                     if (!lista.add(v)) {
@@ -53,7 +53,7 @@ public class ValoracionTecDAO implements Repositorio<ValoracionTecnica>{
     
     public ValoracionTecnica porId(int id) {
         ValoracionTecnica valoracion = null;
-        try (PreparedStatement stmt = conn.prepareStatement("SELECT idValora, dificultad, fecha, estrellas, interesCultural, belleza FROM valora WHERE idValora = ?")) {
+        try (PreparedStatement stmt = conn.prepareStatement("SELECT dificultad,bellezaPaisajistica,interesCultural,Usuario.idUsu,Ruta.idRuta,fecha FROM valoracionesTecnicas WHERE idValora = ?")) {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
@@ -70,7 +70,7 @@ public class ValoracionTecDAO implements Repositorio<ValoracionTecnica>{
 
     
     public void modificar(ValoracionTecnica t) {
-        try (PreparedStatement stmt = conn.prepareStatement("UPDATE valoracionesTecnicas SET dificultad = ?,bellezaPaisajistica = ?,interesCultural = ?,fecha = ?,usuario = ?,ruta= ? WHERE idValora = ?")) {
+        try (PreparedStatement stmt = conn.prepareStatement("UPDATE valoracionesTecnicas SET dificultad = ?,bellezaPaisajistica = ?,interesCultural = ?,fecha = ? WHERE idValora = ?")) {
             
             
             if (stmt.executeUpdate() != 1) {
@@ -86,8 +86,10 @@ public class ValoracionTecDAO implements Repositorio<ValoracionTecnica>{
 
     
     public void agregar(ValoracionTecnica t) {
-        try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO valoracionesTecnicas (dificultad,bellezaPaisajistica,interesCultural,fecha,usuario,ruta) VALUES (?, ?, ?, ?, ?, ?)")) {
-            
+        try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO valoracionesTecnicas (dificultad,bellezaPaisajistica,interesCultural,idUsu,idRuta,fecha) VALUES (?, ?, ?, ?, ?, ?)")) {
+            stmt.setInt(1, t.getDificultad());
+            stmt.setInt(2, t.getBelleza());
+            stmt.setInt(3, t.getInteres());
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha creado la valoracion");
             }

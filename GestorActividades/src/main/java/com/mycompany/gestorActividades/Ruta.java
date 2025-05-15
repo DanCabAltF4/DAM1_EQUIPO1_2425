@@ -14,17 +14,18 @@ import java.time.LocalDate;
  */
 public class Ruta {
 
-    private int nivelRiesgo, nivelEsfuerzo, tipoTerreno,indicaciones,accesibilidad, familiar,duracion;// niveles,indicaciones, accesibilidad y familiar valores de 1-5
+    private int nivelRiesgo, nivelEsfuerzo, tipoTerreno,indicaciones,duracion;
     private String nombre, gpx, recomendaciones, zona;
     private LocalDate fechaCreacion;
     private double longInicio, longFinal, latInicio, latFinal, altMax, altMin,desnivelPos, desnivelNeg, distancia,valoracionMedia;
+    private boolean accesibilidad,familiar;
     private Clasificacion clasificacion;
     private Estado estado;
     private Invitado usuario;
     private Actividad tipoActividad;
     private Periodo periodo;
 
-    public Ruta(int nivelRiesgo, int nivelEsfuerzo, int tipoTerreno, int indicaciones, int accesibilidad, int familiar, int duracion, String nombre, String gpx, String recomendaciones, String zona, LocalDate fechaCreacion, double longInicio, double longFinal, double latInicio, double latFinal, double altMax, double altMin, double desnivelPos, double desnivelNeg, double distancia, double valoracionMedia, Clasificacion clasificacion, Estado estado, Invitado usuario, Actividad tipoActividad, Periodo periodo) {
+    public Ruta(int nivelRiesgo, int nivelEsfuerzo, int tipoTerreno, int indicaciones, boolean accesibilidad, boolean familiar, int duracion, String nombre, String gpx, String recomendaciones, String zona, LocalDate fechaCreacion, double longInicio, double longFinal, double latInicio, double latFinal, double altMax, double altMin, double desnivelPos, double desnivelNeg, double distancia, double valoracionMedia, Clasificacion clasificacion, Estado estado, Invitado usuario, Actividad tipoActividad, Periodo periodo) {
         this.nivelRiesgo = nivelRiesgo;
         this.nivelEsfuerzo = nivelEsfuerzo;
         this.tipoTerreno = tipoTerreno;
@@ -78,11 +79,11 @@ public class Ruta {
         return indicaciones;
     }
 
-    public int getAccesibilidad() {
+    public boolean getAccesibilidad() {
         return accesibilidad;
     }
 
-    public int getFamiliar() {
+    public boolean getFamiliar() {
         return familiar;
     }
 

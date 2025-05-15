@@ -30,10 +30,10 @@ public class ReseñaDAO implements Repositorio<Resena>{
     @Override
     public List<Resena> listar() {
         List<Resena> lista = new ArrayList<>();
-        Resena r = null;
+        Resena r;
         try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select comentario,Usuario.idUsu,Ruta.idRuta,fecha,valoracion FROM resenna")) {
                 while (rs.next()) {
-                    
+                    r = crearReseña(rs);
                     if (!lista.add(r)) {
                         throw new Exception("ERROR: la resena no ha sido añadido");
                     }
@@ -50,11 +50,11 @@ public class ReseñaDAO implements Repositorio<Resena>{
     
     public Resena porId(int id) {
         Resena resena = null;
-        try (PreparedStatement stmt = conn.prepareStatement("SELECT comentario,Usuario.idUsu,Ruta.idRuta,fecha,valoracion FROM resenna WHERE  idUsu= ?")) {
+        try (PreparedStatement stmt = conn.prepareStatement("SELECT comentario,Usuario.idUsu,Ruta.idRuta,fecha,valoracion FROM resenna WHERE  = ?")) {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
-                    
+                    resena = crearReseña(rs);
                 }
             }
         } catch (SQLException e) {
@@ -67,7 +67,7 @@ public class ReseñaDAO implements Repositorio<Resena>{
 
     
     public void modificar(Resena r) {
-        try (PreparedStatement stmt = conn.prepareStatement("UPDATE resenna SET comentario = ?,fecha = ?,valoracion= ? WHERE idUsu= ?")) {
+        try (PreparedStatement stmt = conn.prepareStatement("UPDATE resenna SET comentario = ?,fecha = ?,valoracion= ? WHERE = ?")) {
             stmt.setString(1, r.getComentario());
             
             
@@ -84,7 +84,7 @@ public class ReseñaDAO implements Repositorio<Resena>{
 
     
     public void agregar(Resena r) {
-       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO resenna () VALUES (?, ?, ?, ?, ?, ? ,?)")) {
+       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO resenna (comentario,idUsu,idRuta,fecha,valoracion) VALUES (?, ?, ?, ?, ?)")) {
             
             
             if (stmt.executeUpdate() != 1) {
@@ -113,7 +113,9 @@ public class ReseñaDAO implements Repositorio<Resena>{
         } 
     }
     
-     
+     public Resena crearReseña(final ResultSet rs) throws Exception {
+        return new Resena(null,null,rs.getDate("fecha").toLocalDate(),rs.getString("comentario"),rs.getFloat("estrellas"));
+    }
 
     @Override
     public void eliminar(String nombre) {

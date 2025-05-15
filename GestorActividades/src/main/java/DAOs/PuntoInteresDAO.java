@@ -32,7 +32,7 @@ public class PuntoInteresDAO implements Repositorio<PuntoInteres>{
     public List<PuntoInteres> listar() {
         List<PuntoInteres> lista = new ArrayList<>();
         PuntoInteres p;
-        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select id,nombre,tipo,descripcion,caracteristicasEspeciales,longitud,latitud,Ruta.idRuta FROM puntosInteres")) {
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select nombre,tipo,descripcion,caracteristicasEspeciales,longitud,latitud,idRuta FROM puntosInteres")) {
                 while (rs.next()) {
                     p = crearPuntoInteres(rs);
                     if (!lista.add(p)) {
@@ -48,10 +48,10 @@ public class PuntoInteresDAO implements Repositorio<PuntoInteres>{
         return lista;
     }
 
-    public PuntoInteres porId(int id) {
+    public PuntoInteres porNombre(String nombre) {
         PuntoInteres puntoInteres = null;
-        try (PreparedStatement stmt = conn.prepareStatement("SELECT nombre,tipo,descripcion,caracteristicasEspeciales,longitud,latitud,Ruta.idRuta FROM puntosInteres WHERE id = ?")) {
-            stmt.setInt(1, id);
+        try (PreparedStatement stmt = conn.prepareStatement("SELECT nombre,tipo,descripcion,caracteristicasEspeciales,longitud,latitud,idRuta WHERE nombre = ?")) {
+            stmt.setString(1, nombre);
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
                     puntoInteres = crearPuntoInteres(rs);
@@ -69,7 +69,7 @@ public class PuntoInteresDAO implements Repositorio<PuntoInteres>{
         try (PreparedStatement stmt = conn.prepareStatement("UPDATE puntosInteres SET nombre = ?,tipo = ?,descripcion = ?,caracteristicasEspeciales = ?,longitud = ?,latitud = ? WHERE id= ?")) {
             stmt.setString(1, p.getNombre());
             stmt.setObject(2, p.getTipo());
-           
+            
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha modificado el punto interes");
             }
@@ -82,8 +82,8 @@ public class PuntoInteresDAO implements Repositorio<PuntoInteres>{
     }
 
     
-    public void agregar(PuntoInteres u) {
-       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO puntosInteres (id,kilometro,nivelGravedad,descripcion,ruta,longitud,latitud) VALUES (?, ?, ?, ?, ?, ? ,?)")) {
+    public void agregar(PuntoInteres p) {
+       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO puntosInteres (nombre,tipo,descripcion,caracteristicasEspeciales,longitud,latitud,idRuta) VALUES (?, ?, ?, ?, ?, ? ,?)")) {
            
             
             if (stmt.executeUpdate() != 1) {
@@ -97,10 +97,10 @@ public class PuntoInteresDAO implements Repositorio<PuntoInteres>{
         }
     }
 
-
-    public void eliminar(int id) {
-        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM puntosInteres WHERE id=?")) {
-            stmt.setObject(1, id);
+    @Override
+    public void eliminar(String nombre) {
+        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM puntosInteres WHERE nombre=?")) {
+            stmt.setObject(1, nombre);
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: el punto interes no existe");
             }
@@ -116,9 +116,5 @@ public class PuntoInteresDAO implements Repositorio<PuntoInteres>{
         return new PuntoInteres(rs.getString("descripcion"),rs.getString("imagen"),rs.getString("nombre"),TipoPunto.valueOf("tipo de punto"),rs.getString("caracteristicas"));
     }
 
-    @Override
-    public void eliminar(String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }  
 

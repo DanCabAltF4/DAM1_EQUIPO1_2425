@@ -10,23 +10,22 @@ package com.mycompany.gestorActividades;
  */
 public class PuntoPeligro extends Waypoint{
     
-    private double km;
-    private int nivGravedad;
+    private int nivGravedad,kilometro;
 
-    public PuntoPeligro(String descripcion, String imagen,double km, int nivGravedad) {
+    public PuntoPeligro(String descripcion, String imagen,int kilometro, int nivGravedad) {
         super(descripcion,imagen);
-        this.km = km;
+        this.kilometro = kilometro;
         this.nivGravedad = nivGravedad;
     }
     
     //Métodos
 
-    public double getKm() {
-        return km;
+    public int getKilometro() {
+        return kilometro;
     }
 
-    public void setKm(double km) {
-        this.km = km;
+    public void setgetKilometro(int kilometro) {
+        this.kilometro = kilometro;
     }
 
     public int getNivGravedad() {
@@ -35,6 +34,14 @@ public class PuntoPeligro extends Waypoint{
 
     public void setNivGravedad(int nivGravedad) {
         this.nivGravedad = nivGravedad;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public String getImagen() {
+        return imagen;
     }
     
 }
