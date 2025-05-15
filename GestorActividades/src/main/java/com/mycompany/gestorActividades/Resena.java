@@ -21,5 +21,23 @@ public class Resena extends Valoracion {
         this.estrellas = estrellas;
 
     }
+    
+    //Métodos
 
+    public String getComentario() {
+        return comentario;
+    }
+
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
+    }
+
+    public float getEstrellas() {
+        return estrellas;
+    }
+
+    public void setEstrellas(float estrellas) {
+        this.estrellas = estrellas;
+    }
+    
 }

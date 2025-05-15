@@ -15,5 +15,15 @@ public class Actividad {
     public Actividad(String tipo) {
         this.tipo = tipo;
     }
+    
+    //Métodos
 
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+    
 }

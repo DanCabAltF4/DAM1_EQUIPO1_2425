@@ -31,7 +31,7 @@ public class ActividadDAO implements Repositorio<Actividad>{
     public List<Actividad> listar() {
         List<Actividad> lista = new ArrayList<>();
         Actividad a;
-        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select id,nomActividad FROM actividad")) {
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select idActividad,nomActividad FROM actividad")) {
                 while (rs.next()) {
                     a = crearActividad(rs);
                     if (!lista.add(a)) {
@@ -47,10 +47,10 @@ public class ActividadDAO implements Repositorio<Actividad>{
         return lista;
     }
 
-    @Override
+    
     public Actividad porId(int id) {
         Actividad actividad = null;
-        try (PreparedStatement stmt = conn.prepareStatement("SELECT id,nomActividad FROM actividad WHERE  id= ?")) {
+        try (PreparedStatement stmt = conn.prepareStatement("SELECT idActividad,nomActividad FROM actividad WHERE idActividad= ?")) {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
@@ -65,11 +65,11 @@ public class ActividadDAO implements Repositorio<Actividad>{
         return actividad;
     }
 
-    @Override
-    public void modificar(Actividad a) {
-        try (PreparedStatement stmt = conn.prepareStatement("UPDATE actividad SET  id= ?,nomActividad=? WHERE id= ?")) {
-            stmt.setInt(1, a.getId());
-            stmt.setString(2, a.getNomActividad());           
+    
+    public void modificar(Actividad a,int id) {
+        try (PreparedStatement stmt = conn.prepareStatement("UPDATE actividad SET nomActividad=? WHERE idActividad= ?")) {
+             stmt.setString(1, a.getTipo());
+             stmt.setInt(2, id);
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha modificado la actividad");
             }
@@ -81,11 +81,10 @@ public class ActividadDAO implements Repositorio<Actividad>{
         }
     }
 
-    @Override
+    
     public void agregar(Actividad a) {
-       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO actividad (id,nomActividad) VALUES (?, ?)")) {
-            stmt.setInt(1, a.getId());
-            stmt.setString(2, a.getNomActividad());           
+       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO actividad (nomActividad) VALUES (?)")) {
+            stmt.setString(1, a.getTipo());           
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha creado la actividad");
             }
@@ -98,9 +97,9 @@ public class ActividadDAO implements Repositorio<Actividad>{
     }
 
     @Override
-    public void eliminar(int id) {
-        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM actividad WHERE id=?")) {
-            stmt.setInt(1, id);
+    public void eliminar(String nombre) {
+        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM actividad WHERE nombre=?")) {
+            stmt.setString(1, nombre);
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: la actividad no existe");
             }
@@ -113,6 +112,6 @@ public class ActividadDAO implements Repositorio<Actividad>{
     }
     
      public Actividad crearActividad(final ResultSet rs) throws Exception {
-        return new Actividad(rs.getInt("id"),rs.getString("nomActividad"));
+        return new Actividad(rs.getString("tipo"));
     }
 }

@@ -33,7 +33,7 @@ public class ValoracionTecDAO implements Repositorio<ValoracionTecnica>{
     public List<ValoracionTecnica> listar() {
         List<ValoracionTecnica> lista = new ArrayList<>();
         ValoracionTecnica v;
-        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select dificultad,bellezaPaisajistica,interesCultural,fecha,usuario,ruta FROM valoracionesTecnicas")) {
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select dificultad,bellezaPaisajistica,interesCultural FROM valoracionesTecnicas")) {
                 while (rs.next()) {
                     v = crearValoracion(rs);
                     if (!lista.add(v)) {
@@ -50,7 +50,7 @@ public class ValoracionTecDAO implements Repositorio<ValoracionTecnica>{
         return lista;
     }
 
-    @Override
+    
     public ValoracionTecnica porId(int id) {
         ValoracionTecnica valoracion = null;
         try (PreparedStatement stmt = conn.prepareStatement("SELECT idValora, dificultad, fecha, estrellas, interesCultural, belleza FROM valora WHERE idValora = ?")) {
@@ -115,6 +115,6 @@ public class ValoracionTecDAO implements Repositorio<ValoracionTecnica>{
     }
     
      public ValoracionTecnica crearValoracion(final ResultSet rs) throws Exception {
-        return new ValoracionTecnica(rs.getInt("dificultad"),rs.getInt("belleza paisajistica"),rs.getInt("interes cultural"));
+        return new ValoracionTecnica(null,null,rs.getDate("fecha").toLocalDate(),rs.getInt("dificultad"),rs.getInt("belleza paisajistica"),rs.getInt("interes cultural"));
     }
 }

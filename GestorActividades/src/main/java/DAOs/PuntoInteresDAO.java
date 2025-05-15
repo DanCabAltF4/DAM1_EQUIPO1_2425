@@ -4,7 +4,7 @@
  */
 package DAOs;
 
-import Enumerados.PuntosTipos;
+import Enumerados.TipoPunto;
 import com.mycompany.gestorActividades.AccesoBaseDatos;
 import com.mycompany.gestorActividades.PuntoInteres;
 import com.mycompany.gestorActividades.Repositorio;
@@ -32,9 +32,9 @@ public class PuntoInteresDAO implements Repositorio<PuntoInteres>{
     public List<PuntoInteres> listar() {
         List<PuntoInteres> lista = new ArrayList<>();
         PuntoInteres p;
-        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select latitud FROM puntosInteres")) {
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select id,nombre,tipo,descripcion,caracteristicasEspeciales,longitud,latitud,Ruta.idRuta FROM puntosInteres")) {
                 while (rs.next()) {
-                    p = crearPuntoPeligro(rs);
+                    p = crearPuntoInteres(rs);
                     if (!lista.add(p)) {
                         throw new Exception("ERROR: el punto interes no ha sido añadido");
                     }
@@ -48,14 +48,13 @@ public class PuntoInteresDAO implements Repositorio<PuntoInteres>{
         return lista;
     }
 
-    @Override
     public PuntoInteres porId(int id) {
-        PuntoInteres puntoPeligro = null;
-        try (PreparedStatement stmt = conn.prepareStatement("SELECT id FROM puntosInteres WHERE id = ?")) {
+        PuntoInteres puntoInteres = null;
+        try (PreparedStatement stmt = conn.prepareStatement("SELECT nombre,tipo,descripcion,caracteristicasEspeciales,longitud,latitud,Ruta.idRuta FROM puntosInteres WHERE id = ?")) {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
-                    puntoPeligro = crearPuntoPeligro(rs);
+                    puntoInteres = crearPuntoInteres(rs);
                 }
             }
         } catch (SQLException e) {
@@ -63,14 +62,13 @@ public class PuntoInteresDAO implements Repositorio<PuntoInteres>{
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-        return puntoPeligro;
+        return puntoInteres;
     }
 
-    @Override
     public void modificar(PuntoInteres p) {
-        try (PreparedStatement stmt = conn.prepareStatement("UPDATE puntosInteres SET kilometro = ?,nivelGravedad = ?,descripcion = ?,ruta = ?,longitud = ?,latitud = ? WHERE id= ?")) {
-            
-            
+        try (PreparedStatement stmt = conn.prepareStatement("UPDATE puntosInteres SET nombre = ?,tipo = ?,descripcion = ?,caracteristicasEspeciales = ?,longitud = ?,latitud = ? WHERE id= ?")) {
+            stmt.setString(1, p.getNombre());
+            stmt.set
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha modificado el punto interes");
             }
@@ -82,7 +80,7 @@ public class PuntoInteresDAO implements Repositorio<PuntoInteres>{
         }
     }
 
-    @Override
+    
     public void agregar(PuntoInteres u) {
        try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO puntosInteres (id,kilometro,nivelGravedad,descripcion,ruta,longitud,latitud) VALUES (?, ?, ?, ?, ?, ? ,?)")) {
            
@@ -113,8 +111,8 @@ public class PuntoInteresDAO implements Repositorio<PuntoInteres>{
         } 
     }
     
-     public PuntoInteres crearPuntoPeligro(final ResultSet rs) throws Exception {
-        return new PuntoInteres(rs.getString("descripcion"),rs.getString("imagen"),rs.getString("nombre"),PuntosTipos.valueOf("tipo de punto"),rs.getString("caracteristicas"));
+     public PuntoInteres crearPuntoInteres(final ResultSet rs) throws Exception {
+        return new PuntoInteres(rs.getString("descripcion"),rs.getString("imagen"),rs.getString("nombre"),TipoPunto.valueOf("tipo de punto"),rs.getString("caracteristicas"));
     }
 }  
 

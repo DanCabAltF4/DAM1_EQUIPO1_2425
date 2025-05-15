@@ -25,5 +25,38 @@ public class FIchaOrganizacion extends FichaInformativa{
         this.opinion = opinion;
     }
     
+    //Métodos 
+
+    public String getDatos() {
+        return datos;
+    }
+
+    public void setDatos(String datos) {
+        this.datos = datos;
+    }
+
+    public double getAltitud() {
+        return altitud;
+    }
+
+    public void setAltitud(double altitud) {
+        this.altitud = altitud;
+    }
+
+    public Actividad getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Actividad tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getOpinion() {
+        return opinion;
+    }
+
+    public void setOpinion(String opinion) {
+        this.opinion = opinion;
+    }
     
 }

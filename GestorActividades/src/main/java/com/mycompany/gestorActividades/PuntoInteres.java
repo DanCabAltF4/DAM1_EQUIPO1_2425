@@ -33,11 +33,11 @@ public class PuntoInteres extends Waypoint {
         this.nombre = nombre;
     }
 
-    public PuntosTipos getTipo() {
+    public TipoPunto getTipo() {
         return tipo;
     }
 
-    public void setTipo(PuntosTipos tipo) {
+    public void setTipo(TipoPunto tipo) {
         this.tipo = tipo;
     }
 
