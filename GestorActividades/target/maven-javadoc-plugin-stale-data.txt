@@ -1,0 +1,49 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-classpath
+'D:/Usuarios/DAM102/.m2/repository/org/netbeans/external/AbsoluteLayout/RELEASE220/AbsoluteLayout-RELEASE220.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'21'
+-sourcepath
+'D:/Usuarios/DAM102/Documents/GitHub/DAM1_EQUIPO1_2425/GestorActividades/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'D:/Usuarios/DAM102/Documents/GitHub/DAM1_EQUIPO1_2425/GestorActividades/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'GestorActividades 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'GestorActividades 1.0-SNAPSHOT API'
+com.mycompany.gestorActividades
+DAOs
+Enumerados
+Swing
+D:\Usuarios\DAM102\.m2\repository\org\netbeans\external\AbsoluteLayout\RELEASE220\AbsoluteLayout-RELEASE220.jar = 1747148717842
+D:\Usuarios\DAM102\Documents\GitHub\DAM1_EQUIPO1_2425\GestorActividades\src\main\java = 1747242916008
+D:\Usuarios\DAM102\Documents\GitHub\DAM1_EQUIPO1_2425\GestorActividades\target\reports\apidocs\allclasses-index.html = 1747243269216
+D:\Usuarios\DAM102\Documents\GitHub\DAM1_EQUIPO1_2425\GestorActividades\target\reports\apidocs\allpackages-index.html = 1747243269218
+D:\Usuarios\DAM102\Documents\GitHub\DAM1_EQUIPO1_2425\GestorActividades\target\reports\apidocs\element-list = 1747243268721
+D:\Usuarios\DAM102\Documents\GitHub\DAM1_EQUIPO1_2425\GestorActividades\target\reports\apidocs\help-doc.html = 1747243269281
+D:\Usuarios\DAM102\Documents\GitHub\DAM1_EQUIPO1_2425\GestorActividades\target\reports\apidocs\index-all.html = 1747243269271
+D:\Usuarios\DAM102\Documents\GitHub\DAM1_EQUIPO1_2425\GestorActividades\target\reports\apidocs\index.html = 1747243269182
+D:\Usuarios\DAM102\Documents\GitHub\DAM1_EQUIPO1_2425\GestorActividades\target\reports\apidocs\member-search-index.js = 1747243269239
+D:\Usuarios\DAM102\Documents\GitHub\DAM1_EQUIPO1_2425\GestorActividades\target\reports\apidocs\module-search-index.js = 1747243269220
+D:\Usuarios\DAM102\Documents\GitHub\DAM1_EQUIPO1_2425\GestorActividades\target\reports\apidocs\overview-summary.html = 1747243269276
+D:\Usuarios\DAM102\Documents\GitHub\DAM1_EQUIPO1_2425\GestorActividades\target\reports\apidocs\overview-tree.html = 1747243269175
+D:\Usuarios\DAM102\Documents\GitHub\DAM1_EQUIPO1_2425\GestorActividades\target\reports\apidocs\package-search-index.js = 1747243269221
+D:\Usuarios\DAM102\Documents\GitHub\DAM1_EQUIPO1_2425\GestorActividades\target\reports\apidocs\search.html = 1747243269273
+D:\Usuarios\DAM102\Documents\GitHub\DAM1_EQUIPO1_2425\GestorActividades\target\reports\apidocs\serialized-form.html = 1747243268874
+D:\Usuarios\DAM102\Documents\GitHub\DAM1_EQUIPO1_2425\GestorActividades\target\reports\apidocs\tag-search-index.js = 1747243269241
+D:\Usuarios\DAM102\Documents\GitHub\DAM1_EQUIPO1_2425\GestorActividades\target\reports\apidocs\type-search-index.js = 1747243269222
