@@ -30,10 +30,10 @@ public class ReseñaDAO implements Repositorio<Resena>{
     @Override
     public List<Resena> listar() {
         List<Resena> lista = new ArrayList<>();
-        Resena r;
+        Resena r = null;
         try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select comentario,Usuario.idUsu,Ruta.idRuta,fecha,valoracion FROM resenna")) {
                 while (rs.next()) {
-                    r = crearReseña(rs);
+                    
                     if (!lista.add(r)) {
                         throw new Exception("ERROR: la resena no ha sido añadido");
                     }
@@ -47,14 +47,14 @@ public class ReseñaDAO implements Repositorio<Resena>{
         return lista;
     }
 
-    @Override
+    
     public Resena porId(int id) {
         Resena resena = null;
         try (PreparedStatement stmt = conn.prepareStatement("SELECT comentario,Usuario.idUsu,Ruta.idRuta,fecha,valoracion FROM resenna WHERE  idUsu= ?")) {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
-                    resena = crearReseña(rs);
+                    
                 }
             }
         } catch (SQLException e) {
@@ -65,7 +65,7 @@ public class ReseñaDAO implements Repositorio<Resena>{
         return resena;
     }
 
-    @Override
+    
     public void modificar(Resena r) {
         try (PreparedStatement stmt = conn.prepareStatement("UPDATE resenna SET comentario = ?,fecha = ?,valoracion= ? WHERE idUsu= ?")) {
             stmt.setString(1, r.getComentario());
@@ -82,7 +82,7 @@ public class ReseñaDAO implements Repositorio<Resena>{
         }
     }
 
-    @Override
+    
     public void agregar(Resena r) {
        try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO resenna () VALUES (?, ?, ?, ?, ?, ? ,?)")) {
             
@@ -98,7 +98,7 @@ public class ReseñaDAO implements Repositorio<Resena>{
         }
     }
 
-    @Override
+    
     public void eliminar(int id) {
         try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM resenna WHERE =?")) {
             stmt.setObject(1, id);
@@ -113,7 +113,10 @@ public class ReseñaDAO implements Repositorio<Resena>{
         } 
     }
     
-     public Resena crearReseña(final ResultSet rs) throws Exception {
-        return new Resena(rs.getString("comentario"),rs.getFloat("estrellas"));
+     
+
+    @Override
+    public void eliminar(String nombre) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

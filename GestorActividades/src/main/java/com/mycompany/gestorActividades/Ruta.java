@@ -10,24 +10,21 @@ import java.time.LocalDate;
 
 /**
  *
- * @author Usuario
+ * @author Raúl Buenaga
  */
 public class Ruta {
 
-    private int nivelRiesgo, nivelEsfuerzo, tipoTerreno,
-            indicaciones,accesibilidad, familiar,duracion;// niveles,indicaciones, accesibilidad y familiar valores de 1-5
+    private int nivelRiesgo, nivelEsfuerzo, tipoTerreno,indicaciones,accesibilidad, familiar,duracion;// niveles,indicaciones, accesibilidad y familiar valores de 1-5
     private String nombre, gpx, recomendaciones, zona;
     private LocalDate fechaCreacion;
-    private double longInicio, longFinal, latInicio, latFinal, altMax, altMin, 
-            desnivelPos, desnivelNeg, distancia,valoracionMedia;
+    private double longInicio, longFinal, latInicio, latFinal, altMax, altMin,desnivelPos, desnivelNeg, distancia,valoracionMedia;
     private Clasificacion clasificacion;
     private Estado estado;
     private Invitado usuario;
     private Actividad tipoActividad;
-    private Waypoint[] waypoints;
     private Periodo periodo;
 
-    public Ruta(int nivelRiesgo, int nivelEsfuerzo, int tipoTerreno, int indicaciones, int accesibilidad, int familiar, int duracion, String nombre, String gpx, String recomendaciones, String zona, LocalDate fechaCreacion, double longInicio, double longFinal, double latInicio, double latFinal, double altMax, double altMin, double desnivelPos, double desnivelNeg, double distancia, double valoracionMedia, Clasificacion clasificacion, Estado estado, Invitado usuario, Actividad tipoActividad, Waypoint[] waypoints, Periodo periodo) {
+    public Ruta(int nivelRiesgo, int nivelEsfuerzo, int tipoTerreno, int indicaciones, int accesibilidad, int familiar, int duracion, String nombre, String gpx, String recomendaciones, String zona, LocalDate fechaCreacion, double longInicio, double longFinal, double latInicio, double latFinal, double altMax, double altMin, double desnivelPos, double desnivelNeg, double distancia, double valoracionMedia, Clasificacion clasificacion, Estado estado, Invitado usuario, Actividad tipoActividad, Periodo periodo) {
         this.nivelRiesgo = nivelRiesgo;
         this.nivelEsfuerzo = nivelEsfuerzo;
         this.tipoTerreno = tipoTerreno;
@@ -53,9 +50,125 @@ public class Ruta {
         this.clasificacion = clasificacion;
         this.estado = estado;
         this.usuario = usuario;
-        this.tipoActividad = tipoActividad;
-        this.waypoints = waypoints;
-        this.periodo = periodo;
+        if(tipoActividad!=null){
+            this.tipoActividad = tipoActividad;
+        }else{
+            this.tipoActividad=null;
+        }
+        if(periodo!=null){
+            this.periodo=periodo;
+        }else{
+            this.periodo = null;
+        }
+    }   
+    //Métodos
+    public int getNivelRiesgo() {
+        return nivelRiesgo;
     }
+
+    public int getNivelEsfuerzo() {
+        return nivelEsfuerzo;
+    }
+
+    public int getTipoTerreno() {
+        return tipoTerreno;
+    }
+
+    public int getIndicaciones() {
+        return indicaciones;
+    }
+
+    public int getAccesibilidad() {
+        return accesibilidad;
+    }
+
+    public int getFamiliar() {
+        return familiar;
+    }
+
+    public int getDuracion() {
+        return duracion;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getGpx() {
+        return gpx;
+    }
+
+    public String getRecomendaciones() {
+        return recomendaciones;
+    }
+
+    public String getZona() {
+        return zona;
+    }
+
+    public LocalDate getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public double getLongInicio() {
+        return longInicio;
+    }
+
+    public double getLongFinal() {
+        return longFinal;
+    }
+
+    public double getLatInicio() {
+        return latInicio;
+    }
+
+    public double getLatFinal() {
+        return latFinal;
+    }
+
+    public double getAltMax() {
+        return altMax;
+    }
+
+    public double getAltMin() {
+        return altMin;
+    }
+
+    public double getDesnivelPos() {
+        return desnivelPos;
+    }
+
+    public double getDesnivelNeg() {
+        return desnivelNeg;
+    }
+
+    public double getDistancia() {
+        return distancia;
+    }
+
+    public double getValoracionMedia() {
+        return valoracionMedia;
+    }
+
+    public Clasificacion getClasificacion() {
+        return clasificacion;
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public Invitado getUsuario() {
+        return usuario;
+    }
+
+    public Actividad getTipoActividad() {
+        return tipoActividad;
+    }
+
+    public Periodo getPeriodo() {
+        return periodo;
+    }
+    
        
 }

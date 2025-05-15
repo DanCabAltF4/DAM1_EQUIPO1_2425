@@ -47,7 +47,7 @@ public class PuntoPeligroDAO implements Repositorio<PuntoPeligro>{
         return lista;
     }
 
-    @Override
+    
     public PuntoPeligro porId(int id) {
         PuntoPeligro puntoPeligro = null;
         try (PreparedStatement stmt = conn.prepareStatement("SELECT id,kilometro,nivelGravedad,descripcion,ruta,longitud,latitud FROM puntosPeligro WHERE id = ?")) {
@@ -65,7 +65,7 @@ public class PuntoPeligroDAO implements Repositorio<PuntoPeligro>{
         return puntoPeligro;
     }
 
-    @Override
+    
     public void modificar(PuntoPeligro p) {
         try (PreparedStatement stmt = conn.prepareStatement("UPDATE puntosPeligro SET kilometro = ?,nivelGravedad = ?,descripcion = ?,ruta = ?,longitud = ?,latitud = ? WHERE id= ?")) {
             
@@ -81,7 +81,7 @@ public class PuntoPeligroDAO implements Repositorio<PuntoPeligro>{
         }
     }
 
-    @Override
+    
     public void agregar(PuntoPeligro u) {
        try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO puntosPeligro (id,kilometro,nivelGravedad,descripcion,ruta,longitud,latitud) VALUES (?, ?, ?, ?, ?, ? ,?)")) {
             
@@ -98,9 +98,9 @@ public class PuntoPeligroDAO implements Repositorio<PuntoPeligro>{
     }
 
     @Override
-    public void eliminar(int id) {
-        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM puntosPeligro WHERE id=?")) {
-            stmt.setObject(1, id);
+    public void eliminar(String nombre) {
+        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM puntosPeligro WHERE nombre=?")) {
+            stmt.setString(1, nombre);
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: el punto peligro no existe");
             }

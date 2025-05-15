@@ -68,7 +68,8 @@ public class PuntoInteresDAO implements Repositorio<PuntoInteres>{
     public void modificar(PuntoInteres p) {
         try (PreparedStatement stmt = conn.prepareStatement("UPDATE puntosInteres SET nombre = ?,tipo = ?,descripcion = ?,caracteristicasEspeciales = ?,longitud = ?,latitud = ? WHERE id= ?")) {
             stmt.setString(1, p.getNombre());
-            stmt.set
+            stmt.setObject(2, p.getTipo());
+           
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha modificado el punto interes");
             }
@@ -96,7 +97,7 @@ public class PuntoInteresDAO implements Repositorio<PuntoInteres>{
         }
     }
 
-    @Override
+
     public void eliminar(int id) {
         try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM puntosInteres WHERE id=?")) {
             stmt.setObject(1, id);
@@ -113,6 +114,11 @@ public class PuntoInteresDAO implements Repositorio<PuntoInteres>{
     
      public PuntoInteres crearPuntoInteres(final ResultSet rs) throws Exception {
         return new PuntoInteres(rs.getString("descripcion"),rs.getString("imagen"),rs.getString("nombre"),TipoPunto.valueOf("tipo de punto"),rs.getString("caracteristicas"));
+    }
+
+    @Override
+    public void eliminar(String nombre) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }  
 

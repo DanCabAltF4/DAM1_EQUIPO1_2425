@@ -30,10 +30,10 @@ public class RutaDAO implements Repositorio<Ruta>{
     @Override
     public List<Ruta> listar() {
         List<Ruta> lista = new ArrayList<>();
-        Ruta r;
+        Ruta r = null;
         try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select  FROM rutas")) {
                 while (rs.next()) {
-                    r = crearRuta(rs);
+                    
                     if (!lista.add(r)) {
                         throw new Exception("ERROR: la ruta no ha sido añadido");
                     }
@@ -47,14 +47,14 @@ public class RutaDAO implements Repositorio<Ruta>{
         return lista;
     }
 
-    @Override
+    
     public Ruta porId(int id) {
         Ruta resena = null;
         try (PreparedStatement stmt = conn.prepareStatement("SELECT  FROM rutas WHERE idRuta = ?")) {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
-                    resena = crearRuta(rs);
+                    
                 }
             }
         } catch (SQLException e) {
@@ -65,7 +65,7 @@ public class RutaDAO implements Repositorio<Ruta>{
         return resena;
     }
 
-    @Override
+    
     public void modificar(Ruta r) {
         try (PreparedStatement stmt = conn.prepareStatement("UPDATE rutas SET comentario = ?,fecha = ?,valoracion= ? WHERE idRuta= ?")) {
             
@@ -82,7 +82,7 @@ public class RutaDAO implements Repositorio<Ruta>{
         }
     }
 
-    @Override
+    
     public void agregar(Ruta r) {
        try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO rutas () VALUES (?, ?, ?, ?, ?, ? ,?)")) {
             
@@ -98,7 +98,7 @@ public class RutaDAO implements Repositorio<Ruta>{
         }
     }
 
-    @Override
+    
     public void eliminar(int id) {
         try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM rutas WHERE idRuta=?")) {
             stmt.setObject(1, id);
@@ -113,8 +113,11 @@ public class RutaDAO implements Repositorio<Ruta>{
         } 
     }
     
-     public Ruta crearRuta(final ResultSet rs) throws Exception {
-        return new Ruta();
-    }     
+       
+
+    @Override
+    public void eliminar(String nombre) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

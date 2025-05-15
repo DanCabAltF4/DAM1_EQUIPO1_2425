@@ -68,7 +68,7 @@ public class ValoracionTecDAO implements Repositorio<ValoracionTecnica>{
         return valoracion;
     }
 
-    @Override
+    
     public void modificar(ValoracionTecnica t) {
         try (PreparedStatement stmt = conn.prepareStatement("UPDATE valoracionesTecnicas SET dificultad = ?,bellezaPaisajistica = ?,interesCultural = ?,fecha = ?,usuario = ?,ruta= ? WHERE idValora = ?")) {
             
@@ -84,7 +84,7 @@ public class ValoracionTecDAO implements Repositorio<ValoracionTecnica>{
         }
     }
 
-    @Override
+    
     public void agregar(ValoracionTecnica t) {
         try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO valoracionesTecnicas (dificultad,bellezaPaisajistica,interesCultural,fecha,usuario,ruta) VALUES (?, ?, ?, ?, ?, ?)")) {
             
@@ -99,7 +99,7 @@ public class ValoracionTecDAO implements Repositorio<ValoracionTecnica>{
         }
     }
 
-    @Override
+    
     public void eliminar(int id) {
         try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM valoracionesTecnicas WHERE usuario=?")) {
             stmt.setObject(1, id);
@@ -116,5 +116,10 @@ public class ValoracionTecDAO implements Repositorio<ValoracionTecnica>{
     
      public ValoracionTecnica crearValoracion(final ResultSet rs) throws Exception {
         return new ValoracionTecnica(null,null,rs.getDate("fecha").toLocalDate(),rs.getInt("dificultad"),rs.getInt("belleza paisajistica"),rs.getInt("interes cultural"));
+    }
+
+    @Override
+    public void eliminar(String nombre) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
