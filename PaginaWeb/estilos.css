@@ -1,0 +1,208 @@
+body {
+  display: flex;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("/PaginaWeb/imagenesWeb/Forest_of_Sai_Yok_National_Park.jpg");
+  backdrop-filter: blur(5px) brightness(0.3);
+  flex-direction: column;
+  min-height: 100vh;
+  /*Hace que el cuerpo ocupe todo el espacio visible*/
+}
+
+#encabezado {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  position: relative;
+  background: linear-gradient(to bottom, lightgreen, darkgreen);
+}
+
+#encabezado>a {
+  color: white;
+  text-shadow: black 1px 1px 2px;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+#encabezado>a:hover {
+  transform: scale(1.1);
+}
+
+
+#menu {
+  display: flex;
+  flex-direction: row;
+  top: 0;
+  right: 0;
+  background: linear-gradient(to bottom, lightgray, white);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: black -1px -1px 2px;
+  border-radius: 5px;
+}
+
+#menu a {
+  text-decoration: none;
+  color: black;
+
+}
+
+/*Si juntases estas dos (a y li) lo que es el boton se limitaria el texto-*/
+#menu li {
+  padding: 12px;
+  border-radius: 5px;
+}
+
+#menu li:hover {
+  background-color: darkgray;
+}
+
+main {
+  flex: 1;
+  /*Como el resto de elementos del body no tienen atributo flex, main toma todo el espacio posible, así el footer siempre estará abajo del todo*/
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 10px;
+  background-color: rgba(205, 230, 221, 0.603);
+  border-radius: 10px;
+  box-shadow: -1px -1px 2px black;
+}
+
+article h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+
+
+
+#contenido {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#texto p {
+  text-align: justify;
+  align-self: stretch;
+  margin: 10px 0;
+}
+
+#texto ul {
+  text-align: left;
+  list-style-type: none;
+}
+
+#imagenes {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+article figure img {
+  max-width: 200px;
+  /* Limit the image width */
+  height: auto;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(to bottom, gray, #222);
+  box-shadow: -1px -1px 1px black;
+  text-shadow: 0px 0px 2px black;
+  color: white;
+}
+
+figcaption {
+  font-size: xx-small;
+}
+
+#datosRuta {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#datosRuta p {
+  margin: 5px;
+  padding: 5px;
+  background-color: rgba(205, 230, 221, 0.603);
+  border-radius: 10px;
+  box-shadow: -1px -1px 2px black;
+}
+
+#sin-decorar {
+  text-decoration: none;
+  color: black;
+}
+
+#principalRuta {
+  display: flex;;
+  flex-direction: row;
+  align-items: center;
+}
+
+#waypoints {
+  height: 200px;
+  overflow: hidden;
+  overflow-y: scroll;
+  background-color: rgba(205, 230, 221, 0.603);
+  border-radius: 10px;
+  box-shadow: -1px -1px 2px black;
+}
+
+#waypoints li {
+  list-style: none;
+  margin: 10px;
+  border-bottom: #222 solid 1px;
+}
+
+#waypoints li p {
+  margin: 0px;
+}
+
+#fotosRuta {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+#fotosRuta img {
+  max-width: 350px;
+  height: auto;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#detalleRuta {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: rgba(205, 230, 221, 0.603);
+  border-radius: 10px;
+  box-shadow: -1px -1px 2px black;
+  padding: 10px;
+  margin-left: 10px;
+  font-size: 0.95em;
+}
