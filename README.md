@@ -1,31 +1,89 @@
-# Documentacion y entregas del equipo **RDosM2**
+# RETO: GESTIÓN DE RUTAS EN ACTIVIDADES AL AIRE LIBRE
 
-## Miembros
+ ## Indice de contenido
+- [RETO: GESTIÓN DE RUTAS EN ACTIVIDADES AL AIRE LIBRE](#reto-gestión-de-rutas-en-actividades-al-aire-libre)
+  - [Indice de contenido](#indice-de-contenido)
+  - [Miembros de **RDosM2**](#miembros-de-rdosm2)
+  - [Indice de contenido](#indice-de-contenido-1)
+  - [Implementación y despliegue](#implementación-y-despliegue)
+  - [Sobre la base de datos](#sobre-la-base-de-datos)
+  - [Diagrama clases](#diagrama-clases)
+  - [Diagrama de casos de uso](#diagrama-de-casos-de-uso)
+  - [Manual de usuario](#manual-de-usuario)
+  - [Informes de la aplicación](#informes-de-la-aplicación)
+  - [Base de datos](#base-de-datos)
+  - [Script disparadores](#script-disparadores)
+  - [Página web y estilos](#página-web-y-estilos)
+  - [XSLT](#xslt)
+  - [Infografía sobre Seguridad Social](#infografía-sobre-seguridad-social)
+  - [Factores de riesgo](#factores-de-riesgo)
+  - [Matriz de riesgo](#matriz-de-riesgo)
+  - [Plan de emergencias](#plan-de-emergencias)
+  - [Tarea IT](#tarea-it)
+
+Documentación del desarrollo de la aplicación de escritorio destinada a la gestión de rutas en actividades al aire libre. Este espacio contendrá los miembros que han participado en el proceso, el desarrollo de la aplicación y su web complementaria, además de los manuales destinados a su compresión y uso.
+
+
+## Miembros de **RDosM2**
 
 - Miguel Ángel Quian Díaz
 - Maya García Velasco
 - Daniel Cabeza Berrazueta
 - Raúl Buenaga García
 
-## Indice de entregas
+## Indice de contenido
 <!--Para enlazar correctamente, crear un header con #/##/### y vincular -> [texto](#nombreDelHeader)-->
-1. [Diagrama de clases](#diagrama-clases)
-2. [Diagrama de casos de uso](#diagrama-de-casos-de-uso)
-3. [Manual de despliegue](#manual-despliegue)
-4. [Manual de usuario](#manual-de-usuario)
-5. [Informes de la aplicación de escritorio](#informes-de-la-aplicación)
-6. [Base de datos y Script](#base-de-datos)
-7. [Script de disparadores](#script-disparadores)
-8. [Página web y hoja de estilos](#página-web-y-estilos)
-9. [Plantilla XSLT](#xslt)
-10. [Infografía de Seguridad Social](#infografía-sobre-seguridad-social)
-11. [Identificación de factores de riesgos](#factores-de-riesgo)
-12. [Matriz de riesgo](#matriz-de-riesgo)
-13. [Plan de emergencias](#plan-de-emergencias)
-14. [Tarea I.T](#tarea-it)
+- [RETO: GESTIÓN DE RUTAS EN ACTIVIDADES AL AIRE LIBRE](#reto-gestión-de-rutas-en-actividades-al-aire-libre)
+  - [Indice de contenido](#indice-de-contenido)
+  - [Miembros de **RDosM2**](#miembros-de-rdosm2)
+  - [Indice de contenido](#indice-de-contenido-1)
+  - [Implementación y despliegue](#implementación-y-despliegue)
+  - [Sobre la base de datos](#sobre-la-base-de-datos)
+  - [Diagrama clases](#diagrama-clases)
+  - [Diagrama de casos de uso](#diagrama-de-casos-de-uso)
+  - [Manual de usuario](#manual-de-usuario)
+  - [Informes de la aplicación](#informes-de-la-aplicación)
+  - [Base de datos](#base-de-datos)
+  - [Script disparadores](#script-disparadores)
+  - [Página web y estilos](#página-web-y-estilos)
+  - [XSLT](#xslt)
+  - [Infografía sobre Seguridad Social](#infografía-sobre-seguridad-social)
+  - [Factores de riesgo](#factores-de-riesgo)
+  - [Matriz de riesgo](#matriz-de-riesgo)
+  - [Plan de emergencias](#plan-de-emergencias)
+  - [Tarea IT](#tarea-it)
 
    
-   
+## Implementación y despliegue
+
+Dentro de las tecnologías existentes, a la hora de desplegar este proyecto nos debatimos principalmente entre las siguientes: VirtualBox, VMware, AWS. Hemos elaborado una tabla comparativa sobre ellas para justificar nuestra elección. 
+
+| | VIrtualBox  | VMware | AWS |
+|---|---|---|---|
+|**Licencia** |Código abierto | Código cerrado/ propietario|Código cerrado/ propietario|
+|**Plataforma** | Local |Local o servidores |  En la nube | 
+|**Precio**| Gratuito | Gratuito o de pago según licencia | Pago por consumo | 
+|**Virtualización** | Local | Local o centro de datos | En la nube |
+|**Escalabilidad** | Limitado por hardware | Limitado (local) escalable (VMware vSphere) | Escalable |
+|**Casos de uso** | Pruebas, aprendizaje | Entornos corporativos | Producción |
+***
+
+
+Después de valorar estos aspectos decidimos decantarnos por VirtualBox. Las razones son principalmente la familiaridad del equipo con la herramienta, su gratuidad, y su flexibilidad.
+
+
+
+[Guía de despliegue (PDF)](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/MANUAL%20DE%20DESPLIEGUE%20DAM1.pdf?csf=1&web=1&e=lJPKIP) | [Manual de usuario (PDF)](https://educantabria.sharepoint.com/:w:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/MANUAL%20USUARIO.docx?d=w06038e8d45524639a670f50dc6b88509&csf=1&web=1&e=OlXqLQ)
+
+
+
+## Sobre la base de datos
+
+Las entidades principales de la base de datos son: rutas, usuarios, puntos de interés, puntos de peligro, y valoración técnica. 
+
+<!--Para enlazar imagenes, añade una ! a un enlace normal-->
+  ![Relacional](/imagenes/EER_EQUIPO1_V9.png)
+  [Script (SQL)](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/GeneracionBD_Equipo1.sql?csf=1&web=1&e=hKzkjL)
 
 ## Diagrama clases
 
@@ -41,9 +99,6 @@
 
 ![Diagrama](imagenes/casos_uso.png)
 
-## Manual despliegue
-
-[Plantilla](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/MANUAL%20DE%20DESPLIEGUE%20DAM1.pdf?csf=1&web=1&e=lJPKIP)
 
 ## Manual de usuario
 [Plantilla](https://educantabria.sharepoint.com/:w:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/MANUAL%20USUARIO.docx?d=w06038e8d45524639a670f50dc6b88509&csf=1&web=1&e=OlXqLQ)
@@ -52,15 +107,14 @@
 
 ## Base de datos
 
-[Script](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/GeneracionBD_Equipo1.sql?csf=1&web=1&e=hKzkjL)
+
 
 [Relacional](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/EER_EQUIPO1_V9.mwb?csf=1&web=1&e=e1JlMH)
 
 [Relacional formato PDF](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/EER_EQUIPO1_V9.pdf?csf=1&web=1&e=KapWHP)
 
 
-<!--Para enlazar imagenes, añade una ! a un enlace normal-->
-![Relacional](/imagenes/EER_EQUIPO1_V9.png)
+
 
 [Script ejemplos](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/DatosEjemploBD_Equipo1.sql?csf=1&web=1&e=DBjGqU)
 

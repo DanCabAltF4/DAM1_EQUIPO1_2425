@@ -1,7 +1,3 @@
 
 theme: jekyll-theme-leap-day
 show_downloads: false
-sass:
-  style: compressed
-  load_paths:
-    - assets/css
