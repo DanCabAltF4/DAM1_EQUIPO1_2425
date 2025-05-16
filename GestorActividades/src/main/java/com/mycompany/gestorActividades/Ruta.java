@@ -7,6 +7,7 @@ package com.mycompany.gestorActividades;
 import Enumerados.Clasificacion;
 import Enumerados.Estado;
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  *
@@ -24,8 +25,9 @@ public class Ruta {
     private Invitado usuario;
     private Actividad tipoActividad;
     private Periodo periodo;
+    private List<Waypoint> waypoints; //Hay que controlar a la hora de mostrarlos si son Interes o Peligro
 
-    public Ruta(int nivelRiesgo, int nivelEsfuerzo, int tipoTerreno, int indicaciones, boolean accesibilidad, boolean familiar, int duracion, String nombre, String gpx, String recomendaciones, String zona, LocalDate fechaCreacion, double longInicio, double longFinal, double latInicio, double latFinal, double altMax, double altMin, double desnivelPos, double desnivelNeg, double distancia, double valoracionMedia, Clasificacion clasificacion, Estado estado, Invitado usuario, Actividad tipoActividad, Periodo periodo) {
+    public Ruta(int nivelRiesgo, int nivelEsfuerzo, int tipoTerreno, int indicaciones, boolean accesibilidad, boolean familiar, int duracion, String nombre, String gpx, String recomendaciones, String zona, LocalDate fechaCreacion, double longInicio, double longFinal, double latInicio, double latFinal, double altMax, double altMin, double desnivelPos, double desnivelNeg, double distancia, double valoracionMedia, Clasificacion clasificacion, Estado estado, Invitado usuario, Actividad tipoActividad, Periodo periodo, List<Waypoint> waypoints) {
         this.nivelRiesgo = nivelRiesgo;
         this.nivelEsfuerzo = nivelEsfuerzo;
         this.tipoTerreno = tipoTerreno;
@@ -61,6 +63,8 @@ public class Ruta {
         }else{
             this.periodo = null;
         }
+        
+        this.waypoints = waypoints;
     }   
     //Métodos
     public int getNivelRiesgo() {

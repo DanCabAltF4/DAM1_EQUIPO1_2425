@@ -1,11 +1,23 @@
 package Swing;
 
+import Enumerados.Clasificacion;
+import com.mycompany.gestorActividades.Waypoint;
 import java.awt.event.ActionEvent;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.List;
+import java.util.StringTokenizer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
@@ -27,7 +39,7 @@ public class main extends javax.swing.JFrame {
     3-Profesor
     4-Administrador
      */
-    int nivelAcceso = 4;
+    private int nivelAcceso = 4;
 
     /**
      * Creates new form main
@@ -1362,6 +1374,8 @@ public class main extends javax.swing.JFrame {
 
         getContentPane().add(jPanelCrearRutaCsv, "card11");
 
+        jFileChooser1.setFileFilter(new FileNameExtensionFilter("Archivo csv", "csv")
+        );
         jFileChooser1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jFileChooser1ActionPerformed(evt);
@@ -1490,8 +1504,8 @@ public class main extends javax.swing.JFrame {
                         .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelResennarLayout.createSequentialGroup()
                         .addGap(19, 19, 19)
-                        .addGroup(jPanelResennarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel58)
+                        .addGroup(jPanelResennarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel58, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel57))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanelResennarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -2145,14 +2159,45 @@ public class main extends javax.swing.JFrame {
 
     private void jFileChooser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooser1ActionPerformed
         // TODO add your handling code here:
-        if (jFileChooser1.CANCEL_OPTION == 1) {
+        if (jFileChooser1.CANCEL_SELECTION.equals(evt.getActionCommand())) {
             jPanelSelectorCsv.setVisible(false);
             jPanelCrearRutaCsv.setVisible(true);
-        } else if (jFileChooser1.getSelectedFile() != null) {
+
+        } else {
             jPanelSelectorCsv.setVisible(false);
             jPanelCrearRutaCsv.setVisible(true);
+
+            File documento = jFileChooser1.getSelectedFile();//Se valida que es un csv via FileChooser
+            datosCSV(documento);
         }
     }//GEN-LAST:event_jFileChooser1ActionPerformed
+    
+    private double desnivelPosCSV;
+    private double desnivelNegCSV;
+    private double latitudIniCSV;
+    private double latitudFinCSV;
+    private double longitudIniCSV;
+    private double longitudFinCSV;
+    private double altitudMinimaCSV;
+    private double altitudMaximaCSV;
+    private Clasificacion clasificacionCSV;
+    private List<Waypoint> waypoints;
+    
+    private void datosCSV(File csv) {
+        String nextLine;
+        StringTokenizer tokenizer;
+        try (BufferedReader br = new BufferedReader(new FileReader(csv))) {
+            while ((nextLine = br.readLine()) != null) {
+                tokenizer = new StringTokenizer(nextLine, ",");
+                //Continuará
+            }
+        } catch (FileNotFoundException ex) {
+            System.out.println("ERROR");
+        } catch (IOException ex) {
+            System.out.println("ERROR");
+
+        }
+    }
 
     private void jButtonVerWaypointsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerWaypointsActionPerformed
         // TODO add your handling code here:
