@@ -192,6 +192,19 @@ public class main extends javax.swing.JFrame {
         jFileChooser1 = new javax.swing.JFileChooser();
         jPanelResennar = new javax.swing.JPanel();
         jButtonVolverResennar = new javax.swing.JButton();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel55 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel56 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jComboBox4 = new javax.swing.JComboBox<>();
         jPanelValoracionesAdminRuta = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jButtonVolverValoracionesAdmin = new javax.swing.JButton();
@@ -1381,21 +1394,110 @@ public class main extends javax.swing.JFrame {
             }
         });
 
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel24.setText("Reseñas");
+
+        jLabel54.setText("Valoración de la ruta");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "1", "2", "3", "4", "5" }));
+
+        jLabel55.setText("Comentarios");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jLabel56.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel56.setText("Valoraciones técnicas");
+
+        jLabel57.setText("Dificultad");
+
+        jLabel58.setText("Belleza paisajística");
+
+        jLabel59.setText("Interés cultural");
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "1", "2", "3", "4", "5" }));
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "1", "2", "3", "4", "5" }));
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "1", "2", "3", "4", "5" }));
+
         javax.swing.GroupLayout jPanelResennarLayout = new javax.swing.GroupLayout(jPanelResennar);
         jPanelResennar.setLayout(jPanelResennarLayout);
         jPanelResennarLayout.setHorizontalGroup(
             jPanelResennarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelResennarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButtonVolverResennar)
-                .addContainerGap(414, Short.MAX_VALUE))
+                .addGroup(jPanelResennarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelResennarLayout.createSequentialGroup()
+                        .addGroup(jPanelResennarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelResennarLayout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addComponent(jLabel54))
+                            .addGroup(jPanelResennarLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jButtonVolverResennar))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelResennarLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(69, 69, 69)
+                        .addGroup(jPanelResennarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel24)
+                            .addComponent(jLabel55)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanelResennarLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanelResennarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel57)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(64, 64, 64)
+                        .addGroup(jPanelResennarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel58)
+                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(61, 61, 61)
+                        .addGroup(jPanelResennarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel59)))
+                    .addGroup(jPanelResennarLayout.createSequentialGroup()
+                        .addGap(124, 124, 124)
+                        .addComponent(jLabel56)))
+                .addContainerGap())
         );
         jPanelResennarLayout.setVerticalGroup(
             jPanelResennarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelResennarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButtonVolverResennar)
-                .addContainerGap(391, Short.MAX_VALUE))
+                .addGroup(jPanelResennarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelResennarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButtonVolverResennar))
+                    .addGroup(jPanelResennarLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel24)))
+                .addGap(33, 33, 33)
+                .addGroup(jPanelResennarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel54)
+                    .addComponent(jLabel55))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelResennarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(jLabel56)
+                .addGroup(jPanelResennarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelResennarLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel59)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelResennarLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanelResennarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel58)
+                            .addComponent(jLabel57))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelResennarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelResennar, "card14");
@@ -1790,6 +1892,25 @@ public class main extends javax.swing.JFrame {
 
     private void jButtonReseñarInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReseñarInfoActionPerformed
         // TODO add your handling code here:
+        jPanelInfoRuta.setVisible(false);
+        jPanelResennar.setVisible(true);
+        if (nivelAcceso < 2) {
+            jLabel56.setVisible(false);
+            jLabel57.setVisible(false);
+            jLabel58.setVisible(false);
+            jLabel59.setVisible(false);
+            jComboBox2.setVisible(false);
+            jComboBox3.setVisible(false);
+            jComboBox4.setVisible(false);
+        } else {
+            jLabel56.setVisible(true);
+            jLabel57.setVisible(true);
+            jLabel58.setVisible(true);
+            jLabel59.setVisible(true);
+            jComboBox2.setVisible(true);
+            jComboBox3.setVisible(true);
+            jComboBox4.setVisible(true);
+        }
     }//GEN-LAST:event_jButtonReseñarInfoActionPerformed
 
     private void jButtonVolverInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverInfoActionPerformed
@@ -1821,6 +1942,8 @@ public class main extends javax.swing.JFrame {
 
     private void jButtonValorarInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValorarInfoActionPerformed
         // TODO add your handling code here:
+        jPanelInfoRuta.setVisible(false);
+        jPanelResennar.setVisible(true);
     }//GEN-LAST:event_jButtonValorarInfoActionPerformed
 
     private void jButtonVerValResInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerValResInfoActionPerformed
@@ -1904,10 +2027,31 @@ public class main extends javax.swing.JFrame {
 
     private void jButtonResenarMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResenarMenuActionPerformed
         // TODO add your handling code here:
+        jPanelMenuInicio.setVisible(false);
+        jPanelResennar.setVisible(true);
+        if (nivelAcceso < 2) {
+            jLabel56.setVisible(false);
+            jLabel57.setVisible(false);
+            jLabel58.setVisible(false);
+            jLabel59.setVisible(false);
+            jComboBox2.setVisible(false);
+            jComboBox3.setVisible(false);
+            jComboBox4.setVisible(false);
+        } else {
+            jLabel56.setVisible(true);
+            jLabel57.setVisible(true);
+            jLabel58.setVisible(true);
+            jLabel59.setVisible(true);
+            jComboBox2.setVisible(true);
+            jComboBox3.setVisible(true);
+            jComboBox4.setVisible(true);
+        }
     }//GEN-LAST:event_jButtonResenarMenuActionPerformed
 
     private void jButtonValTecnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValTecnMenuActionPerformed
         // TODO add your handling code here:
+        jPanelMenuInicio.setVisible(false);
+        jPanelResennar.setVisible(true);
     }//GEN-LAST:event_jButtonValTecnMenuActionPerformed
 
     private void jButtonCrearRutaMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearRutaMenuActionPerformed
@@ -2096,6 +2240,10 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton jButtonVolverValoracionesAdmin;
     private javax.swing.JButton jButtonVolverValoracionesUsu;
     private javax.swing.JButton jButtonVolverWaypoints;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -2113,6 +2261,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
@@ -2145,6 +2294,12 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -2167,6 +2322,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordFieldInicio;
     private javax.swing.JPasswordField jPasswordFieldRegistro1;
     private javax.swing.JPasswordField jPasswordFieldRegistro2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPaneResenasAdmin;
     private javax.swing.JScrollPane jScrollPaneResenasAdmin1;
     private javax.swing.JScrollPane jScrollPaneResenasAdmin2;
@@ -2182,6 +2338,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTable jTableRutas;
     private javax.swing.JTable jTableValTecnAdmin;
     private javax.swing.JTable jTableValTecnUsu;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
