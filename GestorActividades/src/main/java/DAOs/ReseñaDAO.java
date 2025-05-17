@@ -8,6 +8,7 @@ import com.mycompany.gestorActividades.AccesoBaseDatos;
 import com.mycompany.gestorActividades.Repositorio;
 import com.mycompany.gestorActividades.Resena;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -31,7 +32,7 @@ public class ReseñaDAO implements Repositorio<Resena>{
     public List<Resena> listar() {
         List<Resena> lista = new ArrayList<>();
         Resena r;
-        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select comentario,Usuario.idUsu,Ruta.idRuta,fecha,valoracion FROM resenna")) {
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select comentario,usuarios_idUsu,rutas_idRuta,fecha,valoracion FROM resenna")) {
                 while (rs.next()) {
                     r = crearReseña(rs);
                     if (!lista.add(r)) {
@@ -50,7 +51,7 @@ public class ReseñaDAO implements Repositorio<Resena>{
     
     public Resena porId(int id) {
         Resena resena = null;
-        try (PreparedStatement stmt = conn.prepareStatement("SELECT comentario,Usuario.idUsu,Ruta.idRuta,fecha,valoracion FROM resenna WHERE  = ?")) {
+        try (PreparedStatement stmt = conn.prepareStatement("SELECT comentario,rutas_idRuta,fecha,valoracion FROM resenna WHERE  usuarios_idUsu= ?")) {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
@@ -66,11 +67,12 @@ public class ReseñaDAO implements Repositorio<Resena>{
     }
 
     
-    public void modificar(Resena r) {
-        try (PreparedStatement stmt = conn.prepareStatement("UPDATE resenna SET comentario = ?,fecha = ?,valoracion= ? WHERE = ?")) {
+    public void modificar(Resena r,int idRuta) {
+        try (PreparedStatement stmt = conn.prepareStatement("UPDATE resenna SET comentario = ?,fecha = ?,valoracion= ? WHERE rutas_idRuta= ?")) {
             stmt.setString(1, r.getComentario());
-            
-            
+            stmt.setDate(2, Date.valueOf(r.getFecha()));
+            stmt.setInt(3, r.getValoracion());
+            stmt.setInt(4, idRuta);
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha modificado la resena");
             }
@@ -83,10 +85,13 @@ public class ReseñaDAO implements Repositorio<Resena>{
     }
 
     
-    public void agregar(Resena r) {
-       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO resenna (comentario,idUsu,idRuta,fecha,valoracion) VALUES (?, ?, ?, ?, ?)")) {
-            
-            
+    public void agregar(Resena r,int idUsuario,int idRuta) {
+       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO resenna (comentario,usuarios_idUsu,rutas_idRuta,fecha,valoracion) VALUES (?, ?, ?, ?, ?)")) {
+            stmt.setString(1, r.getComentario());
+            stmt.setInt(2, idUsuario);
+            stmt.setInt(3, idRuta);
+            stmt.setDate(4, Date.valueOf(r.getFecha()));
+            stmt.setInt(5, r.getValoracion());
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha creado la resena");
             }
@@ -100,7 +105,7 @@ public class ReseñaDAO implements Repositorio<Resena>{
 
     
     public void eliminar(int id) {
-        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM resenna WHERE =?")) {
+        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM resenna WHERE rutas_idRuta=?")) {
             stmt.setObject(1, id);
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: la resena no existe");
@@ -114,7 +119,7 @@ public class ReseñaDAO implements Repositorio<Resena>{
     }
     
      public Resena crearReseña(final ResultSet rs) throws Exception {
-        return new Resena(null,null,rs.getDate("fecha").toLocalDate(),rs.getString("comentario"),rs.getFloat("estrellas"));
+        return new Resena(null,null,rs.getDate("fecha").toLocalDate(),rs.getString("comentario"),rs.getInt("estrellas"));
     }
 
     @Override

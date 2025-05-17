@@ -8,17 +8,17 @@ import java.time.LocalDate;
 
 /**
  *
- * @author DAM102
+ * @author dam105
  */
 public class Resena extends Valoracion {
 
     private String comentario;
-    private float estrellas;
+    private int valoracion;
 
-    public Resena(Ruta ruta, Disenador votante, LocalDate fecha, String comentario, float estrellas) {
+    public Resena(Ruta ruta, Disenador votante, LocalDate fecha, String comentario, int valoracion) {
         super(ruta, votante, fecha);
         this.comentario = comentario;
-        this.estrellas = estrellas;
+        this.valoracion = valoracion;
 
     }
     
@@ -32,12 +32,28 @@ public class Resena extends Valoracion {
         this.comentario = comentario;
     }
 
-    public float getEstrellas() {
-        return estrellas;
+    public int getValoracion() {
+        return valoracion;
     }
 
-    public void setEstrellas(float estrellas) {
-        this.estrellas = estrellas;
+    public void setEstrellas(int valoracion) {
+        this.valoracion = valoracion;
+    }
+
+    public Ruta getRuta() {
+        return ruta;
+    }
+
+    public void setRuta(Ruta ruta) {
+        this.ruta = ruta;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
     }
     
 }

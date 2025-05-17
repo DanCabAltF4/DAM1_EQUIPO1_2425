@@ -7,6 +7,7 @@ package com.mycompany.gestorActividades;
 import Enumerados.Clasificacion;
 import Enumerados.Estado;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,7 +28,7 @@ public class Ruta {
     private Periodo periodo;
     private List<Waypoint> waypoints; //Hay que controlar a la hora de mostrarlos si son Interes o Peligro
 
-    public Ruta(int nivelRiesgo, int nivelEsfuerzo, int tipoTerreno, int indicaciones, boolean accesibilidad, boolean familiar, int duracion, String nombre, String gpx, String recomendaciones, String zona, LocalDate fechaCreacion, double longInicio, double longFinal, double latInicio, double latFinal, double altMax, double altMin, double desnivelPos, double desnivelNeg, double distancia, double valoracionMedia, Clasificacion clasificacion, Estado estado, Invitado usuario, Actividad tipoActividad, Periodo periodo, List<Waypoint> waypoints) {
+    public Ruta(int nivelRiesgo, int nivelEsfuerzo, int tipoTerreno, int indicaciones, boolean accesibilidad, boolean familiar, int duracion, String nombre, String gpx, String recomendaciones, String zona, LocalDate fechaCreacion, double longInicio, double longFinal, double latInicio, double latFinal, double altMax, double altMin, double desnivelPos, double desnivelNeg, double distancia, double valoracionMedia, Clasificacion clasificacion, Estado estado, Invitado usuario, Actividad tipoActividad, Periodo periodo) {
         this.nivelRiesgo = nivelRiesgo;
         this.nivelEsfuerzo = nivelEsfuerzo;
         this.tipoTerreno = tipoTerreno;
@@ -62,10 +63,34 @@ public class Ruta {
             this.periodo=periodo;
         }else{
             this.periodo = null;
+        }       
+        this.waypoints = new ArrayList<>();
+        }   
+    
+    //Constructor con los parámetros para crear una ruta 
+    public Ruta(int tipoTerreno, int indicaciones, int duracion, String nombre, String recomendaciones, String zona, double distancia, boolean accesibilidad, boolean familiar, Clasificacion clasificacion, Actividad tipoActividad, Periodo periodo) {
+        this.tipoTerreno = tipoTerreno;
+        this.indicaciones = indicaciones;
+        this.duracion = duracion;
+        this.nombre = nombre;
+        this.recomendaciones = recomendaciones;
+        this.zona = zona;
+        this.distancia = distancia;
+        this.accesibilidad = accesibilidad;
+        this.familiar = familiar;
+        this.clasificacion = clasificacion;
+        if(tipoActividad!=null){
+            this.tipoActividad = tipoActividad;
+        }else{
+            this.tipoActividad=null;
         }
-        
-        this.waypoints = waypoints;
-    }   
+        if(periodo!=null){
+            this.periodo=periodo;
+        }else{
+            this.periodo = null;
+        }       
+    }
+    
     //Métodos
     public int getNivelRiesgo() {
         return nivelRiesgo;

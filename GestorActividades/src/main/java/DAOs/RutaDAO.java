@@ -5,7 +5,6 @@
 package DAOs;
 
 import Enumerados.Clasificacion;
-import Enumerados.Estado;
 import com.mycompany.gestorActividades.AccesoBaseDatos;
 import com.mycompany.gestorActividades.Repositorio;
 import com.mycompany.gestorActividades.Ruta;
@@ -33,7 +32,7 @@ public class RutaDAO implements Repositorio<Ruta>{
     public List<Ruta> listar() {
         List<Ruta> lista = new ArrayList<>();
         Ruta r;
-        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select  FROM rutas")) {
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select idRuta,nombre,fechaCreacion,longInicio,latInicio,longFin,latFin,altMax,altMin,desnivelPos,desnivelNeg,clasificacion,nivelRiesgo,nivelEsfuerzo,tipoTerreno,indicaciones,accesibilidad,familiar,gpx,estado,recomendaciones,zonaGeografica,Usuario_idUsu,ValoracionMedia,Actividad_tipoActividad,distanciaTotal,duracionEstimada FROM rutas")) {
                 while (rs.next()) {
                     r = crearRuta(rs);
                     if (!lista.add(r)) {
@@ -52,7 +51,7 @@ public class RutaDAO implements Repositorio<Ruta>{
     
     public Ruta porId(int id) {
         Ruta resena = null;
-        try (PreparedStatement stmt = conn.prepareStatement("SELECT  FROM rutas WHERE idRuta = ?")) {
+        try (PreparedStatement stmt = conn.prepareStatement("SELECT nombre,fechaCreacion,longInicio,latInicio,longFin,latFin,altMax,altMin,desnivelPos,desnivelNeg,clasificacion,nivelRiesgo,nivelEsfuerzo,tipoTerreno,indicaciones,accesibilidad,familiar,gpx,estado,recomendaciones,zonaGeografica,Usuario_idUsu,ValoracionMedia,Actividad_tipoActividad,distanciaTotal,duracionEstimada FROM rutas WHERE idRuta = ?")) {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
@@ -68,11 +67,20 @@ public class RutaDAO implements Repositorio<Ruta>{
     }
 
     
-    public void modificar(Ruta r) {
-        try (PreparedStatement stmt = conn.prepareStatement("UPDATE rutas SET comentario = ?,fecha = ?,valoracion= ? WHERE idRuta= ?")) {
-            
-            
-            
+    public void modificar(Ruta r,int idRuta) {
+        try (PreparedStatement stmt = conn.prepareStatement("UPDATE rutas SET clasificacion = ?,tipoTerreno = ?,indicaciones= ?,accesibilidad= ?,familiar= ?,estado= ?,recomendaciones= ?,zonaGeografica= ?,Actividad_tipoActividad= ? WHERE idRuta= ?")) {
+            String clasificacion = String.valueOf(r.getClasificacion());
+            stmt.setString(1, clasificacion);
+            stmt.setInt(2, r.getTipoTerreno());
+            stmt.setInt(3, r.getIndicaciones());
+            stmt.setBoolean(4, r.getAccesibilidad());
+            stmt.setBoolean(5, r.getFamiliar());
+            String estado = String.valueOf(r.getEstado());
+            stmt.setString(6, estado);
+            stmt.setString(7, r.getRecomendaciones());
+            stmt.setString(8, r.getZona());
+            stmt.setObject(9, r.getTipoActividad());
+            stmt.setInt(10,idRuta );
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha modificado la ruta");
             }
@@ -85,10 +93,20 @@ public class RutaDAO implements Repositorio<Ruta>{
     }
 
     
-    public void agregar(Ruta r) {
-       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO rutas () VALUES (?, ?, ?, ?, ?, ? ,?)")) {
-            
-            
+    public void agregar(Ruta r,int idRuta) {
+       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO rutas (clasificacion,tipoTerreno,indicaciones,accesibilidad,familiar,estado,recomendaciones,zonaGeografica,Actividad_tipoActividad) VALUES (?, ?, ?, ?, ?, ? ,?, ? ,?)")) {
+            String clasificacion = String.valueOf(r.getClasificacion());
+            stmt.setString(1, clasificacion);
+            stmt.setInt(2, r.getTipoTerreno());
+            stmt.setInt(3, r.getIndicaciones());
+            stmt.setBoolean(4, r.getAccesibilidad());
+            stmt.setBoolean(5, r.getFamiliar());
+            String estado = String.valueOf(r.getEstado());
+            stmt.setString(6, estado);
+            stmt.setString(7, r.getRecomendaciones());
+            stmt.setString(8, r.getZona());
+            stmt.setObject(9, r.getTipoActividad());
+            stmt.setInt(10,idRuta );         
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha creado la ruta");
             }
@@ -116,31 +134,16 @@ public class RutaDAO implements Repositorio<Ruta>{
     }
     
      public Ruta crearRuta(final ResultSet rs) throws Exception {
-        return new Ruta(rs.getInt("nivel de riesgo")
-                ,rs.getInt("nivel de esfuerzo")
-                ,rs.getInt("tipo de terreno")
+        return new Ruta(rs.getInt("tipo de terreno")
                 ,rs.getInt("indicaciones")
-                ,rs.getBoolean("accesibilidad")
-                ,rs.getBoolean("familiar")
                 ,rs.getInt("duracion")
                 ,rs.getString("nombre")
-                ,rs.getString("gpx")
                 ,rs.getString("recomendaciones")
                 ,rs.getString("zona")
-                ,rs.getDate("fechaCreacion").toLocalDate()
-                ,rs.getDouble("longInicio")
-                ,rs.getDouble("longFinal")
-                ,rs.getDouble("latInicio")
-                ,rs.getDouble("latFinal")
-                ,rs.getDouble("altMax")
-                ,rs.getDouble("altMin")
-                ,rs.getDouble("desnivelPos")
-                ,rs.getDouble("desnivelNeg")
                 ,rs.getDouble("distancia")
-                ,rs.getDouble("valoracionMedia")
+                ,rs.getBoolean("accesibilidad")
+                ,rs.getBoolean("familiar")
                 ,Clasificacion.valueOf("clasificacion")
-                ,Estado.valueOf("estado")
-                ,null
                 ,null
                 ,null);
     }     
