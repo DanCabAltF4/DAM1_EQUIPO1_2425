@@ -93,7 +93,7 @@ public class RutaDAO implements Repositorio<Ruta>{
     }
 
     
-    public void agregar(Ruta r,int idRuta) {
+    public void agregar(Ruta r) {
        try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO rutas (clasificacion,tipoTerreno,indicaciones,accesibilidad,familiar,estado,recomendaciones,zonaGeografica,Actividad_tipoActividad) VALUES (?, ?, ?, ?, ?, ? ,?, ? ,?)")) {
             String clasificacion = String.valueOf(r.getClasificacion());
             stmt.setString(1, clasificacion);
@@ -105,8 +105,7 @@ public class RutaDAO implements Repositorio<Ruta>{
             stmt.setString(6, estado);
             stmt.setString(7, r.getRecomendaciones());
             stmt.setString(8, r.getZona());
-            stmt.setObject(9, r.getTipoActividad());
-            stmt.setInt(10,idRuta );         
+            stmt.setObject(9, r.getTipoActividad());      
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha creado la ruta");
             }
