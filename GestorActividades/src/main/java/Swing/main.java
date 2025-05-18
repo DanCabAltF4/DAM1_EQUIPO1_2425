@@ -1,6 +1,9 @@
 package Swing;
 
 import Enumerados.Clasificacion;
+import Enumerados.TipoPunto;
+import com.mycompany.gestorActividades.PuntoInteres;
+import com.mycompany.gestorActividades.PuntoPeligro;
 import com.mycompany.gestorActividades.Waypoint;
 import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
@@ -8,6 +11,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
@@ -2171,7 +2179,10 @@ public class main extends javax.swing.JFrame {
             datosCSV(documento);
         }
     }//GEN-LAST:event_jFileChooser1ActionPerformed
-    
+
+    //Atributos que se usaran para mantener los datos obtenidos de un csv entre pantallas
+    //Al implementar
+    private String nombreCSV;
     private double desnivelPosCSV;
     private double desnivelNegCSV;
     private double latitudIniCSV;
@@ -2180,16 +2191,137 @@ public class main extends javax.swing.JFrame {
     private double longitudFinCSV;
     private double altitudMinimaCSV;
     private double altitudMaximaCSV;
+    private int duracion;  //en minutos
     private Clasificacion clasificacionCSV;
     private List<Waypoint> waypoints;
-    
+
+    /**
+     *
+     * @param csv
+     */
     private void datosCSV(File csv) {
+        datosCSVNull();
         String nextLine;
+        String fila;
         StringTokenizer tokenizer;
+        double latAnterior = 0;
+        double lonAnterior = 0;
+        double eleAnterior = 0;
+        double ele;
+        LocalTime horaIni = null;
+        LocalTime horaFin = null;
+        boolean primerTrackPoint = true;
+        boolean primerWaypoint = true;
+        String nombreWay = null;
+        String descWay = null;
+        String[] opcionesTipoWay = {"Interes", "Peligro"};
         try (BufferedReader br = new BufferedReader(new FileReader(csv))) {
             while ((nextLine = br.readLine()) != null) {
                 tokenizer = new StringTokenizer(nextLine, ",");
-                //Continuará
+                fila = tokenizer.nextToken();
+                if (tokenizer.hasMoreElements()) {
+                    switch (fila) {
+                        case "InfoGeneral" -> {
+                            nombreCSV = tokenizer.nextToken();
+                        }
+                        case "Trackpoint" -> {
+                            latAnterior = Double.parseDouble(tokenizer.nextToken());
+                            lonAnterior = Double.parseDouble(tokenizer.nextToken());
+                            if (primerTrackPoint) {
+                                latitudIniCSV = latAnterior;
+                                longitudIniCSV = lonAnterior;
+                                ele = Double.parseDouble(tokenizer.nextToken());
+                                eleAnterior = ele;
+                                altitudMaximaCSV = ele;
+                                altitudMinimaCSV = ele;
+                                horaIni = LocalTime.parse(tokenizer.nextToken(), DateTimeFormatter.ofPattern("hh:mm:ss"));
+                                horaFin = horaIni;
+                                primerTrackPoint = false;
+                            } else {
+                                ele = Double.parseDouble(tokenizer.nextToken());
+                                datosAlturaCSV(ele, eleAnterior);
+                                eleAnterior = ele;
+                                horaFin = LocalTime.parse(tokenizer.nextToken(), DateTimeFormatter.ofPattern("hh:mm:ss"));
+
+                            }
+                        }
+                        case "Waypoint" -> {
+                            if (primerWaypoint) {
+                                latitudFinCSV = latAnterior;
+                                longitudFinCSV = lonAnterior;
+                                duracion = (int) ChronoUnit.MINUTES.between(horaIni, horaFin);
+                                //No estoy seguro como hacer la clasificacion
+                                clasificacionCSV = Clasificacion.LINEAL;
+                            }
+                            for (int i = 0; i < 4; i++) { //No vamos a usar los datos de posicion, podria haber estructurado mejor el csv
+                                tokenizer.nextToken();
+                            }
+                            nombreWay = tokenizer.nextToken();
+                            if (tokenizer.hasMoreTokens()) {
+                                descWay = tokenizer.nextToken();
+                            }
+                            int tipoWay = -1;
+                            while (tipoWay == -1) { //Para que no se salten el paso
+                                tipoWay = JOptionPane.showOptionDialog(null, "¿De que tipo es el siguiente punto?\nNombre: " + nombreWay + descWay != null ? "Descripcion: " + descWay : "", "Tipo", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcionesTipoWay, null);
+                            }
+                            switch (tipoWay) {
+
+                                case 0 -> {
+                                    int tipoPt = -1;
+                                    while (tipoPt == -1) {
+                                        tipoPt = JOptionPane.showOptionDialog(null, "¿De que tipo es el punto de interes?", "Tipo", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, TipoPunto.values(), null);
+                                    }
+                                    TipoPunto tipoPtEnum = switch (tipoPt) {
+                                        case 0 ->
+                                            TipoPunto.HISTÓRICOARQUEOLÓGICO;
+                                        case 1 ->
+                                            TipoPunto.NATURALEZA;
+                                        case 2 ->
+                                            TipoPunto.MIRADOR;
+                                        case 3 ->
+                                            TipoPunto.ÁREADEDESCANSO;
+                                        case 4 ->
+                                            TipoPunto.PUNTODEAGUA;
+                                        case 5 ->
+                                            TipoPunto.CULTURAL;
+                                        case 6 ->
+                                            TipoPunto.GEOLÓGICO;
+                                        case 7 ->
+                                            TipoPunto.FAUNAESPECIFICA;
+                                        case 8 ->
+                                            TipoPunto.BOTÁNICO;
+                                        default ->
+                                            null;
+                                    };
+                                    String caracteristicas = JOptionPane.showInputDialog("¿Algun comentario especifico?");
+                                    waypoints.add(new PuntoInteres(descWay, null, nombreWay, tipoPtEnum, caracteristicas));
+                                }
+                                case 1 -> {
+                                    int kilometro = 0;
+                                    do {
+                                        String input = JOptionPane.showInputDialog("¿En que kilometro se encuentra?");
+                                        try {
+                                            kilometro = Integer.parseInt(input);
+                                            if (kilometro < 0) {
+                                                throw new NumberFormatException();
+                                            }
+                                        } catch (NumberFormatException e) {
+                                            JOptionPane.showMessageDialog(null, "Introduce un numero positivo sin decimales", "Problema de entrada", JOptionPane.WARNING_MESSAGE);
+                                        }
+                                    } while (kilometro < 0);
+                                    int nivGrav = -1;
+                                    while (nivGrav == -1) {
+                                        String[] gravedad = {"1", "2", "3", "4", "5"};
+                                        nivGrav = JOptionPane.showOptionDialog(null, "Nivel de gravedad de peligro", "Nivel de gravedad", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, gravedad, null);
+                                    }
+                                    nivGrav += 1;
+                                    waypoints.add(new PuntoPeligro(descWay, null, kilometro, nivGrav));
+                                }
+                            }
+                        }
+
+                    }
+                }
             }
         } catch (FileNotFoundException ex) {
             System.out.println("ERROR");
@@ -2199,6 +2331,42 @@ public class main extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Establece los valores de los atributos referentes al CSV a null y 0
+     */
+    private void datosCSVNull() {
+        desnivelPosCSV = 0;
+        desnivelNegCSV = 0;
+        latitudIniCSV = 0;
+        latitudFinCSV = 0;
+        longitudIniCSV = 0;
+        longitudFinCSV = 0;
+        altitudMinimaCSV = 0;
+        altitudMaximaCSV = 0;
+        clasificacionCSV = null;
+        waypoints = new ArrayList<Waypoint>();
+    }
+
+    /**
+     * Recibe la altura del punto siendo procesado actualmente y del anterior y
+     * actualiza el desnivel en los parametros, además de la altura minima y
+     * maxima
+     *
+     * @param ele
+     * @param eleAnterior
+     */
+    private void datosAlturaCSV(double ele, double eleAnterior) {
+        if (ele > eleAnterior) {
+            desnivelPosCSV = ele - eleAnterior;
+        } else {
+            desnivelNegCSV = eleAnterior - ele;
+        }
+        if (ele > altitudMaximaCSV) {
+            altitudMaximaCSV = ele;
+        } else if (ele < altitudMinimaCSV) {
+            altitudMinimaCSV = ele;
+        }
+    }
     private void jButtonVerWaypointsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerWaypointsActionPerformed
         // TODO add your handling code here:
         jPanelInfoRuta.setVisible(false);
