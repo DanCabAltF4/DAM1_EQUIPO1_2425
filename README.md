@@ -1,25 +1,5 @@
 # **RETO: GESTIÓN DE RUTAS EN ACTIVIDADES AL AIRE LIBRE**
 
- ## Indice de contenido
-
-
-- [**RETO: GESTIÓN DE RUTAS EN ACTIVIDADES AL AIRE LIBRE**](#reto-gestión-de-rutas-en-actividades-al-aire-libre)
-  - [Indice de contenido](#indice-de-contenido)
-  - [Implementación y despliegue](#implementación-y-despliegue)
-  - [Sobre la base de datos](#sobre-la-base-de-datos)
-  - [Sobre Java](#sobre-java)
-  - [Manual de usuario](#manual-de-usuario)
-  - [Informes de la aplicación](#informes-de-la-aplicación)
-  - [Base de datos](#base-de-datos)
-  - [Script disparadores](#script-disparadores)
-  - [Página web y estilos](#página-web-y-estilos)
-  - [XSLT](#xslt)
-  - [Infografía sobre Seguridad Social](#infografía-sobre-seguridad-social)
-  - [Factores de riesgo](#factores-de-riesgo)
-  - [Matriz de riesgo](#matriz-de-riesgo)
-  - [Plan de emergencias](#plan-de-emergencias)
-  - [Tarea IT](#tarea-it)
-
 <!-- Documentación del desarrollo de la aplicación de escritorio destinada a la gestión de rutas en actividades al aire libre. Este espacio contendrá los miembros que han participado en el proceso, el desarrollo de la aplicación y su web complementaria, además de los manuales destinados a su compresión y uso.
 
 
@@ -74,7 +54,10 @@ Después de valorar estos aspectos decidimos decantarnos por VirtualBox. Las raz
 
 [Guía de despliegue (PDF)](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/MANUAL%20DE%20DESPLIEGUE%20DAM1.pdf?csf=1&web=1&e=lJPKIP) | [Manual de usuario (PDF)](https://educantabria.sharepoint.com/:w:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/MANUAL%20USUARIO.docx?d=w06038e8d45524639a670f50dc6b88509&csf=1&web=1&e=OlXqLQ)
 
+## Sobre la web
 
+
+[XSLT](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/gpxToCSV?csf=1&web=1&e=XLbvS2)
 
 ## Sobre la base de datos
 <!--Para enlazar imagenes, añade una ! a un enlace normal-->
@@ -105,18 +88,10 @@ Las relaciones más importantes se establecen entre usuarios y rutas, pudiendo u
   ![Casos de uso](imagenes/casos_uso.png)
 
 
-[Casos de uso](https://educantabria.sharepoint.com/:i:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/casos_uso.drawio.png?csf=1&web=1&e=hHwa4F) |
+[Casos de uso](#casos-de-uso)(https://educantabria.sharepoint.com/:i:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/casos_uso.drawio.png?csf=1&web=1&e=hHwa4F) |
 [Descripción de casos de uso](https://educantabria.sharepoint.com/:w:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/descripci%C3%B3n%20de%20casos%20de%20uso.docx?d=w5e06507a021a45c7ab6b5103337c9e46&csf=1&web=1&e=00XqIP)
 
-
-## Manual de usuario
-[Plantilla](https://educantabria.sharepoint.com/:w:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/MANUAL%20USUARIO.docx?d=w06038e8d45524639a670f50dc6b88509&csf=1&web=1&e=OlXqLQ)
-
-## Informes de la aplicación
-
-## Base de datos
-
-
+## Sobre la base de datos
 
 [Relacional](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/EER_EQUIPO1_V9.mwb?csf=1&web=1&e=e1JlMH)
 
@@ -131,8 +106,7 @@ Las relaciones más importantes se establecen entre usuarios y rutas, pudiendo u
 [Script de TRIGGERS](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/Script%20disparadores-Equipo1.sql?csf=1&web=1&e=PxRWOw)
 ## Página web y estilos
 
-## XSLT
-[Transformacion .gpx -> CSV](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/gpxToCSV?csf=1&web=1&e=XLbvS2)
+
 ## Infografía sobre Seguridad Social
 [Infografia de SS en PDF](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Infografia%20SS.pdf?csf=1&web=1&e=En4MY3)
 
