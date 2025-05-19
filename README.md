@@ -1,5 +1,6 @@
 # **RETO: GESTIÓN DE RUTAS EN ACTIVIDADES AL AIRE LIBRE**
 
+  - Guia de despliegue
 <!-- Documentación del desarrollo de la aplicación de escritorio destinada a la gestión de rutas en actividades al aire libre. Este espacio contendrá los miembros que han participado en el proceso, el desarrollo de la aplicación y su web complementaria, además de los manuales destinados a su compresión y uso.
 
 
