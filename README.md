@@ -52,21 +52,21 @@ Toma un archivo gpx para formatearlo con la información de la ruta y lo introdu
 
 Para la web hemos optado por un diseño sencillo y compacto, facilitando su uso para todo el mundo. Para el estilo nos inclinamos por un tema principalmente verde para acompañar la intención de disfrutar de la naturaleza que tienen los visitantes de la página.  
 
-![web1](/imagenes/WEB1.png)
+![web1](/imagenes/web1.png)
 
 
  Esta primera imagen muestra la pestaña que se abre por defecto al acceder a la página web, muestra las rutas disponibles y puede seleccionarse una para desplegar una nueva pestaña con los detalles de dicha ruta.
 
 
-![web4](/imagenes/WEB4.png)
+![web4](/imagenes/web4.png)
 
 Esta imagen muestra los detalles de las rutas mostradas en el apartado anterior. Como podemos ver, se tiene acceso a un gran abanico deelementos de las rutas que incluyen apartados como las fotos, valoraciones, y puntos de interés. 
 
-![web2](/imagenes/WEB2.png)
+![web2](/imagenes/web2.png)
 
 En este apartado se recoge la información esencial sobre la web, su finalidad y planes a futuro.
 
-![web3](/imagenes/WEB3.png)
+![web3](/imagenes/web3.png)
 
 Por último, existe una pestaña dedicada para conocer al equipo y porqué se creó esta web. 
 
