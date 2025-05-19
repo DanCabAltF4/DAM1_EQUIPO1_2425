@@ -1,14 +1,13 @@
-# RETO: GESTIÓN DE RUTAS EN ACTIVIDADES AL AIRE LIBRE
+# **RETO: GESTIÓN DE RUTAS EN ACTIVIDADES AL AIRE LIBRE**
 
  ## Indice de contenido
-- [RETO: GESTIÓN DE RUTAS EN ACTIVIDADES AL AIRE LIBRE](#reto-gestión-de-rutas-en-actividades-al-aire-libre)
+- [**RETO: GESTIÓN DE RUTAS EN ACTIVIDADES AL AIRE LIBRE**](#reto-gestión-de-rutas-en-actividades-al-aire-libre)
   - [Indice de contenido](#indice-de-contenido)
-  - [Miembros de **RDosM2**](#miembros-de-rdosm2)
+  - [Miembros de __RDosM2__](#miembros-de-rdosm2)
   - [Indice de contenido](#indice-de-contenido-1)
   - [Implementación y despliegue](#implementación-y-despliegue)
   - [Sobre la base de datos](#sobre-la-base-de-datos)
-  - [Diagrama clases](#diagrama-clases)
-  - [Diagrama de casos de uso](#diagrama-de-casos-de-uso)
+  - [Sobre Java](#sobre-java)
   - [Manual de usuario](#manual-de-usuario)
   - [Informes de la aplicación](#informes-de-la-aplicación)
   - [Base de datos](#base-de-datos)
@@ -24,7 +23,7 @@
 Documentación del desarrollo de la aplicación de escritorio destinada a la gestión de rutas en actividades al aire libre. Este espacio contendrá los miembros que han participado en el proceso, el desarrollo de la aplicación y su web complementaria, además de los manuales destinados a su compresión y uso.
 
 
-## Miembros de **RDosM2**
+## Miembros de __RDosM2__
 
 - Miguel Ángel Quian Díaz
 - Maya García Velasco
@@ -33,7 +32,7 @@ Documentación del desarrollo de la aplicación de escritorio destinada a la ges
 
 ## Indice de contenido
 <!--Para enlazar correctamente, crear un header con #/##/### y vincular -> [texto](#nombreDelHeader)-->
-- [RETO: GESTIÓN DE RUTAS EN ACTIVIDADES AL AIRE LIBRE](#reto-gestión-de-rutas-en-actividades-al-aire-libre)
+<!-- - [RETO: GESTIÓN DE RUTAS EN ACTIVIDADES AL AIRE LIBRE](#reto-gestión-de-rutas-en-actividades-al-aire-libre)
   - [Indice de contenido](#indice-de-contenido)
   - [Miembros de **RDosM2**](#miembros-de-rdosm2)
   - [Indice de contenido](#indice-de-contenido-1)
@@ -51,7 +50,7 @@ Documentación del desarrollo de la aplicación de escritorio destinada a la ges
   - [Factores de riesgo](#factores-de-riesgo)
   - [Matriz de riesgo](#matriz-de-riesgo)
   - [Plan de emergencias](#plan-de-emergencias)
-  - [Tarea IT](#tarea-it)
+  - [Tarea IT](#tarea-it) -->
 
    
 ## Implementación y despliegue
@@ -78,26 +77,36 @@ Después de valorar estos aspectos decidimos decantarnos por VirtualBox. Las raz
 
 
 ## Sobre la base de datos
-
-Las entidades principales de la base de datos son: rutas, usuarios, puntos de interés, puntos de peligro, y valoración técnica. 
-
 <!--Para enlazar imagenes, añade una ! a un enlace normal-->
   ![Relacional](/imagenes/EER_EQUIPO1_V9.png)
   [Script (SQL)](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/GeneracionBD_Equipo1.sql?csf=1&web=1&e=hKzkjL)
 
-## Diagrama clases
+La base de datos ha sido diseñada para acompañar a las diferentes funciones de la aplicación, entre las que se encuentran la creación y modificación de rutas, su valoración y la gestión de roles de los usuarios y sus permisos, entre otras. 
 
-[Diagrama](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Diagrama%20de%20clases%20ultimo.pdf?csf=1&web=1&e=LEeazY)
+| ENTIDADES PRINCIPALES|CONTENIDO|
+|---|---|
+|Usuarios| rol del usuario, credenciales, datos personales
+|Rutas| coordenadas, recomendaciones, duración
+Valoraciones Técnicas| dificultad, belleza, interés cultural
+***
 
-![Diagrama](imagenes/Diagrama_clases_ultimo.png)
+Las relaciones más importantes se establecen entre usuarios y rutas, pudiendo un usuario crear una o más rutas, rutas con puntos de peligro e interés, pudieno contener uno o varios, y rutas con valoración técnica pudiendo valorar una ruta tan solo una vez por usuario.
 
 
-## Diagrama de casos de uso
-[Diagrama](https://educantabria.sharepoint.com/:i:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/casos_uso.drawio.png?csf=1&web=1&e=hHwa4F)
 
-[Descripción](https://educantabria.sharepoint.com/:w:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/descripci%C3%B3n%20de%20casos%20de%20uso.docx?d=w5e06507a021a45c7ab6b5103337c9e46&csf=1&web=1&e=00XqIP)
+  ## Sobre Java
 
-![Diagrama](imagenes/casos_uso.png)
+
+<!-- FOTOS  -->
+  ![Diagrama](imagenes/Diagrama_clases_ultimo.png)
+
+  El diagrama representa nuestro sistema para tratar la información relacionada a la gestión de rutas al aire y los usuarios resgistrados. 
+
+  ![Casos de uso](imagenes/casos_uso.png)
+
+
+[Casos de uso](https://educantabria.sharepoint.com/:i:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/casos_uso.drawio.png?csf=1&web=1&e=hHwa4F) |
+[Descripción de casos de uso](https://educantabria.sharepoint.com/:w:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/descripci%C3%B3n%20de%20casos%20de%20uso.docx?d=w5e06507a021a45c7ab6b5103337c9e46&csf=1&web=1&e=00XqIP)
 
 
 ## Manual de usuario
