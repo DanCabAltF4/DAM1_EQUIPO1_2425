@@ -32,7 +32,7 @@ public class RutaDAO implements Repositorio<Ruta>{
     public List<Ruta> listar() {
         List<Ruta> lista = new ArrayList<>();
         Ruta r;
-        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select idRuta,nombre,fechaCreacion,longInicio,latInicio,longFin,latFin,altMax,altMin,desnivelPos,desnivelNeg,clasificacion,nivelRiesgo,nivelEsfuerzo,tipoTerreno,indicaciones,accesibilidad,familiar,gpx,estado,recomendaciones,zonaGeografica,Usuario_idUsu,ValoracionMedia,Actividad_tipoActividad,distanciaTotal,duracionEstimada FROM rutas")) {
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select idRuta,nombre,fechaCreacion,longInicio,latInicio,longFin,latFin,altMax,altMin,desnivelPos,desnivelNeg,clasificacion,nivelRiesgo,nivelEsfuerzo,tipoTerreno,indicaciones,accesibilidad,familiar,gpx,estado,recomendaciones,zonaGeografica,idUsu,ValoracionMedia,tipoActividad FROM rutas")) {
                 while (rs.next()) {
                     r = crearRuta(rs);
                     if (!lista.add(r)) {
