@@ -11,27 +11,29 @@
 <!--Para enlazar correctamente, crear un header con #/##/### y vincular -> [texto](#nombreDelHeader)-->
 1. [Diagrama de clases](#diagrama-clases)
 2. [Diagrama de casos de uso](#diagrama-de-casos-de-uso)
-3. [Manual de despliegue](#manual-despliegue)
-4. [Manual de usuario](#manual-de-usuario)
-5. [Informes de la aplicación de escritorio](#informes-de-la-aplicación)
-6. [Base de datos y Script](#base-de-datos)
-7. [Script de disparadores](#script-disparadores)
-8. [Página web y hoja de estilos](#página-web-y-estilos)
-9. [Plantilla XSLT](#xslt)
-10. [Infografía de Seguridad Social](#infografía-sobre-seguridad-social)
-11. [Identificación de factores de riesgos](#factores-de-riesgo)
-12. [Matriz de riesgo](#matriz-de-riesgo)
-13. [Plan de emergencias](#plan-de-emergencias)
-14. [Tarea I.T](#tarea-it)
+3. [Máquinas virtuales con servidores](#máquinas-virtuales-con-servidores)
+4. [Manual de despliegue](#manual-despliegue)
+5. [Manual de usuario](#manual-de-usuario)
+6. [Informes de la aplicación de escritorio](#informes-de-la-aplicación)
+7. [Base de datos y Script](#base-de-datos)
+8. [Script de disparadores](#script-disparadores)
+9. [Página web y hoja de estilos](#página-web-y-estilos)
+10. [Plantilla XSLT](#xslt)
+11. [Infografía de Seguridad Social](#infografía-sobre-seguridad-social)
+12. [Identificación de factores de riesgos](#factores-de-riesgo)
+13. [Matriz de riesgo](#matriz-de-riesgo)
+14. [Plan de emergencias](#plan-de-emergencias)
+15. [Tarea I.T](#tarea-it)
 
    
    
 
 ## Diagrama clases
+[Diagrama de clases completo](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Diagrama%20de%20clases%20espero%20que%20sea%20el%20ultimo.pdf?csf=1&web=1&e=UkPkpz)
 
-[Diagrama](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Diagrama%20de%20clases%20ultimo.pdf?csf=1&web=1&e=LEeazY)
+[Diagrama de clases que hemos aplicado](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Diagrama%20de%20clases%20aplicado.pdf?csf=1&web=1&e=eYL99k)
 
-![Diagrama](imagenes/Diagrama_clases_ultimo.png)
+![Diagrama](imagenes/Diagrama_clases_por_fin.png)
 
 
 ## Diagrama de casos de uso
@@ -41,26 +43,32 @@
 
 ![Diagrama](imagenes/casos_uso.png)
 
-## Manual despliegue
+## Máquinas virtuales con servidores
+[Servidor de base de datos](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/bd_ubuntu.ova?csf=1&web=1&e=VXpzZz)
 
-[Plantilla](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/MANUAL%20DE%20DESPLIEGUE%20DAM1.pdf?csf=1&web=1&e=lJPKIP)
+[Servidor web](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/ServidorWeb-Equipo1-VF.ova?csf=1&web=1&e=RlUCsb)
+
+## Manual despliegue
+[Manual de despliegue](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Manuales/MANUAL%20DESPLIEGUE.pdf?csf=1&web=1&e=bMy8iM)
 
 ## Manual de usuario
 [Plantilla](https://educantabria.sharepoint.com/:w:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/MANUAL%20USUARIO.docx?d=w06038e8d45524639a670f50dc6b88509&csf=1&web=1&e=OlXqLQ)
 
+[Manual de usuario](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Manuales/MANUAL%20USUARIO.pdf?csf=1&web=1&e=eZLNh1)
+
 ## Informes de la aplicación
 
-## Base de datos
 
+## Base de datos
 [Script](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/GeneracionBD_Equipo1.sql?csf=1&web=1&e=hKzkjL)
 
-[Relacional](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/EER_EQUIPO1_V9.mwb?csf=1&web=1&e=e1JlMH)
+[Relacional](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/EER_EQUIPO1_V10.mwb?csf=1&web=1&e=e1JlMH)
 
-[Relacional formato PDF](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/EER_EQUIPO1_V9.pdf?csf=1&web=1&e=KapWHP)
+[Relacional formato PDF](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/EER_EQUIPO1_V10.pdf?csf=1&web=1&e=KapWHP)
 
 
 <!--Para enlazar imagenes, añade una ! a un enlace normal-->
-![Relacional](/imagenes/EER_EQUIPO1_V9.png)
+![Relacional](/imagenes/EER_EQUIPO1_V10.png)
 
 [Script ejemplos](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/DatosEjemploBD_Equipo1.sql?csf=1&web=1&e=DBjGqU)
 
