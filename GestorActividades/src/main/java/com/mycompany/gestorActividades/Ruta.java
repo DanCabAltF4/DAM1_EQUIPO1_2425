@@ -7,6 +7,7 @@ package com.mycompany.gestorActividades;
 import Enumerados.Clasificacion;
 import Enumerados.Estado;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,12 +16,12 @@ import java.util.List;
  * @author Raúl Buenaga
  */
 public class Ruta {
-
-    private int nivelRiesgo, nivelEsfuerzo, tipoTerreno,indicaciones,duracion;
+    
+    private int nivelRiesgo, nivelEsfuerzo, tipoTerreno, indicaciones, duracion;
     private String nombre, gpx, recomendaciones, zona;
     private LocalDate fechaCreacion;
-    private double longInicio, longFinal, latInicio, latFinal, altMax, altMin,desnivelPos, desnivelNeg, distancia,valoracionMedia;
-    private boolean accesibilidad,familiar;
+    private double longInicio, longFinal, latInicio, latFinal, altMax, altMin, desnivelPos, desnivelNeg, distancia, valoracionMedia;
+    private boolean accesibilidad, familiar;
     private Clasificacion clasificacion;
     private Estado estado;
     private Invitado usuario;
@@ -54,19 +55,19 @@ public class Ruta {
         this.clasificacion = clasificacion;
         this.estado = estado;
         this.usuario = usuario;
-        if(tipoActividad!=null){
+        if (tipoActividad != null) {
             this.tipoActividad = tipoActividad;
-        }else{
-            this.tipoActividad=null;
+        } else {
+            this.tipoActividad = null;
         }
-        if(periodo!=null){
-            this.periodo=periodo;
-        }else{
+        if (periodo != null) {
+            this.periodo = periodo;
+        } else {
             this.periodo = null;
-        }       
+        }        
         this.waypoints = new ArrayList<>();
-        }   
-    
+    }
+
     //Constructor con los parámetros para crear una ruta 
     public Ruta(int tipoTerreno, int indicaciones, int duracion, String nombre, String recomendaciones, String zona, double distancia, boolean accesibilidad, boolean familiar, Clasificacion clasificacion, Actividad tipoActividad, Periodo periodo) {
         this.tipoTerreno = tipoTerreno;
@@ -79,126 +80,141 @@ public class Ruta {
         this.accesibilidad = accesibilidad;
         this.familiar = familiar;
         this.clasificacion = clasificacion;
-        if(tipoActividad!=null){
+        if (tipoActividad != null) {
             this.tipoActividad = tipoActividad;
-        }else{
-            this.tipoActividad=null;
+        } else {
+            this.tipoActividad = null;
         }
-        if(periodo!=null){
-            this.periodo=periodo;
-        }else{
+        if (periodo != null) {
+            this.periodo = periodo;
+        } else {
             this.periodo = null;
-        }       
+        }        
     }
-    
+
     //Métodos
     public int getNivelRiesgo() {
         return nivelRiesgo;
     }
-
+    
     public int getNivelEsfuerzo() {
         return nivelEsfuerzo;
     }
-
+    
     public int getTipoTerreno() {
         return tipoTerreno;
     }
-
+    
     public int getIndicaciones() {
         return indicaciones;
     }
-
+    
     public boolean getAccesibilidad() {
         return accesibilidad;
     }
-
+    
     public boolean getFamiliar() {
         return familiar;
     }
-
+    
     public int getDuracion() {
         return duracion;
     }
-
+    
     public String getNombre() {
         return nombre;
     }
-
+    
     public String getGpx() {
         return gpx;
     }
-
+    
     public String getRecomendaciones() {
         return recomendaciones;
     }
-
+    
     public String getZona() {
         return zona;
     }
-
+    
     public LocalDate getFechaCreacion() {
         return fechaCreacion;
     }
-
+    
     public double getLongInicio() {
         return longInicio;
     }
-
+    
     public double getLongFinal() {
         return longFinal;
     }
-
+    
     public double getLatInicio() {
         return latInicio;
     }
-
+    
     public double getLatFinal() {
         return latFinal;
     }
-
+    
     public double getAltMax() {
         return altMax;
     }
-
+    
     public double getAltMin() {
         return altMin;
     }
-
+    
     public double getDesnivelPos() {
         return desnivelPos;
     }
-
+    
     public double getDesnivelNeg() {
         return desnivelNeg;
     }
-
+    
     public double getDistancia() {
         return distancia;
     }
-
+    
     public double getValoracionMedia() {
         return valoracionMedia;
     }
-
+    
     public Clasificacion getClasificacion() {
         return clasificacion;
     }
-
+    
     public Estado getEstado() {
         return estado;
     }
-
+    
     public Invitado getUsuario() {
         return usuario;
     }
-
+    
     public Actividad getTipoActividad() {
         return tipoActividad;
     }
-
+    
     public Periodo getPeriodo() {
         return periodo;
     }
+
+    /**
+     * Devuelve un array con los datos necesarios para mostrarla en
+     * JPanelVerRuta
+     *
+     * @return datos
+     */
+    public String[] arrayVerRuta() {
+        String[] datos = {
+            nombre,
+            String.valueOf(valoracionMedia),
+            nivelEsfuerzo != 0 ? String.valueOf(nivelEsfuerzo) : "TBD",
+            fechaCreacion.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+        };
+        return datos;
+    }
     
-       
 }
