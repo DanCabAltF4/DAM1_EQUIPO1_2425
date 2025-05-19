@@ -47,7 +47,7 @@ public class main extends javax.swing.JFrame {
     3-Profesor
     4-Administrador
      */
-    private int nivelAcceso = 4;
+    private int nivelAcceso = 3;
 
     /**
      * Creates new form main
@@ -230,6 +230,7 @@ public class main extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
         jComboBox4 = new javax.swing.JComboBox<>();
+        jButtonGuardarResena = new javax.swing.JButton();
         jPanelValoracionesAdminRuta = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jButtonVolverValoracionesAdmin = new javax.swing.JButton();
@@ -1574,6 +1575,13 @@ public class main extends javax.swing.JFrame {
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "1", "2", "3", "4", "5" }));
 
+        jButtonGuardarResena.setText("Guardar");
+        jButtonGuardarResena.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGuardarResenaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelResennarLayout = new javax.swing.GroupLayout(jPanelResennar);
         jPanelResennar.setLayout(jPanelResennarLayout);
         jPanelResennarLayout.setHorizontalGroup(
@@ -1597,6 +1605,9 @@ public class main extends javax.swing.JFrame {
                             .addComponent(jLabel55)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanelResennarLayout.createSequentialGroup()
+                        .addGap(124, 124, 124)
+                        .addComponent(jLabel56))
+                    .addGroup(jPanelResennarLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addGroup(jPanelResennarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel57)
@@ -1608,11 +1619,11 @@ public class main extends javax.swing.JFrame {
                         .addGap(61, 61, 61)
                         .addGroup(jPanelResennarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel59)))
-                    .addGroup(jPanelResennarLayout.createSequentialGroup()
-                        .addGap(124, 124, 124)
-                        .addComponent(jLabel56)))
-                .addContainerGap())
+                            .addComponent(jLabel59))))
+                .addGap(58, 58, 58))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelResennarLayout.createSequentialGroup()
+                .addComponent(jButtonGuardarResena)
+                .addGap(18, 18, 18))
         );
         jPanelResennarLayout.setVerticalGroup(
             jPanelResennarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1649,7 +1660,9 @@ public class main extends javax.swing.JFrame {
                         .addGroup(jPanelResennarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addGap(25, 25, 25)
+                .addComponent(jButtonGuardarResena)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelResennar, "card14");
@@ -2274,7 +2287,7 @@ public class main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIniciarSesionActionPerformed
-        jPanelPrincipal.setVisible(false);
+        jPanelPrincipal.setVisible(false);  
         jPanelInicioSesion.setVisible(true);
     }//GEN-LAST:event_jButtonIniciarSesionActionPerformed
 
@@ -2466,20 +2479,22 @@ public class main extends javax.swing.JFrame {
 
     private void jPanelInfoRutaComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jPanelInfoRutaComponentShown
         //Control de visibilidad de los botones
-        if (nivelAcceso < 1) {
-            jButtonVerValResInfo.setVisible(true);
-            jButtonReseñarInfo.setVisible(false);
-            jButtonValorarInfo.setVisible(false);
-        } else if (nivelAcceso < 2) {
+        if (nivelAcceso <= 1) {
             jButtonVerValResInfo.setVisible(true);
             jButtonReseñarInfo.setVisible(true);
             jButtonValorarInfo.setVisible(false);
-        } else {
+            jButtonModificarRutasMenu.setVisible(false);
+        } else if (nivelAcceso <= 3) {
             jButtonVerValResInfo.setVisible(true);
             jButtonReseñarInfo.setVisible(true);
             jButtonValorarInfo.setVisible(true);
+            jButtonModificarRutasMenu.setVisible(false);
+        } else if (nivelAcceso == 4) { 
+            jButtonVerValResInfo.setVisible(true);
+            jButtonReseñarInfo.setVisible(true);
+            jButtonValorarInfo.setVisible(true);
+            jButtonModificarRutasMenu.setVisible(true);
         }
-
     }//GEN-LAST:event_jPanelInfoRutaComponentShown
 
     private void jButtonValorarInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValorarInfoActionPerformed
@@ -2960,7 +2975,6 @@ public class main extends javax.swing.JFrame {
         // TODO add your handling code here:
         jPanelPuntosInteres.setVisible(false);
         jPanelCrearRuta.setVisible(true);
-
     }//GEN-LAST:event_jButtonVolverValoracionesUsu3ActionPerformed
 
     private void jButtonVolverValoracionesUsu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverValoracionesUsu4ActionPerformed
@@ -2989,6 +3003,7 @@ public class main extends javax.swing.JFrame {
 
     private void jButtonModificarRutasMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificarRutasMenuActionPerformed
         // TODO add your handling code here:
+        
         jPanelInfoRuta.setVisible(false);
         jPanelModificarRuta.setVisible(true);
     }//GEN-LAST:event_jButtonModificarRutasMenuActionPerformed
@@ -3008,6 +3023,13 @@ public class main extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jButtonEliminarRutaActionPerformed
+
+    private void jButtonGuardarResenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarResenaActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(jPanelResennar, "Valoración guardada con éxito", "", JOptionPane.INFORMATION_MESSAGE);
+        jPanelResennar.setVisible(false);
+        jPanelInfoRuta.setVisible(true);
+    }//GEN-LAST:event_jButtonGuardarResenaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3056,6 +3078,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton jButtonDescargarRutaMenu;
     private javax.swing.JButton jButtonEliminarRuta;
     private javax.swing.JButton jButtonGuardarCambios;
+    private javax.swing.JButton jButtonGuardarResena;
     private javax.swing.JButton jButtonInfoRutas;
     private javax.swing.JButton jButtonIniciarSesion;
     private javax.swing.JButton jButtonIntroduceFicheroCsv;
