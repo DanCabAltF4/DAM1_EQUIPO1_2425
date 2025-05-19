@@ -44,13 +44,13 @@
 ![Diagrama](imagenes/casos_uso.png)
 
 ## Máquinas virtuales con servidores
-[Servidor de base de datos]
+[Servidor de base de datos]()
 
 [Servidor web](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/ServidorWeb-Equipo1-VF.ova?csf=1&web=1&e=RlUCsb)
 
 ## Manual despliegue
 
-[Manual de despliegue](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/MANUAL%20DESPLIEGUE%20(1).pdf?csf=1&web=1&e=AdxFBu)
+[Manual de despliegue](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/MANUAL%20DESPLIEGUE.pdf?csf=1&web=1&e=dM0MBh)
 
 ## Manual de usuario
 [Plantilla](https://educantabria.sharepoint.com/:w:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/MANUAL%20USUARIO.docx?d=w06038e8d45524639a670f50dc6b88509&csf=1&web=1&e=OlXqLQ)
