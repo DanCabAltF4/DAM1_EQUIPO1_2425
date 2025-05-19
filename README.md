@@ -11,18 +11,19 @@
 <!--Para enlazar correctamente, crear un header con #/##/### y vincular -> [texto](#nombreDelHeader)-->
 1. [Diagrama de clases](#diagrama-clases)
 2. [Diagrama de casos de uso](#diagrama-de-casos-de-uso)
-3. [Manual de despliegue](#manual-despliegue)
-4. [Manual de usuario](#manual-de-usuario)
-5. [Informes de la aplicación de escritorio](#informes-de-la-aplicación)
-6. [Base de datos y Script](#base-de-datos)
-7. [Script de disparadores](#script-disparadores)
-8. [Página web y hoja de estilos](#página-web-y-estilos)
-9. [Plantilla XSLT](#xslt)
-10. [Infografía de Seguridad Social](#infografía-sobre-seguridad-social)
-11. [Identificación de factores de riesgos](#factores-de-riesgo)
-12. [Matriz de riesgo](#matriz-de-riesgo)
-13. [Plan de emergencias](#plan-de-emergencias)
-14. [Tarea I.T](#tarea-it)
+3. [Máquinas virtuales con servidores](#maquinas-virtuales-con-servidores)
+4. [Manual de despliegue](#manual-despliegue)
+5. [Manual de usuario](#manual-de-usuario)
+6. [Informes de la aplicación de escritorio](#informes-de-la-aplicación)
+7. [Base de datos y Script](#base-de-datos)
+8. [Script de disparadores](#script-disparadores)
+9. [Página web y hoja de estilos](#página-web-y-estilos)
+10. [Plantilla XSLT](#xslt)
+11. [Infografía de Seguridad Social](#infografía-sobre-seguridad-social)
+12. [Identificación de factores de riesgos](#factores-de-riesgo)
+13. [Matriz de riesgo](#matriz-de-riesgo)
+14. [Plan de emergencias](#plan-de-emergencias)
+15. [Tarea I.T](#tarea-it)
 
    
    
@@ -41,6 +42,11 @@
 [Descripción](https://educantabria.sharepoint.com/:w:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/descripci%C3%B3n%20de%20casos%20de%20uso.docx?d=w5e06507a021a45c7ab6b5103337c9e46&csf=1&web=1&e=00XqIP)
 
 ![Diagrama](imagenes/casos_uso.png)
+
+## Máquinas virtuales con servidores
+[Servidor de base de datos]
+
+[Servidor web](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/ServidorWeb-Equipo1-VF.ova?csf=1&web=1&e=RlUCsb)
 
 ## Manual despliegue
 
