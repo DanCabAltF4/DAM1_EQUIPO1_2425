@@ -31,7 +31,7 @@ public class PuntoPeligroDAO implements Repositorio<PuntoPeligro>{
     public List<PuntoPeligro> listar() {
         List<PuntoPeligro> lista = new ArrayList<>();
         PuntoPeligro p;
-        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select id,kilometro,nivelGravedad,descripcion,ruta,longitud,latitud FROM puntosPeligro")) {
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select id,descripcion,kilometro,nivelGravedad,rutas_idRuta,longitud,latitud FROM puntospeligro")) {
                 while (rs.next()) {
                     p = crearPuntoPeligro(rs);
                     if (!lista.add(p)) {
@@ -50,7 +50,7 @@ public class PuntoPeligroDAO implements Repositorio<PuntoPeligro>{
     
     public PuntoPeligro porId(int id) {
         PuntoPeligro puntoPeligro = null;
-        try (PreparedStatement stmt = conn.prepareStatement("SELECT kilometro,nivelGravedad,descripcion,ruta,longitud,latitud FROM puntosPeligro WHERE id = ?")) {
+        try (PreparedStatement stmt = conn.prepareStatement("SELECT id,descripcion,kilometro,nivelGravedad,rutas_idRuta,longitud,latitud FROM puntospeligro WHERE id = ?")) {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
@@ -66,12 +66,12 @@ public class PuntoPeligroDAO implements Repositorio<PuntoPeligro>{
     }
 
     
-    public void modificar(PuntoPeligro p) {
-        try (PreparedStatement stmt = conn.prepareStatement("UPDATE puntosPeligro SET kilometro = ?,nivelGravedad = ?,descripcion = ?,longitud = ?,latitud = ? WHERE id= ?")) {
-            stmt.setInt(1, p.getKilometro());
-            stmt.setInt(2, p.getNivGravedad());
-            stmt.setString(3, p.getDescripcion());
-            
+    public void modificar(PuntoPeligro p,int id) {
+        try (PreparedStatement stmt = conn.prepareStatement("UPDATE puntospeligro SET descripcion = ?,kilometro = ?,nivelGravedad = ? WHERE id= ?")) {
+            stmt.setString(1, p.getDescripcion());
+            stmt.setInt(2, p.getKilometro());
+            stmt.setInt(3, p.getNivGravedad());
+            stmt.setInt(4, id);
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha modificado el punto peligro");
             }
@@ -84,10 +84,12 @@ public class PuntoPeligroDAO implements Repositorio<PuntoPeligro>{
     }
 
     
-    public void agregar(PuntoPeligro p) {
-       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO puntosPeligro (descripcion,kilometro,nivelGravedad,idRuta,longitud,latitud) VALUES (?, ?, ?, ?, ?, ? )")) {
-            
-            
+    public void agregar(PuntoPeligro p,int idRuta) {
+       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO puntospeligro (descripcion,kilometro,nivelGravedad,rutas_idRuta) VALUES (?, ?, ?, ?)")) {
+            stmt.setString(1, p.getDescripcion());
+            stmt.setInt(2, p.getKilometro());
+            stmt.setInt(3, p.getNivGravedad());
+            stmt.setInt(4, idRuta);         
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha creado el usuario");
             }
@@ -100,9 +102,9 @@ public class PuntoPeligroDAO implements Repositorio<PuntoPeligro>{
     }
 
     @Override
-    public void eliminar(String nombre) {
-        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM puntosPeligro WHERE =?")) {
-            stmt.setString(1, nombre);
+    public void eliminar(String descripcion) {
+        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM puntospeligro WHERE descripcion=?")) {
+            stmt.setString(1, descripcion);
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: el punto peligro no existe");
             }

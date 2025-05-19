@@ -33,7 +33,7 @@ public class ValoracionTecDAO implements Repositorio<ValoracionTecnica>{
     public List<ValoracionTecnica> listar() {
         List<ValoracionTecnica> lista = new ArrayList<>();
         ValoracionTecnica v;
-        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select dificultad,bellezaPaisajistica,interesCultural,Usuario.idUsu,Ruta.idRuta,fecha FROM valoracionesTecnicas")) {
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select dificultad,bellezaPaisajistica,interesCultural,usuarios_idUsu,rutas_idRuta,fecha FROM valoracionestecnicas")) {
                 while (rs.next()) {
                     v = crearValoracion(rs);
                     if (!lista.add(v)) {
@@ -53,7 +53,7 @@ public class ValoracionTecDAO implements Repositorio<ValoracionTecnica>{
     
     public ValoracionTecnica porId(int id) {
         ValoracionTecnica valoracion = null;
-        try (PreparedStatement stmt = conn.prepareStatement("SELECT dificultad,bellezaPaisajistica,interesCultural,Usuario.idUsu,Ruta.idRuta,fecha FROM valoracionesTecnicas WHERE idValora = ?")) {
+        try (PreparedStatement stmt = conn.prepareStatement("SELECT dificultad,bellezaPaisajistica,interesCultural,usuarios_idUsu,fecha FROM valoracionestecnicas WHERE rutas_idRuta = ?")) {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
@@ -69,10 +69,13 @@ public class ValoracionTecDAO implements Repositorio<ValoracionTecnica>{
     }
 
     
-    public void modificar(ValoracionTecnica t) {
-        try (PreparedStatement stmt = conn.prepareStatement("UPDATE valoracionesTecnicas SET dificultad = ?,bellezaPaisajistica = ?,interesCultural = ?,fecha = ? WHERE idValora = ?")) {
-            
-            
+    public void modificar(ValoracionTecnica v, int idRuta) {
+        try (PreparedStatement stmt = conn.prepareStatement("UPDATE valoracionestecnicas SET dificultad = ?,bellezaPaisajistica = ?,interesCultural = ?,fecha = ? WHERE rutas_idRuta = ?")) {
+            stmt.setInt(1, v.getDificultad());
+            stmt.setInt(2, v.getBelleza());
+            stmt.setInt(3, v.getInteres());
+            stmt.setDate(4, Date.valueOf(v.getFecha()));
+            stmt.setInt(5, idRuta);
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha modificado la valoracion");
             }
@@ -85,11 +88,14 @@ public class ValoracionTecDAO implements Repositorio<ValoracionTecnica>{
     }
 
     
-    public void agregar(ValoracionTecnica t) {
-        try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO valoracionesTecnicas (dificultad,bellezaPaisajistica,interesCultural,idUsu,idRuta,fecha) VALUES (?, ?, ?, ?, ?, ?)")) {
-            stmt.setInt(1, t.getDificultad());
-            stmt.setInt(2, t.getBelleza());
-            stmt.setInt(3, t.getInteres());
+    public void agregar(ValoracionTecnica v,int idUsu,int idRuta) {
+        try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO valoracionestecnicas (dificultad,bellezaPaisajistica,interesCultural,usuarios_idUsu,rutas_idRuta,fecha) VALUES (?, ?, ?, ?, ?, ?)")) {
+            stmt.setInt(1, v.getDificultad());
+            stmt.setInt(2, v.getBelleza());
+            stmt.setInt(3, v.getInteres());
+            stmt.setInt(4, idUsu);
+            stmt.setInt(5, idRuta);
+            stmt.setDate(6, Date.valueOf(v.getFecha()));
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha creado la valoracion");
             }
@@ -102,9 +108,9 @@ public class ValoracionTecDAO implements Repositorio<ValoracionTecnica>{
     }
 
     
-    public void eliminar(int id) {
-        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM valoracionesTecnicas WHERE usuario=?")) {
-            stmt.setObject(1, id);
+    public void eliminar(int idRuta) {
+        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM valoracionestecnicas WHERE rutas_idRuta=?")) {
+            stmt.setObject(1, idRuta);
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: la valoracion no existe");
             }

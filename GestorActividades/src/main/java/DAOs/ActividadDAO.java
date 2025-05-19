@@ -48,10 +48,10 @@ public class ActividadDAO implements Repositorio<Actividad>{
     }
 
     
-    public Actividad porId(int id) {
+    public Actividad porNombre(String nombre) {
         Actividad actividad = null;
-        try (PreparedStatement stmt = conn.prepareStatement("SELECT idActividad,nomActividad FROM actividad WHERE idActividad= ?")) {
-            stmt.setInt(1, id);
+        try (PreparedStatement stmt = conn.prepareStatement("SELECT idActividad,nomActividad FROM actividad WHERE nomActividad= ?")) {
+            stmt.setString(1,nombre);
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
                     actividad = crearActividad(rs);
@@ -66,10 +66,9 @@ public class ActividadDAO implements Repositorio<Actividad>{
     }
 
     
-    public void modificar(Actividad a,int id) {
-        try (PreparedStatement stmt = conn.prepareStatement("UPDATE actividad SET nomActividad=? WHERE idActividad= ?")) {
+    public void modificar(Actividad a) {
+        try (PreparedStatement stmt = conn.prepareStatement("UPDATE actividad SET nomActividad=? WHERE nomActividad= ?")) {
              stmt.setString(1, a.getTipo());
-             stmt.setInt(2, id);
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha modificado la actividad");
             }
