@@ -11,7 +11,7 @@
 <!--Para enlazar correctamente, crear un header con #/##/### y vincular -> [texto](#nombreDelHeader)-->
 1. [Diagrama de clases](#diagrama-clases)
 2. [Diagrama de casos de uso](#diagrama-de-casos-de-uso)
-3. [Máquinas virtuales con servidores](#maquinas-virtuales-con-servidores)
+3. [Máquinas virtuales con servidores](#máquinas-virtuales-con-servidores)
 4. [Manual de despliegue](#manual-despliegue)
 5. [Manual de usuario](#manual-de-usuario)
 6. [Informes de la aplicación de escritorio](#informes-de-la-aplicación)
