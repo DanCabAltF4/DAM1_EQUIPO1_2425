@@ -1108,8 +1108,8 @@
                                   </Group>
                                   <Component id="jTextField2" alignment="0" pref="200" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="jTextField3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField4" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBox7" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBox8" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -1169,7 +1169,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jTextFieldDuracionRuta" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBox7" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -1179,7 +1179,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jTextFieldClasificacionRuta" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBox8" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -1335,25 +1335,9 @@
             <Property name="text" type="java.lang.String" value="&#xbf;Es accesible para todos?"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField3">
-          <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="99" red="99" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="S&#xed;/No"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel37">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xbf;Es una ruta familiar?"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField4">
-          <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="99" red="99" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="S&#xed;/No"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel38">
@@ -1385,6 +1369,34 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAnnadirWaypointsActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox7">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="Seleccione"/>
+                <StringItem index="1" value="S&#xed;"/>
+                <StringItem index="2" value="No"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox8">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="Seleccione"/>
+                <StringItem index="1" value="S&#xed;"/>
+                <StringItem index="2" value="No"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
@@ -1439,12 +1451,12 @@
                                       <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
                                       <Component id="jTextField11" min="-2" pref="187" max="-2" attributes="0"/>
                                       <Component id="jLabel49" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField10" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel48" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField9" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jTextField7" min="-2" pref="200" max="-2" attributes="0"/>
                                       <Component id="jLabel47" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel41" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox9" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox10" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
@@ -1495,8 +1507,8 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextField9" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextFieldActividadCsv" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBox9" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -1505,8 +1517,8 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextField10" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextFieldDistanciaRuta1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBox10" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -1630,25 +1642,9 @@
             <Property name="text" type="java.lang.String" value="&#xbf;Es accesible para todos?"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField9">
-          <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="99" red="99" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="S&#xed;/No"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel48">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xbf;Es una ruta familiar?"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField10">
-          <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="99" red="99" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="S&#xed;/No"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel49">
@@ -1681,6 +1677,34 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonIntroduceFicheroCsvActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox9">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="Seleccione"/>
+                <StringItem index="1" value="S&#xed;"/>
+                <StringItem index="2" value="No"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox10">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="Seleccione"/>
+                <StringItem index="1" value="S&#xed;"/>
+                <StringItem index="2" value="No"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
@@ -1801,7 +1825,7 @@
         <Component class="javax.swing.JTable" name="jTableInfo2">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    new Object [][] {&#xa;        {&quot;Nombre&quot;, null},&#xa;        {&quot;Coordenadas GPS&quot;, &quot;Punto inicial&quot;},&#xa;        {&quot;Latitud&quot;, null},&#xa;        {&quot;Longitud&quot;, null},&#xa;        {&quot;Coordenadas GPS&quot;, &quot;Punto final&quot;},&#xa;        {&quot;Latitud&quot;, null},&#xa;        {&quot;Longitud&quot;, null},&#xa;        {&quot;Distancia&quot;, null},&#xa;        {&quot;Duracion Estimada&quot;, null},&#xa;        {&quot;Desnivel positivo&quot;, null},&#xa;        {&quot;Altura m&#xe1;xima&quot;, null},&#xa;        {&quot;Altura m&#xed;nima&quot;, null},&#xa;        {&quot;Clasificacion&quot;, null},&#xa;        {&quot;Nivel de Riesgo&quot;, null},&#xa;        {&quot;Nivel de Esfuerzo&quot;, null},&#xa;        {&quot;Tipo de Terreno&quot;, null},&#xa;        {&quot;Zona&quot;, null},&#xa;        {&quot;Indicaciones&quot;, null},&#xa;        {&quot;Accesibilidad&quot;, null},&#xa;        {&quot;Familiar&quot;, null},&#xa;        {&quot;Recomendaciones&quot;, null},&#xa;        {&quot;Tipo de actividad&quot;, null},&#xa;        {&quot;Epoca del a&#xf1;o&quot;, null}&#xa;&#xa;    },&#xa;    new Object[] {&quot;nombre&quot;,&quot;info&quot;}&#xa;){&#xa;    @Override&#xa;    public boolean isCellEditable(int row, int column) {&#xa;        return false;&#xa;    }&#xa;}" type="code"/>
+              <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    new Object [][] {&#xa;        {&quot;Nombre&quot;, null},&#xa;        {&quot;Coordenadas GPS&quot;, &quot;Punto inicial&quot;},&#xa;        {&quot;Latitud&quot;, null},&#xa;        {&quot;Longitud&quot;, null},&#xa;        {&quot;Coordenadas GPS&quot;, &quot;Punto final&quot;},&#xa;        {&quot;Latitud&quot;, null},&#xa;        {&quot;Longitud&quot;, null},&#xa;        {&quot;Distancia&quot;, null},&#xa;        {&quot;Duracion Estimada&quot;, null},&#xa;        {&quot;Desnivel positivo&quot;, null},&#xa;        {&quot;Altura m&#xe1;xima&quot;, null},&#xa;        {&quot;Altura m&#xed;nima&quot;, null},&#xa;        {&quot;Clasificacion&quot;, null},&#xa;        {&quot;Nivel de Riesgo&quot;, null},&#xa;        {&quot;Nivel de Esfuerzo&quot;, null},&#xa;        {&quot;Tipo de Terreno&quot;, null},&#xa;        {&quot;Zona&quot;, null},&#xa;        {&quot;Indicaciones&quot;, null},&#xa;        {&quot;Accesibilidad&quot;, null},&#xa;        {&quot;Familiar&quot;, null},&#xa;        {&quot;Recomendaciones&quot;, null},&#xa;        {&quot;Tipo de actividad&quot;, null},&#xa;        {&quot;Epoca del a&#xf1;o&quot;, null}&#xa;&#xa;    },&#xa;    new Object[] {&quot;nombre&quot;,&quot;info&quot;}&#xa;)" type="code"/>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0"/>
