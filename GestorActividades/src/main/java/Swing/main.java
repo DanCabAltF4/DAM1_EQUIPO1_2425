@@ -2836,10 +2836,9 @@ public class main extends javax.swing.JFrame {
                 }
             }
         } catch (FileNotFoundException ex) {
-            System.out.println("ERROR");
+            JOptionPane.showMessageDialog(null, "No se ha podido procesar el  csv", "ERROR", JOptionPane.WARNING_MESSAGE);
         } catch (IOException ex) {
-            System.out.println("ERROR");
-
+            JOptionPane.showMessageDialog(null, "No se ha podido procesar el  csv", "ERROR", JOptionPane.WARNING_MESSAGE);
         }
     }
 
