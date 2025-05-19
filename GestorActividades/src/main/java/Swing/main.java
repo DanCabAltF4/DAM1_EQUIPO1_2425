@@ -2694,12 +2694,14 @@ public class main extends javax.swing.JFrame {
     private double longitudFinCSV;
     private double altitudMinimaCSV;
     private double altitudMaximaCSV;
-    private int duracion;  //en minutos
+    private int duracionCSV;  //en minutos
     private Clasificacion clasificacionCSV;
-    private List<Waypoint> waypoints;
+    private List<Waypoint> waypointsCSV;
 
     /**
-     *
+     * Mediante un archivo csv generado a partir de un gpx con el xslt que hemos
+     * generado, da valores a los atributos acabados en "CSV" para su uso en la
+     * creacion de una ruta.
      * @param csv
      */
     private void datosCSV(File csv) {
@@ -2752,7 +2754,7 @@ public class main extends javax.swing.JFrame {
                             if (primerWaypoint) {
                                 latitudFinCSV = latAnterior;
                                 longitudFinCSV = lonAnterior;
-                                duracion = (int) ChronoUnit.MINUTES.between(horaIni, horaFin);
+                                duracionCSV = (int) ChronoUnit.MINUTES.between(horaIni, horaFin);
                                 //No estoy seguro como hacer la clasificacion
                                 clasificacionCSV = Clasificacion.LINEAL;
                             }
@@ -2797,7 +2799,7 @@ public class main extends javax.swing.JFrame {
                                             null;
                                     };
                                     String caracteristicas = JOptionPane.showInputDialog("¿Algun comentario especifico?");
-                                    waypoints.add(new PuntoInteres(descWay, null, nombreWay, tipoPtEnum, caracteristicas));
+                                    waypointsCSV.add(new PuntoInteres(descWay, null, nombreWay, tipoPtEnum, caracteristicas));
                                 }
                                 case 1 -> {
                                     int kilometro = 0;
@@ -2818,8 +2820,9 @@ public class main extends javax.swing.JFrame {
                                         nivGrav = JOptionPane.showOptionDialog(null, "Nivel de gravedad de peligro", "Nivel de gravedad", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, gravedad, null);
                                     }
                                     nivGrav += 1;
-                                    waypoints.add(new PuntoPeligro(descWay, null, kilometro, nivGrav));
+                                    waypointsCSV.add(new PuntoPeligro(descWay, null, kilometro, nivGrav));
                                 }
+
                             }
                         }
 
@@ -2846,7 +2849,7 @@ public class main extends javax.swing.JFrame {
         altitudMinimaCSV = 0;
         altitudMaximaCSV = 0;
         clasificacionCSV = null;
-        waypoints = new ArrayList<Waypoint>();
+        waypointsCSV = new ArrayList<Waypoint>();
     }
 
     /**
@@ -2957,7 +2960,7 @@ public class main extends javax.swing.JFrame {
         // TODO add your handling code here:
         jPanelPuntosInteres.setVisible(false);
         jPanelCrearRuta.setVisible(true);
-        
+
     }//GEN-LAST:event_jButtonVolverValoracionesUsu3ActionPerformed
 
     private void jButtonVolverValoracionesUsu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverValoracionesUsu4ActionPerformed
@@ -3003,7 +3006,7 @@ public class main extends javax.swing.JFrame {
             jPanelModificarRuta.setVisible(false);
             jPanelInfoRuta.setVisible(true);
         }
-        
+
     }//GEN-LAST:event_jButtonEliminarRutaActionPerformed
 
     /**
