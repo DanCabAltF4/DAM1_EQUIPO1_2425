@@ -174,15 +174,15 @@ public class main extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
         jLabel37 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
         jLabel38 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
         jButton1CrearLaRuta = new javax.swing.JButton();
         jButtonAnnadirWaypoints = new javax.swing.JButton();
+        jComboBox7 = new javax.swing.JComboBox<>();
+        jComboBox8 = new javax.swing.JComboBox<>();
         jPanelCrearRutaCsv = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
         jButtonVolverCrearRutaCsv = new javax.swing.JButton();
@@ -198,15 +198,15 @@ public class main extends javax.swing.JFrame {
         jLabel46 = new javax.swing.JLabel();
         jTextFieldTerrenoRuta1 = new javax.swing.JTextField();
         jLabel47 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
         jLabel49 = new javax.swing.JLabel();
         jTextField11 = new javax.swing.JTextField();
         jLabel50 = new javax.swing.JLabel();
         jTextField12 = new javax.swing.JTextField();
         jButtonCrearLaRutaCsv = new javax.swing.JButton();
         jButtonIntroduceFicheroCsv = new javax.swing.JButton();
+        jComboBox9 = new javax.swing.JComboBox<>();
+        jComboBox10 = new javax.swing.JComboBox<>();
         jPanelSelectorCsv = new javax.swing.JPanel();
         jFileChooser1 = new javax.swing.JFileChooser();
         jPanelModificarRuta = new javax.swing.JPanel();
@@ -1085,13 +1085,7 @@ public class main extends javax.swing.JFrame {
 
         jLabel36.setText("¿Es accesible para todos?");
 
-        jTextField3.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField3.setText("Sí/No");
-
         jLabel37.setText("¿Es una ruta familiar?");
-
-        jTextField4.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField4.setText("Sí/No");
 
         jLabel38.setText("Recomendaciones");
 
@@ -1110,6 +1104,10 @@ public class main extends javax.swing.JFrame {
                 jButtonAnnadirWaypointsActionPerformed(evt);
             }
         });
+
+        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Sí", "No" }));
+
+        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Sí", "No" }));
 
         javax.swing.GroupLayout jPanelCrearRutaLayout = new javax.swing.GroupLayout(jPanelCrearRuta);
         jPanelCrearRuta.setLayout(jPanelCrearRutaLayout);
@@ -1156,8 +1154,8 @@ public class main extends javax.swing.JFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel34))
                                 .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanelCrearRutaLayout.createSequentialGroup()
                         .addComponent(jButtonVolverCrearRutas)
                         .addGap(82, 82, 82)
@@ -1202,7 +1200,7 @@ public class main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelCrearRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldDuracionRuta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelCrearRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel30)
@@ -1210,7 +1208,7 @@ public class main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelCrearRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldClasificacionRuta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelCrearRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
@@ -1278,13 +1276,7 @@ public class main extends javax.swing.JFrame {
 
         jLabel47.setText("¿Es accesible para todos?");
 
-        jTextField9.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField9.setText("Sí/No");
-
         jLabel48.setText("¿Es una ruta familiar?");
-
-        jTextField10.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField10.setText("Sí/No");
 
         jLabel49.setText("Recomendaciones");
 
@@ -1304,6 +1296,10 @@ public class main extends javax.swing.JFrame {
                 jButtonIntroduceFicheroCsvActionPerformed(evt);
             }
         });
+
+        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Sí", "No" }));
+
+        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Sí", "No" }));
 
         javax.swing.GroupLayout jPanelCrearRutaCsvLayout = new javax.swing.GroupLayout(jPanelCrearRutaCsv);
         jPanelCrearRutaCsv.setLayout(jPanelCrearRutaCsvLayout);
@@ -1343,12 +1339,12 @@ public class main extends javax.swing.JFrame {
                                     .addComponent(jLabel50)
                                     .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel49)
-                                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel48)
-                                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel47)
-                                    .addComponent(jLabel41))
+                                    .addComponent(jLabel41)
+                                    .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addComponent(jLabel42))
                 .addContainerGap())
@@ -1383,16 +1379,16 @@ public class main extends javax.swing.JFrame {
                         .addComponent(jLabel47)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelCrearRutaCsvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldActividadCsv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldActividadCsv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelCrearRutaCsvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel48)
                     .addComponent(jLabel44))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelCrearRutaCsvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldDistanciaRuta1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldDistanciaRuta1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelCrearRutaCsvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel49)
@@ -1485,12 +1481,7 @@ public class main extends javax.swing.JFrame {
 
             },
             new Object[] {"nombre","info"}
-        ){
-            @Override
-            public boolean isCellEditable(int row, int column) {
-                return false;
-            }
-        });
+        ));
 
         jButtonGuardarCambios.setText("Guardar cambios");
         jButtonGuardarCambios.addActionListener(new java.awt.event.ActionListener() {
@@ -3096,11 +3087,15 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton jButtonVolverValoracionesUsu4;
     private javax.swing.JButton jButtonVolverWaypoints;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox10;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox6;
+    private javax.swing.JComboBox<String> jComboBox7;
+    private javax.swing.JComboBox<String> jComboBox8;
+    private javax.swing.JComboBox<String> jComboBox9;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -3227,7 +3222,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
@@ -3236,13 +3230,10 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField jTextFieldActividadCsv;
     private javax.swing.JTextField jTextFieldApellidosRegistro;
     private javax.swing.JTextField jTextFieldClasificacionRuta;
