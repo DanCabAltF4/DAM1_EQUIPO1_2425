@@ -5,8 +5,6 @@
 
 - [**RETO: GESTIÓN DE RUTAS EN ACTIVIDADES AL AIRE LIBRE**](#reto-gestión-de-rutas-en-actividades-al-aire-libre)
   - [Indice de contenido](#indice-de-contenido)
-  - [Miembros de __RDosM2__](#miembros-de-rdosm2)
-  - [Indice de contenido](#indice-de-contenido-1)
   - [Implementación y despliegue](#implementación-y-despliegue)
   - [Sobre la base de datos](#sobre-la-base-de-datos)
   - [Sobre Java](#sobre-java)
@@ -22,17 +20,17 @@
   - [Plan de emergencias](#plan-de-emergencias)
   - [Tarea IT](#tarea-it)
 
-Documentación del desarrollo de la aplicación de escritorio destinada a la gestión de rutas en actividades al aire libre. Este espacio contendrá los miembros que han participado en el proceso, el desarrollo de la aplicación y su web complementaria, además de los manuales destinados a su compresión y uso.
+<!-- Documentación del desarrollo de la aplicación de escritorio destinada a la gestión de rutas en actividades al aire libre. Este espacio contendrá los miembros que han participado en el proceso, el desarrollo de la aplicación y su web complementaria, además de los manuales destinados a su compresión y uso.
 
 
-## Miembros de __RDosM2__
+## Miembros de RDosM2
 
 - Miguel Ángel Quian Díaz
 - Maya García Velasco
 - Daniel Cabeza Berrazueta
 - Raúl Buenaga García
 
-## Indice de contenido
+
 <!--Para enlazar correctamente, crear un header con #/##/### y vincular -> [texto](#nombreDelHeader)-->
 <!-- - [RETO: GESTIÓN DE RUTAS EN ACTIVIDADES AL AIRE LIBRE](#reto-gestión-de-rutas-en-actividades-al-aire-libre)
   - [Indice de contenido](#indice-de-contenido)
@@ -67,7 +65,7 @@ Dentro de las tecnologías existentes, a la hora de desplegar este proyecto nos 
 |**Virtualización** | Local | Local o centro de datos | En la nube |
 |**Escalabilidad** | Limitado por hardware | Limitado (local) escalable (VMware vSphere) | Escalable |
 |**Casos de uso** | Pruebas, aprendizaje | Entornos corporativos | Producción |
-***
+
 
 
 Después de valorar estos aspectos decidimos decantarnos por VirtualBox. Las razones son principalmente la familiaridad del equipo con la herramienta, su gratuidad, y su flexibilidad.
@@ -90,7 +88,7 @@ La base de datos ha sido diseñada para acompañar a las diferentes funciones de
 |Usuarios| rol del usuario, credenciales, datos personales
 |Rutas| coordenadas, recomendaciones, duración
 Valoraciones Técnicas| dificultad, belleza, interés cultural
-***
+
 
 Las relaciones más importantes se establecen entre usuarios y rutas, pudiendo un usuario crear una o más rutas, rutas con puntos de peligro e interés, pudieno contener uno o varios, y rutas con valoración técnica pudiendo valorar una ruta tan solo una vez por usuario.
 
