@@ -95,7 +95,7 @@ public class ActividadDAO implements Repositorio<Actividad>{
         }
     }
 
-    @Override
+    
     public void eliminar(String nombre) {
         try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM actividad WHERE nombre=?")) {
             stmt.setString(1, nombre);

@@ -32,7 +32,7 @@ public class PuntoInteresDAO implements Repositorio<PuntoInteres>{
     public List<PuntoInteres> listar() {
         List<PuntoInteres> lista = new ArrayList<>();
         PuntoInteres p;
-        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select id,nombre,tipo,descripcion,caracteristicasEspeciales,longitud,latitud,rutas_idRuta FROM puntosinteres")) {
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select id,nombre,tipo,descripcion,caracteristicasEspeciales,longitud,latitud FROM puntosinteres")) {
                 while (rs.next()) {
                     p = crearPuntoInteres(rs);
                     if (!lista.add(p)) {
@@ -50,7 +50,7 @@ public class PuntoInteresDAO implements Repositorio<PuntoInteres>{
 
     public PuntoInteres porNombre(String nombre) {
         PuntoInteres puntoInteres = null;
-        try (PreparedStatement stmt = conn.prepareStatement("SELECT id,nombre,tipo,descripcion,caracteristicasEspeciales,longitud,latitud,rutas_idRuta FROM puntosinteres WHERE nombre = ?")) {
+        try (PreparedStatement stmt = conn.prepareStatement("SELECT id,nombre,tipo,descripcion,caracteristicasEspeciales,longitud,latitud FROM puntosinteres WHERE nombre = ?")) {
             stmt.setString(1, nombre);
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
@@ -84,13 +84,12 @@ public class PuntoInteresDAO implements Repositorio<PuntoInteres>{
     }
 
     
-    public void agregar(PuntoInteres p,int idRuta) {
-       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO puntosinteres (nombre,tipo,descripcion,caracteristicasEspeciales,rutas_idRuta) VALUES (?, ?, ?, ?, ?)")) {
+    public void agregar(PuntoInteres p) {
+       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO puntosinteres (nombre,tipo,descripcion,caracteristicasEspeciales) VALUES (?, ?, ?, ?)")) {
             stmt.setString(1, p.getNombre());
             stmt.setObject(2, p.getTipo());
             stmt.setString(3, p.getDescripcion());
             stmt.setString(4, p.getCaracteristicas());
-             stmt.setInt(5, idRuta);
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha creado el punto interes");
             }
@@ -102,7 +101,7 @@ public class PuntoInteresDAO implements Repositorio<PuntoInteres>{
         }
     }
 
-    @Override
+    
     public void eliminar(String nombre) {
         try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM puntosinteres WHERE nombre=?")) {
             stmt.setObject(1, nombre);

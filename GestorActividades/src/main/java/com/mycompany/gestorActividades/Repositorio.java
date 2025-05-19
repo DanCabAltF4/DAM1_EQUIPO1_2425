@@ -17,9 +17,4 @@ public interface Repositorio<T> {
     public List<T> listar();
 
 
-   
-
-    // método para borrar un objeto por su nombre
-    // nos permite borrar un registro de la base de datos 
-    public void eliminar(String nombre);
 }

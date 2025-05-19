@@ -32,7 +32,7 @@ public class RutaDAO implements Repositorio<Ruta>{
     public List<Ruta> listar() {
         List<Ruta> lista = new ArrayList<>();
         Ruta r;
-        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select idRuta,nombre,fechaCreacion,longInicio,latInicio,longFin,latFin,altMax,altMin,desnivelPos,desnivelNeg,clasificacion,nivelRiesgo,nivelEsfuerzo,tipoTerreno,indicaciones,accesibilidad,familiar,gpx,estado,recomendaciones,zonaGeografica,Usuario_idUsu,ValoracionMedia,Actividad_tipoActividad,distanciaTotal,duracionEstimada FROM rutas")) {
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select nombre,fechaCreacion,longInicio,latInicio,longFin,latFin,altMax,altMin,desnivelPos,desnivelNeg,clasificacion,nivelRiesgo,nivelEsfuerzo,tipoTerreno,indicaciones,accesibilidad,familiar,gpx,estado,recomendaciones,zonaGeografica,ValoracionMedia,Actividad_tipoActividad,distanciaTotal,duracionEstimada FROM rutas")) {
                 while (rs.next()) {
                     r = crearRuta(rs);
                     if (!lista.add(r)) {
@@ -49,10 +49,10 @@ public class RutaDAO implements Repositorio<Ruta>{
     }
 
     
-    public Ruta porId(int id) {
+    public Ruta porId(String nombre) {
         Ruta resena = null;
-        try (PreparedStatement stmt = conn.prepareStatement("SELECT nombre,fechaCreacion,longInicio,latInicio,longFin,latFin,altMax,altMin,desnivelPos,desnivelNeg,clasificacion,nivelRiesgo,nivelEsfuerzo,tipoTerreno,indicaciones,accesibilidad,familiar,gpx,estado,recomendaciones,zonaGeografica,Usuario_idUsu,ValoracionMedia,Actividad_tipoActividad,distanciaTotal,duracionEstimada FROM rutas WHERE idRuta = ?")) {
-            stmt.setInt(1, id);
+        try (PreparedStatement stmt = conn.prepareStatement("SELECT nombre,fechaCreacion,longInicio,latInicio,longFin,latFin,altMax,altMin,desnivelPos,desnivelNeg,clasificacion,nivelRiesgo,nivelEsfuerzo,tipoTerreno,indicaciones,accesibilidad,familiar,gpx,estado,recomendaciones,zonaGeografica,ValoracionMedia,Actividad_tipoActividad,distanciaTotal,duracionEstimada FROM rutas WHERE nombre = ?")) {
+            stmt.setString(1, nombre);
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
                     resena = crearRuta(rs);
@@ -117,7 +117,7 @@ public class RutaDAO implements Repositorio<Ruta>{
         }
     }
 
-    @Override
+    
     public void eliminar(String nombre) {
         try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM rutas WHERE nombre=?")) {
             stmt.setObject(1, nombre);

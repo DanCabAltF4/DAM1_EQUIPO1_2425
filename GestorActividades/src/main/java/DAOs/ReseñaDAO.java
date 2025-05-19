@@ -32,7 +32,7 @@ public class ReseñaDAO implements Repositorio<Resena>{
     public List<Resena> listar() {
         List<Resena> lista = new ArrayList<>();
         Resena r;
-        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select comentario,usuarios_idUsu,rutas_idRuta,fecha,valoracion FROM resenna")) {
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select comentario,fecha,valoracion FROM resenna")) {
                 while (rs.next()) {
                     r = crearReseña(rs);
                     if (!lista.add(r)) {
@@ -49,10 +49,10 @@ public class ReseñaDAO implements Repositorio<Resena>{
     }
 
     
-    public Resena porId(int id) {
+    public Resena porId(Resena r) {
         Resena resena = null;
-        try (PreparedStatement stmt = conn.prepareStatement("SELECT comentario,rutas_idRuta,fecha,valoracion FROM resenna WHERE  usuarios_idUsu= ?")) {
-            stmt.setInt(1, id);
+        try (PreparedStatement stmt = conn.prepareStatement("SELECT comentario,fecha,valoracion FROM resenna WHERE valoracion= ?")) {
+            stmt.setInt(1, r.getValoracion());
             try (ResultSet rs = stmt.executeQuery();) {
                 if (rs.next()) {
                     resena = crearReseña(rs);
@@ -85,13 +85,11 @@ public class ReseñaDAO implements Repositorio<Resena>{
     }
 
     
-    public void agregar(Resena r,int idUsuario,int idRuta) {
-       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO resenna (comentario,usuarios_idUsu,rutas_idRuta,fecha,valoracion) VALUES (?, ?, ?, ?, ?)")) {
+    public void agregar(Resena r) {
+       try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO resenna (comentario,fecha,valoracion) VALUES (?, ?, ?)")) {
             stmt.setString(1, r.getComentario());
-            stmt.setInt(2, idUsuario);
-            stmt.setInt(3, idRuta);
-            stmt.setDate(4, Date.valueOf(r.getFecha()));
-            stmt.setInt(5, r.getValoracion());
+            stmt.setDate(2, Date.valueOf(r.getFecha()));
+            stmt.setInt(3, r.getValoracion());
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: no se ha creado la resena");
             }
@@ -104,9 +102,9 @@ public class ReseñaDAO implements Repositorio<Resena>{
     }
 
     
-    public void eliminar(int id) {
-        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM resenna WHERE rutas_idRuta=?")) {
-            stmt.setObject(1, id);
+    public void eliminar(String comentario) {
+        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM resenna WHERE comentario=?")) {
+            stmt.setString(1, comentario);
             if (stmt.executeUpdate() != 1) {
                 throw new Exception("ERROR: la resena no existe");
             }
@@ -122,8 +120,4 @@ public class ReseñaDAO implements Repositorio<Resena>{
         return new Resena(null,null,rs.getDate("fecha").toLocalDate(),rs.getString("comentario"),rs.getInt("estrellas"));
     }
 
-    @Override
-    public void eliminar(String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
