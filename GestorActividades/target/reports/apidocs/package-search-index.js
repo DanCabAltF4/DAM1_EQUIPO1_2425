@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.mycompany.gestorActividades"},{"l":"DAOs"},{"l":"Enumerados"},{"l":"Swing"}];updateSearchResults();
