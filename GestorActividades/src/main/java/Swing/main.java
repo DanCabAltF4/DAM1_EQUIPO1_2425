@@ -1,9 +1,12 @@
 package Swing;
 
+import DAOs.RutaDAO;
 import Enumerados.Clasificacion;
 import Enumerados.TipoPunto;
+import com.mycompany.gestorActividades.AccesoBaseDatos;
 import com.mycompany.gestorActividades.PuntoInteres;
 import com.mycompany.gestorActividades.PuntoPeligro;
+import com.mycompany.gestorActividades.Ruta;
 import com.mycompany.gestorActividades.Waypoint;
 import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
@@ -2432,15 +2435,28 @@ public class main extends javax.swing.JFrame {
             modelo.removeRow(0);
         }
 
-        //valores de pruebas
+        cargarRutas(modelo);
+        /*//valores de pruebas
         for (int i = 0; i < 20; i++) {
-            String[] infoEjemplo = {"Nombre", "3", String.valueOf(i), "12/05/25"};
-            modelo.addRow(infoEjemplo);
+        String[] infoEjemplo = {"Nombre", "3", String.valueOf(i), "12/05/25"};
+        modelo.addRow(infoEjemplo);
         }
         String[] ejemplo = {"ejemploejemploejemploejemploejemploejemploeje", "ejemplo", "ejemplo", "ejemplo"};
-        modelo.addRow(ejemplo);
+         modelo.addRow(ejemplo);*/
     }//GEN-LAST:event_jPanelRutasComponentShown
-
+    /**
+     * Carga las rutas a la tabla de JPanelRutas
+     * @param modelo
+     */
+    private void cargarRutas(DefaultTableModel modelo) {
+        /*RutaDAO dao = new RutaDAO(AccesoBaseDatos.getInstance().getConn());
+        List<Ruta> rutas = dao.listar();
+        Iterator<Ruta> it = rutas.iterator();
+        while (it.hasNext()) {
+        Ruta next = it.next();
+        modelo.addRow(next.arrayVerRuta());
+        }*/
+    }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -2717,6 +2733,7 @@ public class main extends javax.swing.JFrame {
      * Mediante un archivo csv generado a partir de un gpx con el xslt que hemos
      * generado, da valores a los atributos acabados en "CSV" para su uso en la
      * creacion de una ruta.
+     *
      * @param csv
      */
     private void datosCSV(File csv) {
@@ -2754,14 +2771,14 @@ public class main extends javax.swing.JFrame {
                                 eleAnterior = ele;
                                 altitudMaximaCSV = ele;
                                 altitudMinimaCSV = ele;
-                                horaIni = LocalTime.parse(tokenizer.nextToken(), DateTimeFormatter.ofPattern("hh:mm:ss"));
+                                horaIni = LocalTime.parse(tokenizer.nextToken().substring(11,19), DateTimeFormatter.ofPattern("HH:mm:ss"));
                                 horaFin = horaIni;
                                 primerTrackPoint = false;
                             } else {
                                 ele = Double.parseDouble(tokenizer.nextToken());
                                 datosAlturaCSV(ele, eleAnterior);
                                 eleAnterior = ele;
-                                horaFin = LocalTime.parse(tokenizer.nextToken(), DateTimeFormatter.ofPattern("hh:mm:ss"));
+                                horaFin = LocalTime.parse(tokenizer.nextToken().substring(11,19), DateTimeFormatter.ofPattern("HH:mm:ss"));
 
                             }
                         }
@@ -2782,7 +2799,7 @@ public class main extends javax.swing.JFrame {
                             }
                             int tipoWay = -1;
                             while (tipoWay == -1) { //Para que no se salten el paso
-                                tipoWay = JOptionPane.showOptionDialog(null, "¿De que tipo es el siguiente punto?\nNombre: " + nombreWay + descWay != null ? "Descripcion: " + descWay : "", "Tipo", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcionesTipoWay, null);
+                                tipoWay = JOptionPane.showOptionDialog(null, "¿De que tipo es el siguiente punto?\nNombre: " + nombreWay + (descWay != null ? "\nDescripcion: " + descWay : ""), "Tipo", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcionesTipoWay, null);
                             }
                             switch (tipoWay) {
 
@@ -2827,6 +2844,7 @@ public class main extends javax.swing.JFrame {
                                             }
                                         } catch (NumberFormatException e) {
                                             JOptionPane.showMessageDialog(null, "Introduce un numero positivo sin decimales", "Problema de entrada", JOptionPane.WARNING_MESSAGE);
+                                            kilometro = 0;
                                         }
                                     } while (kilometro < 0);
                                     int nivGrav = -1;
