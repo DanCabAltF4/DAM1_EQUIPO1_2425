@@ -88,13 +88,7 @@ Por último, existe una pestaña dedicada para conocer al equipo y porqué se cr
 Toma un archivo gpx para formatearlo con la información de la ruta y lo introduce en la web para ver los datos de interés.
 
 
-## Base de datos
-[Script](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/GeneracionBD_Equipo1.sql?csf=1&web=1&e=hKzkjL)
-
-[Relacional](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/EER_EQUIPO1_V10.mwb?csf=1&web=1&e=e1JlMH)
-
-[Relacional formato PDF](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/EER_EQUIPO1_V10.pdf?csf=1&web=1&e=KapWHP)
-
+## Sobre la base de datos
 
 <!--Para enlazar imagenes, añade una ! a un enlace normal-->
 ![Relacional](/imagenes/EER_EQUIPO1_V10.png)
@@ -118,7 +112,7 @@ Las relaciones más importantes se establecen entre usuarios y rutas, pudiendo u
 ## Sobre Java
 
 <!-- FOTOS  -->
-  ![Diagrama](imagenes/Diagrama_clases_ultimo.png)
+  ![Diagrama](imagenes/Diagrama_clases_por_fin.png)
 
   El diagrama representa nuestro sistema para la gestión  y evaluación de rutas. La clase central es la de Ruta, que se relaciona con todas las demás y cuenta con los datos esenciales de las mismas como atributos. Las rutas pueden ser valoradas mediante ValoracionTecnica (por diseñadores, profesores) o Reseña (por todos los usuarios), ambas heredando de la clase abstracta Valoracion. Los usuarios siguen la siguiente jerarquía: invitado, alumno, profesor, diseñador de ruta, administrador, cada uno con métodos propios que se corresponden con sus permisos. Otra clase esencial a la que se relaciona Rutas es Waypoint, que puede representar los puntos de interés o de peligro. Por último, otra función clave es la de descargar fichas informativas, que se dividen en Ficha de Seguridad, Ficha de Usuario, y Ficha de Organización que cuelgan de una clase abstracta común llamada Ficha Informativa.
 
@@ -134,7 +128,7 @@ A continuación ofrecemos una imagen del diagrama de casos de uso, con un víncu
 
 
 
-[XSLT ](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/gpxToCSV?csf=1&web=1&e=XLbvS2) XSLT que recoge un archivo GPX genera un archivo CSV para usarlo en la generación de rutas mediante ficheros.
+[XSLT ](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/gpxToCSV?csf=1&web=1&e=XLbvS2) que recoge un archivo GPX genera un archivo CSV para usarlo en la generación de rutas mediante ficheros.
 ## IPE
 
 [Infografia de SS 📑](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Infografia%20SS.pdf?csf=1&web=1&e=En4MY3) | 
