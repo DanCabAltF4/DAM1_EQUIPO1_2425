@@ -41,13 +41,28 @@ Dentro de las tecnologías existentes, a la hora de desplegar este proyecto nos 
 |**Casos de uso** | Pruebas, aprendizaje | Entornos corporativos | Producción |
 
 
-
 Después de valorar estos aspectos decidimos decantarnos por VirtualBox. Las razones son principalmente la familiaridad del equipo con la herramienta, su gratuidad, y su flexibilidad.
+
+Para el servidor web investigamos NGINX para explorar otras tecnologías no vistas en clase, y la comparamos con Apache que es el servidor con el que más experiencia contábamos.
+
+| | NGINX | Apache |
+|---|---|---|
+|**Licencia**|2-Clause BSD | Apache License 2.0|
+|**Arquitectura**| asíncrono | multihilo|
+|**sistema operativo**|multiplataforma| multiplataforma |
+|**Renimiento**| alto, incluso con mucha afluencia| bueno, pero menos eficiente con gran afluencia |
+|**consumo**| bajo | alto |
+|**soporte de .htaccess** | no | sí |
+|**soporte PHP**| por FastCGI | por mod_php |
+
+Como se ve en la tabla NGINX es una opción muy llamativa, pero con las dificultades que afrontamos en su uso y la falta de tiempo finalmente decidimos seguir adelante con Apache.
+
+
 
 ## Sobre la web
 
 [XSLT](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/gpxToHtml?csf=1&web=1&e=D1xcbi)
-Toma un archivo gpx para formatearlo con la información de la ruta y lo introduce en la web para ver los datos de interés.
+que toma un archivo gpx para formatearlo con la información de la ruta y lo introduce en la web para ver los datos de interés.
 
 
 Para la web hemos optado por un diseño sencillo y compacto, facilitando su uso para todo el mundo. Para el estilo nos inclinamos por un tema principalmente verde para acompañar la intención de disfrutar de la naturaleza que tienen los visitantes de la página.  
@@ -105,7 +120,7 @@ Las relaciones más importantes se establecen entre usuarios y rutas, pudiendo u
 
 
 
-[XSLT ](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/gpxToCSV?csf=1&web=1&e=XLbvS2) XSLT que recoge un archivo GPX genera un archivo CSV para usarlo en la generación de rutas mediante ficheros.
+[XSLT ](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/gpxToCSV?csf=1&web=1&e=XLbvS2)que recoge un archivo GPX genera un archivo CSV para usarlo en la generación de rutas mediante ficheros.
 ## IPE
 
 [Infografia de SS 📑](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Infografia%20SS.pdf?csf=1&web=1&e=En4MY3) | 
