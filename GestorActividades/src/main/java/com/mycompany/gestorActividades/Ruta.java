@@ -211,7 +211,7 @@ public class Ruta {
     public String[] arrayVerRuta() {
         String[] datos = {
             nombre,
-            String.valueOf(valoracionMedia),
+            String.valueOf(valoracionMedia),//va a ser cero porque no se recoge en el DAO. Atentamente, Dani <3
             nivelEsfuerzo != 0 ? String.valueOf(nivelEsfuerzo) : "TBD",
             //fechaCreacion.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) lo dejo comentado, pues el DAO no crea el objeto con fecha. Atentamente, Dani <3
             LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
