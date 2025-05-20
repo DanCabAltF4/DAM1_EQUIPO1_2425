@@ -2446,16 +2446,17 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanelRutasComponentShown
     /**
      * Carga las rutas a la tabla de JPanelRutas
+     *
      * @param modelo
      */
     private void cargarRutas(DefaultTableModel modelo) {
-        /*RutaDAO dao = new RutaDAO(AccesoBaseDatos.getInstance().getConn());
+        RutaDAO dao = new RutaDAO(AccesoBaseDatos.getInstance().getConn());
         List<Ruta> rutas = dao.listar();
         Iterator<Ruta> it = rutas.iterator();
         while (it.hasNext()) {
-        Ruta next = it.next();
-        modelo.addRow(next.arrayVerRuta());
-        }*/
+            Ruta next = it.next();
+            modelo.addRow(next.arrayVerRuta());
+        }
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -2771,14 +2772,14 @@ public class main extends javax.swing.JFrame {
                                 eleAnterior = ele;
                                 altitudMaximaCSV = ele;
                                 altitudMinimaCSV = ele;
-                                horaIni = LocalTime.parse(tokenizer.nextToken().substring(11,19), DateTimeFormatter.ofPattern("HH:mm:ss"));
+                                horaIni = LocalTime.parse(tokenizer.nextToken().substring(11, 19), DateTimeFormatter.ofPattern("HH:mm:ss"));
                                 horaFin = horaIni;
                                 primerTrackPoint = false;
                             } else {
                                 ele = Double.parseDouble(tokenizer.nextToken());
                                 datosAlturaCSV(ele, eleAnterior);
                                 eleAnterior = ele;
-                                horaFin = LocalTime.parse(tokenizer.nextToken().substring(11,19), DateTimeFormatter.ofPattern("HH:mm:ss"));
+                                horaFin = LocalTime.parse(tokenizer.nextToken().substring(11, 19), DateTimeFormatter.ofPattern("HH:mm:ss"));
 
                             }
                         }
