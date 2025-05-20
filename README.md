@@ -62,6 +62,7 @@ Como se ve en la tabla NGINX es una opción muy llamativa, pero con las dificult
 [Servidor web 🗄️](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/ServidorWeb-Equipo1-VF.ova?csf=1&web=1&e=YyC8dQ)
 
 
+
 Para la web hemos optado por un diseño sencillo y compacto, facilitando su uso para todo el mundo. Para el estilo nos inclinamos por un tema principalmente verde para acompañar la intención de disfrutar de la naturaleza que tienen los visitantes de la página.  
 
 ![web1](/imagenes/web1.PNG)
@@ -87,12 +88,17 @@ Por último, existe una pestaña dedicada para conocer al equipo y porqué se cr
 Toma un archivo gpx para formatearlo con la información de la ruta y lo introduce en la web para ver los datos de interés.
 
 
+## Base de datos
+[Script](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/GeneracionBD_Equipo1.sql?csf=1&web=1&e=hKzkjL)
 
-## Sobre la base de datos
+[Relacional](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/EER_EQUIPO1_V10.mwb?csf=1&web=1&e=e1JlMH)
+
+[Relacional formato PDF](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/EER_EQUIPO1_V10.pdf?csf=1&web=1&e=KapWHP)
 
 
 <!--Para enlazar imagenes, añade una ! a un enlace normal-->
 ![Relacional](/imagenes/EER_EQUIPO1_V10.png)
+
 
 
   [Servidor de base de datos 🗄️](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/bd_ubuntu.ova?csf=1&web=1&e=YZO6Oc) |
