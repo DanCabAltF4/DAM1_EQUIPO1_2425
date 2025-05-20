@@ -7,6 +7,7 @@ package com.mycompany.gestorActividades;
 import Enumerados.Clasificacion;
 import Enumerados.Estado;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,10 @@ import java.util.List;
  * @author Raúl Buenaga
  */
 public class Ruta {
-    
+
     private int nivelRiesgo, nivelEsfuerzo, tipoTerreno, indicaciones, duracion;
     private String nombre, gpx, recomendaciones, zona;
-    private LocalDate fechaCreacion;
+    private LocalDateTime fechaCreacion;
     private double longInicio, longFinal, latInicio, latFinal, altMax, altMin, desnivelPos, desnivelNeg, distancia, valoracionMedia;
     private boolean accesibilidad, familiar;
     private Clasificacion clasificacion;
@@ -29,7 +30,7 @@ public class Ruta {
     private Periodo periodo;
     private List<Waypoint> waypoints; //Hay que controlar a la hora de mostrarlos si son Interes o Peligro
 
-    public Ruta(int nivelRiesgo, int nivelEsfuerzo, int tipoTerreno, int indicaciones, boolean accesibilidad, boolean familiar, int duracion, String nombre, String gpx, String recomendaciones, String zona, LocalDate fechaCreacion, double longInicio, double longFinal, double latInicio, double latFinal, double altMax, double altMin, double desnivelPos, double desnivelNeg, double distancia, double valoracionMedia, Clasificacion clasificacion, Estado estado, Invitado usuario, Actividad tipoActividad, Periodo periodo) {
+    public Ruta(int nivelRiesgo, int nivelEsfuerzo, int tipoTerreno, int indicaciones, boolean accesibilidad, boolean familiar, int duracion, String nombre, String gpx, String recomendaciones, String zona, LocalDateTime fechaCreacion, double longInicio, double longFinal, double latInicio, double latFinal, double altMax, double altMin, double desnivelPos, double desnivelNeg, double distancia, double valoracionMedia, Clasificacion clasificacion, Estado estado, Invitado usuario, Actividad tipoActividad, Periodo periodo) {
         this.nivelRiesgo = nivelRiesgo;
         this.nivelEsfuerzo = nivelEsfuerzo;
         this.tipoTerreno = tipoTerreno;
@@ -64,7 +65,7 @@ public class Ruta {
             this.periodo = periodo;
         } else {
             this.periodo = null;
-        }        
+        }
         this.waypoints = new ArrayList<>();
     }
 
@@ -89,114 +90,114 @@ public class Ruta {
             this.periodo = periodo;
         } else {
             this.periodo = null;
-        }        
+        }
     }
 
     //Métodos
     public int getNivelRiesgo() {
         return nivelRiesgo;
     }
-    
+
     public int getNivelEsfuerzo() {
         return nivelEsfuerzo;
     }
-    
+
     public int getTipoTerreno() {
         return tipoTerreno;
     }
-    
+
     public int getIndicaciones() {
         return indicaciones;
     }
-    
+
     public boolean getAccesibilidad() {
         return accesibilidad;
     }
-    
+
     public boolean getFamiliar() {
         return familiar;
     }
-    
+
     public int getDuracion() {
         return duracion;
     }
-    
+
     public String getNombre() {
         return nombre;
     }
-    
+
     public String getGpx() {
         return gpx;
     }
-    
+
     public String getRecomendaciones() {
         return recomendaciones;
     }
-    
+
     public String getZona() {
         return zona;
     }
-    
-    public LocalDate getFechaCreacion() {
+
+    public LocalDateTime getFechaCreacion() {
         return fechaCreacion;
     }
-    
+
     public double getLongInicio() {
         return longInicio;
     }
-    
+
     public double getLongFinal() {
         return longFinal;
     }
-    
+
     public double getLatInicio() {
         return latInicio;
     }
-    
+
     public double getLatFinal() {
         return latFinal;
     }
-    
+
     public double getAltMax() {
         return altMax;
     }
-    
+
     public double getAltMin() {
         return altMin;
     }
-    
+
     public double getDesnivelPos() {
         return desnivelPos;
     }
-    
+
     public double getDesnivelNeg() {
         return desnivelNeg;
     }
-    
+
     public double getDistancia() {
         return distancia;
     }
-    
+
     public double getValoracionMedia() {
         return valoracionMedia;
     }
-    
+
     public Clasificacion getClasificacion() {
         return clasificacion;
     }
-    
+
     public Estado getEstado() {
         return estado;
     }
-    
+
     public Invitado getUsuario() {
         return usuario;
     }
-    
+
     public Actividad getTipoActividad() {
         return tipoActividad;
     }
-    
+
     public Periodo getPeriodo() {
         return periodo;
     }
@@ -212,9 +213,10 @@ public class Ruta {
             nombre,
             String.valueOf(valoracionMedia),
             nivelEsfuerzo != 0 ? String.valueOf(nivelEsfuerzo) : "TBD",
-            fechaCreacion.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+            //fechaCreacion.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) lo dejo comentado, pues el DAO no crea el objeto con fecha. Atentamente, Dani <3
+            LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
         };
         return datos;
     }
-    
+
 }

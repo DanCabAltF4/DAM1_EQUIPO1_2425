@@ -32,7 +32,7 @@ public class RutaDAO implements Repositorio<Ruta>{
     public List<Ruta> listar() {
         List<Ruta> lista = new ArrayList<>();
         Ruta r;
-        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select idRuta,nombre,fechaCreacion,longInicio,latInicio,longFin,latFin,altMax,altMin,desnivelPos,desnivelNeg,clasificacion,nivelRiesgo,nivelEsfuerzo,tipoTerreno,indicaciones,accesibilidad,familiar,gpx,estado,recomendaciones,zonaGeografica,idUsu,ValoracionMedia,tipoActividad FROM rutas")) {
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery("Select idRuta,nombre,fechaCreacion,longInicio,latInicio,longFin,latFin,altMax,altMin,desnivelPos,desnivelNeg,clasificacion,nivelRiesgo,nivelEsfuerzo,tipoTerreno,indicaciones,accesibilidad,familiar,gpx,estado,recomendaciones,zonaGeografica,idUsu,ValoracionMedia,tipoActividad FROM Rutas")) {
                 while (rs.next()) {
                     r = crearRuta(rs);
                     if (!lista.add(r)) {
@@ -133,16 +133,16 @@ public class RutaDAO implements Repositorio<Ruta>{
     }
     
      public Ruta crearRuta(final ResultSet rs) throws Exception {
-        return new Ruta(rs.getInt("tipo de terreno")
+        return new Ruta(rs.getInt("tipoTerreno")
                 ,rs.getInt("indicaciones")
-                ,rs.getInt("duracion")
+                , 0
                 ,rs.getString("nombre")
                 ,rs.getString("recomendaciones")
-                ,rs.getString("zona")
-                ,rs.getDouble("distancia")
+                ,rs.getString("zonaGeografica")
+                ,0
                 ,rs.getBoolean("accesibilidad")
                 ,rs.getBoolean("familiar")
-                ,Clasificacion.valueOf("clasificacion")
+                ,Clasificacion.valueOf("LINEAL") //dato de ejemplo. Codigo original Clasificacion.valueOf("clasificacion")
                 ,null
                 ,null);
     }     
