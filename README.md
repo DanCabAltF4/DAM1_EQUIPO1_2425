@@ -22,12 +22,10 @@ Documentación del desarrollo de la aplicación de escritorio destinada a la ges
 - Maya García Velasco
 - Daniel Cabeza Berrazueta
 - Raúl Buenaga García
-
-
    
 ## Implementación y despliegue
 
-[Guía de despliegue 📑](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/MANUAL%20DESPLIEGUE.pdf?csf=1&web=1&e=sVfAos) | [Manual de usuario 📑](https://educantabria.sharepoint.com/:w:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/MANUAL%20USUARIO.docx?d=w06038e8d45524639a670f50dc6b88509&csf=1&web=1&e=OlXqLQ)
+[Guía de despliegue 📑](/Manuales/MANUAL%20DESPLIEGUE.pdf) | [Manual de usuario 📑](/Manuales/MANUAL%20USUARIO.pdf)
 
 Dentro de las tecnologías existentes, a la hora de desplegar este proyecto nos debatimos principalmente entre las siguientes: VirtualBox, VMware, AWS. Hemos elaborado una tabla comparativa sobre ellas para justificar nuestra elección. 
 
