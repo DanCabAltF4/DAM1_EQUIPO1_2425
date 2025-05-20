@@ -40,7 +40,6 @@ Dentro de las tecnologías existentes, a la hora de desplegar este proyecto nos 
 |**Escalabilidad** | Limitado por hardware | Limitado (local) escalable (VMware vSphere) | Escalable |
 |**Casos de uso** | Pruebas, aprendizaje | Entornos corporativos | Producción |
 
-
 Después de valorar estos aspectos decidimos decantarnos por VirtualBox. Las razones son principalmente la familiaridad del equipo con la herramienta, su gratuidad, y su flexibilidad.
 
 Para el servidor web investigamos NGINX para explorar otras tecnologías no vistas en clase, y la comparamos con Apache que es el servidor con el que más experiencia contábamos.
@@ -58,11 +57,9 @@ Para el servidor web investigamos NGINX para explorar otras tecnologías no vist
 Como se ve en la tabla NGINX es una opción muy llamativa, pero con las dificultades que afrontamos en su uso y la falta de tiempo finalmente decidimos seguir adelante con Apache.
 
 
-
 ## Sobre la web
 
-[XSLT](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/gpxToHtml?csf=1&web=1&e=D1xcbi)
-que toma un archivo gpx para formatearlo con la información de la ruta y lo introduce en la web para ver los datos de interés.
+[Servidor web 🗄️](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/ServidorWeb-Equipo1-VF.ova?csf=1&web=1&e=YyC8dQ)
 
 
 Para la web hemos optado por un diseño sencillo y compacto, facilitando su uso para todo el mundo. Para el estilo nos inclinamos por un tema principalmente verde para acompañar la intención de disfrutar de la naturaleza que tienen los visitantes de la página.  
@@ -86,12 +83,20 @@ En este apartado se recoge la información esencial sobre la web, su finalidad y
 Por último, existe una pestaña dedicada para conocer al equipo y porqué se creó esta web. 
 
 
+[XSLT](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/gpxToHtml?csf=1&web=1&e=D1xcbi)
+Toma un archivo gpx para formatearlo con la información de la ruta y lo introduce en la web para ver los datos de interés.
+
 
 
 ## Sobre la base de datos
+
+
 <!--Para enlazar imagenes, añade una ! a un enlace normal-->
-  ![Relacional](/imagenes/EER_EQUIPO1_V9.png)
-  [Script (SQL)](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/GeneracionBD_Equipo1.sql?csf=1&web=1&e=hKzkjL) | [Relacional 📑](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/EER_EQUIPO1_V9.pdf?csf=1&web=1&e=KapWHP) | [Script ejemplos](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/DatosEjemploBD_Equipo1.sql?csf=1&web=1&e=DBjGqU) | [Script de TRIGGERS](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/Script%20disparadores-Equipo1.sql?csf=1&web=1&e=PxRWOw)
+![Relacional](/imagenes/EER_EQUIPO1_V10.png)
+
+
+  [Servidor de base de datos 🗄️](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/bd_ubuntu.ova?csf=1&web=1&e=YZO6Oc) |
+  [Script (SQL)](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/GeneracionBD_Equipo1.sql?csf=1&web=1&e=hKzkjL) | [Esquema relacional 📑](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/EER_EQUIPO1_V10.pdf?csf=1&web=1&e=KapWHP) | [Script ejemplos](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/DatosEjemploBD_Equipo1.sql?csf=1&web=1&e=DBjGqU) | [Script de TRIGGERS](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/BD/Script%20disparadores-Equipo1.sql?csf=1&web=1&e=PxRWOw)
 
 La base de datos ha sido diseñada para acompañar a las diferentes funciones de la aplicación, entre las que se encuentran la creación y modificación de rutas, su valoración y la gestión de roles de los usuarios y sus permisos, entre otras. 
 
@@ -104,12 +109,15 @@ Valoraciones Técnicas| dificultad, belleza, interés cultural
 
 Las relaciones más importantes se establecen entre usuarios y rutas, pudiendo un usuario crear una o más rutas, rutas con puntos de peligro e interés, pudieno contener uno o varios, y rutas con valoración técnica pudiendo valorar una ruta tan solo una vez por usuario.
 
-  ## Sobre Java
+## Sobre Java
 
 <!-- FOTOS  -->
   ![Diagrama](imagenes/Diagrama_clases_ultimo.png)
 
-  El diagrama representa nuestro sistema para tratar la información relacionada a la gestión de rutas al aire y los usuarios resgistrados. 
+  El diagrama representa nuestro sistema para la gestión  y evaluación de rutas. La clase central es la de Ruta, que se relaciona con todas las demás y cuenta con los datos esenciales de las mismas como atributos. Las rutas pueden ser valoradas mediante ValoracionTecnica (por diseñadores, profesores) o Reseña (por todos los usuarios), ambas heredando de la clase abstracta Valoracion. Los usuarios siguen la siguiente jerarquía: invitado, alumno, profesor, diseñador de ruta, administrador, cada uno con métodos propios que se corresponden con sus permisos. Otra clase esencial a la que se relaciona Rutas es Waypoint, que puede representar los puntos de interés o de peligro. Por último, otra función clave es la de descargar fichas informativas, que se dividen en Ficha de Seguridad, Ficha de Usuario, y Ficha de Organización que cuelgan de una clase abstracta común llamada Ficha Informativa.
+
+
+A continuación ofrecemos una imagen del diagrama de casos de uso, con un vínculo a su descripción.
 
   ![Casos de uso](imagenes/casos_uso.png)
 
@@ -120,7 +128,7 @@ Las relaciones más importantes se establecen entre usuarios y rutas, pudiendo u
 
 
 
-[XSLT ](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/gpxToCSV?csf=1&web=1&e=XLbvS2)que recoge un archivo GPX genera un archivo CSV para usarlo en la generación de rutas mediante ficheros.
+[XSLT ](https://educantabria.sharepoint.com/:u:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/gpxToCSV?csf=1&web=1&e=XLbvS2) XSLT que recoge un archivo GPX genera un archivo CSV para usarlo en la generación de rutas mediante ficheros.
 ## IPE
 
 [Infografia de SS 📑](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Infografia%20SS.pdf?csf=1&web=1&e=En4MY3) | 
@@ -128,7 +136,3 @@ Las relaciones más importantes se establecen entre usuarios y rutas, pudiendo u
 [Matriz de Riesgo 📑](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Matriz%20de%20riesgo.pdf?csf=1&web=1&e=s3ks61) |
 [Plan de emergencias 📑](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Plan%20de%20emergencias.pdf?csf=1&web=1&e=8r9907) |
 [Tarea 📑](https://educantabria.sharepoint.com/:b:/r/sites/RETODAM1DAM12025-39009471-DAM1-EQUIPO1/Documentos%20compartidos/DAM1-EQUIPO1/ARCHIVOS%20RETO/Tarea_IT_Equipo1.pdf?csf=1&web=1&e=qgO1M3)
-
-
-
-
